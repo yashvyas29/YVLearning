@@ -23,6 +23,7 @@
 		1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBC727BA7A5E0073B4C4 /* MapView.swift */; };
 		1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */; };
 		1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9708FE27BE5DE60048F780 /* RootView.swift */; };
+		22FE1CCE27C16B9C009CD00F /* StructuredConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		1C83CBC727BA7A5E0073B4C4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationHandler.swift; sourceTree = "<group>"; };
 		1C9708FE27BE5DE60048F780 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructuredConcurrency.swift; sourceTree = "<group>"; };
+		22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructuredConcurrency.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 		1C42B49E27B7BBBE00D8D885 /* YVLearning */ = {
 			isa = PBXGroup;
 			children = (
+				22FE1CCF27C16BE3009CD00F /* Playgrounds */,
 				1C83CBC927BA7F1D0073B4C4 /* Protocols */,
 				1C83CBC627BA7A4B0073B4C4 /* Views */,
 				1C42B4C927B7BBDD00D8D885 /* Structs */,
@@ -153,6 +157,7 @@
 		1C42B4C927B7BBDD00D8D885 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */,
 				1C42B4CA27B7BC0400D8D885 /* LearnTask.swift */,
 				1C5CFC6127C0E57A00BCB924 /* RootPresentationMode.swift */,
 			);
@@ -194,6 +199,14 @@
 				1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		22FE1CCF27C16BE3009CD00F /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +344,7 @@
 				1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */,
 				1C5CFC8927C0F87700BCB924 /* SceneDelegate.swift in Sources */,
 				1C42B4CB27B7BC0400D8D885 /* LearnTask.swift in Sources */,
+				22FE1CCE27C16B9C009CD00F /* StructuredConcurrency.swift in Sources */,
 				1C5CFC6227C0E57A00BCB924 /* RootPresentationMode.swift in Sources */,
 				1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */,
 				1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */,
