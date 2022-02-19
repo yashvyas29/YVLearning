@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C42B4A027B7BBBE00D8D885 /* YVLearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B49F27B7BBBE00D8D885 /* YVLearningApp.swift */; };
+		1C372ACD27B9081F004E0FA8 /* UINavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C372ACC27B9081F004E0FA8 /* UINavigationView.swift */; };
 		1C42B4A227B7BBBE00D8D885 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4A127B7BBBE00D8D885 /* ContentView.swift */; };
 		1C42B4A427B7BBC000D8D885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C42B4A327B7BBC000D8D885 /* Assets.xcassets */; };
 		1C42B4A727B7BBC000D8D885 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C42B4A627B7BBC000D8D885 /* Preview Assets.xcassets */; };
 		1C42B4B127B7BBC000D8D885 /* YVLearningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4B027B7BBC000D8D885 /* YVLearningTests.swift */; };
 		1C42B4BB27B7BBC000D8D885 /* YVLearningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4BA27B7BBC000D8D885 /* YVLearningUITests.swift */; };
 		1C42B4BD27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4BC27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift */; };
+		1C42B4CB27B7BC0400D8D885 /* LearnTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4CA27B7BC0400D8D885 /* LearnTask.swift */; };
+		1C42B4CE27B7BD2D00D8D885 /* LearnTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4CD27B7BD2D00D8D885 /* LearnTaskTest.swift */; };
+		1C5CFC6227C0E57A00BCB924 /* RootPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC6127C0E57A00BCB924 /* RootPresentationMode.swift */; };
+		1C5CFC8827C0F87700BCB924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC8627C0F87700BCB924 /* AppDelegate.swift */; };
+		1C5CFC8927C0F87700BCB924 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC8727C0F87700BCB924 /* SceneDelegate.swift */; };
+		1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC8B27C104C700BCB924 /* YVLearningApp.swift */; };
+		1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBC727BA7A5E0073B4C4 /* MapView.swift */; };
+		1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */; };
+		1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9708FE27BE5DE60048F780 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C372ACC27B9081F004E0FA8 /* UINavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationView.swift; sourceTree = "<group>"; };
 		1C42B49C27B7BBBE00D8D885 /* YVLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YVLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C42B49F27B7BBBE00D8D885 /* YVLearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVLearningApp.swift; sourceTree = "<group>"; };
 		1C42B4A127B7BBBE00D8D885 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C42B4A327B7BBC000D8D885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C42B4A627B7BBC000D8D885 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,6 +53,16 @@
 		1C42B4B627B7BBC000D8D885 /* YVLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YVLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C42B4BA27B7BBC000D8D885 /* YVLearningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVLearningUITests.swift; sourceTree = "<group>"; };
 		1C42B4BC27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVLearningUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1C42B4CA27B7BC0400D8D885 /* LearnTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTask.swift; sourceTree = "<group>"; };
+		1C42B4CD27B7BD2D00D8D885 /* LearnTaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTaskTest.swift; sourceTree = "<group>"; };
+		1C5CFC6127C0E57A00BCB924 /* RootPresentationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationMode.swift; sourceTree = "<group>"; };
+		1C5CFC8627C0F87700BCB924 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1C5CFC8727C0F87700BCB924 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1C5CFC8A27C0FA2600BCB924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C5CFC8B27C104C700BCB924 /* YVLearningApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YVLearningApp.swift; sourceTree = "<group>"; };
+		1C83CBC727BA7A5E0073B4C4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationHandler.swift; sourceTree = "<group>"; };
+		1C9708FE27BE5DE60048F780 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +113,13 @@
 		1C42B49E27B7BBBE00D8D885 /* YVLearning */ = {
 			isa = PBXGroup;
 			children = (
-				1C42B49F27B7BBBE00D8D885 /* YVLearningApp.swift */,
-				1C42B4A127B7BBBE00D8D885 /* ContentView.swift */,
+				1C83CBC927BA7F1D0073B4C4 /* Protocols */,
+				1C83CBC627BA7A4B0073B4C4 /* Views */,
+				1C42B4C927B7BBDD00D8D885 /* Structs */,
 				1C42B4A327B7BBC000D8D885 /* Assets.xcassets */,
+				1C5CFC8A27C0FA2600BCB924 /* Info.plist */,
 				1C42B4A527B7BBC000D8D885 /* Preview Content */,
+				1C5CFC6527C0EEBD00BCB924 /* App */,
 			);
 			path = YVLearning;
 			sourceTree = "<group>";
@@ -113,6 +135,7 @@
 		1C42B4AF27B7BBC000D8D885 /* YVLearningTests */ = {
 			isa = PBXGroup;
 			children = (
+				1C42B4CC27B7BD1A00D8D885 /* Structs */,
 				1C42B4B027B7BBC000D8D885 /* YVLearningTests.swift */,
 			);
 			path = YVLearningTests;
@@ -125,6 +148,52 @@
 				1C42B4BC27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift */,
 			);
 			path = YVLearningUITests;
+			sourceTree = "<group>";
+		};
+		1C42B4C927B7BBDD00D8D885 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				1C42B4CA27B7BC0400D8D885 /* LearnTask.swift */,
+				1C5CFC6127C0E57A00BCB924 /* RootPresentationMode.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		1C42B4CC27B7BD1A00D8D885 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				1C42B4CD27B7BD2D00D8D885 /* LearnTaskTest.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		1C5CFC6527C0EEBD00BCB924 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1C5CFC8B27C104C700BCB924 /* YVLearningApp.swift */,
+				1C5CFC8627C0F87700BCB924 /* AppDelegate.swift */,
+				1C5CFC8727C0F87700BCB924 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1C83CBC627BA7A4B0073B4C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C42B4A127B7BBBE00D8D885 /* ContentView.swift */,
+				1C372ACC27B9081F004E0FA8 /* UINavigationView.swift */,
+				1C83CBC727BA7A5E0073B4C4 /* MapView.swift */,
+				1C9708FE27BE5DE60048F780 /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1C83CBC927BA7F1D0073B4C4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +326,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5CFC8827C0F87700BCB924 /* AppDelegate.swift in Sources */,
 				1C42B4A227B7BBBE00D8D885 /* ContentView.swift in Sources */,
-				1C42B4A027B7BBBE00D8D885 /* YVLearningApp.swift in Sources */,
+				1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */,
+				1C5CFC8927C0F87700BCB924 /* SceneDelegate.swift in Sources */,
+				1C42B4CB27B7BC0400D8D885 /* LearnTask.swift in Sources */,
+				1C5CFC6227C0E57A00BCB924 /* RootPresentationMode.swift in Sources */,
+				1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */,
+				1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */,
+				1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */,
+				1C372ACD27B9081F004E0FA8 /* UINavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C42B4B127B7BBC000D8D885 /* YVLearningTests.swift in Sources */,
+				1C42B4CE27B7BD2D00D8D885 /* LearnTaskTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,11 +499,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YVLearning/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YVLearning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,11 +529,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YVLearning/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YVLearning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
