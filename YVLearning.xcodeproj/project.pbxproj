@@ -23,6 +23,8 @@
 		1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBC727BA7A5E0073B4C4 /* MapView.swift */; };
 		1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */; };
 		1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9708FE27BE5DE60048F780 /* RootView.swift */; };
+		2268B88927C234270079807B /* ListRowSeparatorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268B88827C234270079807B /* ListRowSeparatorModifier.swift */; };
+		2268B88B27C235720079807B /* NumberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268B88A27C235720079807B /* NumberListView.swift */; };
 		22FE1CCE27C16B9C009CD00F /* StructuredConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		1C83CBC727BA7A5E0073B4C4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationHandler.swift; sourceTree = "<group>"; };
 		1C9708FE27BE5DE60048F780 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		2268B88827C234270079807B /* ListRowSeparatorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowSeparatorModifier.swift; sourceTree = "<group>"; };
+		2268B88A27C235720079807B /* NumberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListView.swift; sourceTree = "<group>"; };
 		22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructuredConcurrency.swift; sourceTree = "<group>"; };
 		22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructuredConcurrency.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -116,6 +120,7 @@
 		1C42B49E27B7BBBE00D8D885 /* YVLearning */ = {
 			isa = PBXGroup;
 			children = (
+				2268B88727C233FF0079807B /* ViewModifiers */,
 				22FE1CCF27C16BE3009CD00F /* Playgrounds */,
 				1C83CBC927BA7F1D0073B4C4 /* Protocols */,
 				1C83CBC627BA7A4B0073B4C4 /* Views */,
@@ -189,6 +194,7 @@
 				1C372ACC27B9081F004E0FA8 /* UINavigationView.swift */,
 				1C83CBC727BA7A5E0073B4C4 /* MapView.swift */,
 				1C9708FE27BE5DE60048F780 /* RootView.swift */,
+				2268B88A27C235720079807B /* NumberListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +205,14 @@
 				1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2268B88727C233FF0079807B /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				2268B88827C234270079807B /* ListRowSeparatorModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 		22FE1CCF27C16BE3009CD00F /* Playgrounds */ = {
@@ -344,11 +358,13 @@
 				1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */,
 				1C5CFC8927C0F87700BCB924 /* SceneDelegate.swift in Sources */,
 				1C42B4CB27B7BC0400D8D885 /* LearnTask.swift in Sources */,
+				2268B88927C234270079807B /* ListRowSeparatorModifier.swift in Sources */,
 				22FE1CCE27C16B9C009CD00F /* StructuredConcurrency.swift in Sources */,
 				1C5CFC6227C0E57A00BCB924 /* RootPresentationMode.swift in Sources */,
 				1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */,
 				1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */,
 				1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */,
+				2268B88B27C235720079807B /* NumberListView.swift in Sources */,
 				1C372ACD27B9081F004E0FA8 /* UINavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
