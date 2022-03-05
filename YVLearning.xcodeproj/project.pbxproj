@@ -88,6 +88,7 @@
 		1CA6299327D3D36800B6B582 /* Logger+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Categories.swift"; sourceTree = "<group>"; };
 		1CA6299E27D3E05600B6B582 /* Optional+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+String.swift"; sourceTree = "<group>"; };
 		1CA629A027D3E06500B6B582 /* Optional+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Bool.swift"; sourceTree = "<group>"; };
+		1CA629A227D3E58B00B6B582 /* Combine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Combine.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2268B88827C234270079807B /* ListRowSeparatorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowSeparatorModifier.swift; sourceTree = "<group>"; };
 		2268B88A27C235720079807B /* NumberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListView.swift; sourceTree = "<group>"; };
 		2268B88C27C2C4040079807B /* NumberFormLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormLinkView.swift; sourceTree = "<group>"; };
@@ -289,6 +290,7 @@
 		22FE1CCF27C16BE3009CD00F /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				1CA629A227D3E58B00B6B582 /* Combine.playground */,
 				22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */,
 			);
 			path = Playgrounds;
