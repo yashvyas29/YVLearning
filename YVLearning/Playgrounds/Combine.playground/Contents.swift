@@ -203,3 +203,72 @@ private func romanNumeral(from:Int) throws -> String {
         receiveValue: { print ("\($0)", terminator: " ") }
     )
     .store(in: &cancellables)
+
+class StringSubscriber: Subscriber {
+    typealias Input = String
+    typealias Failure = Never
+
+    func receive(subscription: Subscription) {
+        subscription.request(.unlimited)
+    }
+
+    func receive(_ input: String) -> Subscribers.Demand {
+        print("Received: \(input), Transformed into: \(input.uppercased())")
+        return .none
+    }
+
+    func receive(completion: Subscribers.Completion<Never>) {
+        print("Completion event:", completion)
+    }
+}
+
+let stringPublisher = [
+    "Warsaw", "Barcelona", "New York", "Toronto"
+].publisher
+
+let stringSubscriber = StringSubscriber()
+
+stringPublisher.subscribe(stringSubscriber)
+
+// Generic approach
+class GenericSubscriber<T>: Subscriber {
+    typealias Input = T
+    typealias Failure = Never
+
+    func receive(subscription: Subscription) {
+        subscription.request(.unlimited)
+    }
+
+    func receive(_ input: T) -> Subscribers.Demand {
+        print("Received: \(input)", T.self)
+        return .none
+    }
+
+    func receive(completion: Subscribers.Completion<Never>) {
+        print("Completion event:", completion)
+    }
+}
+
+let publisherOfInts = [
+    1, 2, 3, 4
+].publisher
+
+let publisherOfStrings = [
+    "1", "2", "3", "4"
+].publisher
+
+let subscriberOfInt = GenericSubscriber<Int>()
+let subscriberOfString = GenericSubscriber<String>()
+
+publisherOfInts.subscribe(subscriberOfInt)
+publisherOfStrings.subscribe(subscriberOfString)
+
+let subscriber = AnySubscriber<Int, Never> { subscription in
+    subscription.request(.unlimited)
+} receiveValue: { value in
+    debugPrint("AnySubscriber receiveValue \(value)")
+    return .none
+} receiveCompletion: { completion in
+    debugPrint("AnySubscriber completion \(completion)")
+}
+Just(5).subscribe(subscriber)
