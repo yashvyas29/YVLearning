@@ -2,12 +2,25 @@
 // Copyright © 2022 by Hilti Corporation – all rights reserved
 //
 
+import os.log
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        /*
+        if #available(iOS 14.0, *) {
+            Logger.appCycle.debug("didFinishLaunchingWithOptions")
+            Logger.appCycle.info("didFinishLaunchingWithOptions by \("Yash", privacy: .private)")
+            Logger.appCycle.log("didFinishLaunchingWithOptions by \("Yash", privacy: .public)")
+            Logger.appCycle.info("didFinishLaunchingWithOptions with float \(2910.1992, format: .fixed(precision: 2), align: .left(columns: .max), privacy: .private)")
+        } else {
+            os_log("didFinishLaunchingWithOptions by %{public}@", log: OSLog.appCycle, type: .debug, "Yash")
+            os_log("didFinishLaunchingWithOptions by %{private}@", log: OSLog.appCycle, type: .info, "Yash")
+            os_log(.info, "didFinishLaunchingWithOptions")
+        }
+         */
         return true
     }
 
