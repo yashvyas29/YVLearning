@@ -8,7 +8,7 @@
 import MapKit
 import SwiftUI
 
-/*
+@available(iOS 14.0, *)
 struct MapView: View {
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.5, longitude: -0.12), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     let locations = [
@@ -40,9 +40,9 @@ struct MapView: View {
     }
 }
 
+@available(iOS 14.0, *)
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
     }
 }
- */

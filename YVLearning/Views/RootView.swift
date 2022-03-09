@@ -45,7 +45,7 @@ struct ContentView1: View {
                 Text("Go to Hello, World #2!")
             }
             Button (action: {
-                //                self.rootIsActive = false
+//                self.rootIsActive = false
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Pop")
