@@ -20,6 +20,7 @@
 		1C5CFC8827C0F87700BCB924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC8627C0F87700BCB924 /* AppDelegate.swift */; };
 		1C5CFC8927C0F87700BCB924 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC8727C0F87700BCB924 /* SceneDelegate.swift */; };
 		1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC8B27C104C700BCB924 /* YVLearningApp.swift */; };
+		1C734B4627DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C734B4527DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift */; };
 		1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBC727BA7A5E0073B4C4 /* MapView.swift */; };
 		1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */; };
 		1C939E9927D6517E00D8B152 /* UINavigationController+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C939E9827D6517E00D8B152 /* UINavigationController+Customization.swift */; };
@@ -80,6 +81,7 @@
 		1C5CFC8727C0F87700BCB924 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1C5CFC8A27C0FA2600BCB924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5CFC8B27C104C700BCB924 /* YVLearningApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YVLearningApp.swift; sourceTree = "<group>"; };
+		1C734B4527DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuIgnoringSafeAreaView.swift; sourceTree = "<group>"; };
 		1C83CBC727BA7A5E0073B4C4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationHandler.swift; sourceTree = "<group>"; };
 		1C939E9827D6517E00D8B152 /* UINavigationController+Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Customization.swift"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				1CA6297827D3A06E00B6B582 /* RedactedView.swift */,
 				1CF764C127D7B7F000A2693D /* ReadAppStorageView.swift */,
 				1CF764C327D7B80500A2693D /* WriteAppStorageView.swift */,
+				1C734B4527DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				1C5CFC8827C0F87700BCB924 /* AppDelegate.swift in Sources */,
 				2268B89027C2C4740079807B /* EmptyNavigationLink.swift in Sources */,
 				1C42B4A227B7BBBE00D8D885 /* ContentView.swift in Sources */,
+				1C734B4627DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift in Sources */,
 				1CF764C227D7B7F000A2693D /* ReadAppStorageView.swift in Sources */,
 				1CA6299227D3CC8C00B6B582 /* OSLog+Categories.swift in Sources */,
 				1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */,

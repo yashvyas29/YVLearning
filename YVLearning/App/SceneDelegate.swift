@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             if #available(iOS 14.0, *) {
-                window.rootViewController = UIHostingController(rootView: ReadAppStorageView())
+                window.rootViewController = UIHostingController(rootView: MenuIgnoringSafeAreaView())
             } else {
                 window.rootViewController = UIHostingController(rootView: NumberFormLinkView())
             }
