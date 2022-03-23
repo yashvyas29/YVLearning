@@ -38,6 +38,7 @@
 		1CA6299427D3D36800B6B582 /* Logger+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6299327D3D36800B6B582 /* Logger+Categories.swift */; };
 		1CA6299F27D3E05600B6B582 /* Optional+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6299E27D3E05600B6B582 /* Optional+String.swift */; };
 		1CA629A127D3E06500B6B582 /* Optional+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA629A027D3E06500B6B582 /* Optional+Bool.swift */; };
+		1CD9435A27EB2FC900BE4D1D /* Color+Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9435927EB2FC900BE4D1D /* Color+Scheme.swift */; };
 		1CF7437027E3441E001F34A3 /* TextSpacingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7436F27E3441E001F34A3 /* TextSpacingView.swift */; };
 		1CF7437227E34F38001F34A3 /* iOSSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7437127E34F38001F34A3 /* iOSSlider.swift */; };
 		1CF7437427E35155001F34A3 /* LockerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7437327E35155001F34A3 /* LockerSlider.swift */; };
@@ -106,6 +107,7 @@
 		1CA6299E27D3E05600B6B582 /* Optional+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+String.swift"; sourceTree = "<group>"; };
 		1CA629A027D3E06500B6B582 /* Optional+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Bool.swift"; sourceTree = "<group>"; };
 		1CA629A227D3E58B00B6B582 /* Combine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Combine.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1CD9435927EB2FC900BE4D1D /* Color+Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Scheme.swift"; sourceTree = "<group>"; };
 		1CF7436F27E3441E001F34A3 /* TextSpacingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSpacingView.swift; sourceTree = "<group>"; };
 		1CF7437127E34F38001F34A3 /* iOSSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSlider.swift; sourceTree = "<group>"; };
 		1CF7437327E35155001F34A3 /* LockerSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerSlider.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				1CA6299327D3D36800B6B582 /* Logger+Categories.swift */,
 				1C939E9827D6517E00D8B152 /* UINavigationController+Customization.swift */,
 				1C06D2B427E238E500FB65F6 /* Preview.swift */,
+				1CD9435927EB2FC900BE4D1D /* Color+Scheme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				1C734B4627DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift in Sources */,
 				1CF764C227D7B7F000A2693D /* ReadAppStorageView.swift in Sources */,
 				1CA6299227D3CC8C00B6B582 /* OSLog+Categories.swift in Sources */,
+				1CD9435A27EB2FC900BE4D1D /* Color+Scheme.swift in Sources */,
 				1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */,
 				1C939E9927D6517E00D8B152 /* UINavigationController+Customization.swift in Sources */,
 				1CF7437427E35155001F34A3 /* LockerSlider.swift in Sources */,
