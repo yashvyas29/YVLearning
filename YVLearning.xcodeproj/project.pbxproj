@@ -26,6 +26,8 @@
 		1C734B4627DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C734B4527DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift */; };
 		1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBC727BA7A5E0073B4C4 /* MapView.swift */; };
 		1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */; };
+		1C8F017527F3779000DBD9DF /* View+ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8F017427F3779000DBD9DF /* View+ConditionalModifier.swift */; };
+		1C8F017727F377D000DBD9DF /* RedCircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8F017627F377D000DBD9DF /* RedCircleButtonStyle.swift */; };
 		1C939E9927D6517E00D8B152 /* UINavigationController+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C939E9827D6517E00D8B152 /* UINavigationController+Customization.swift */; };
 		1C939E9C27D656FB00D8B152 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C939E9B27D656FB00D8B152 /* ActivityIndicatorView.swift */; };
 		1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9708FE27BE5DE60048F780 /* RootView.swift */; };
@@ -94,6 +96,8 @@
 		1C734B4527DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuIgnoringSafeAreaView.swift; sourceTree = "<group>"; };
 		1C83CBC727BA7A5E0073B4C4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationHandler.swift; sourceTree = "<group>"; };
+		1C8F017427F3779000DBD9DF /* View+ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ConditionalModifier.swift"; sourceTree = "<group>"; };
+		1C8F017627F377D000DBD9DF /* RedCircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedCircleButtonStyle.swift; sourceTree = "<group>"; };
 		1C939E9827D6517E00D8B152 /* UINavigationController+Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Customization.swift"; sourceTree = "<group>"; };
 		1C939E9B27D656FB00D8B152 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		1C9708FE27BE5DE60048F780 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 				1C939E9827D6517E00D8B152 /* UINavigationController+Customization.swift */,
 				1C06D2B427E238E500FB65F6 /* Preview.swift */,
 				1CD9435927EB2FC900BE4D1D /* Color+Scheme.swift */,
+				1C8F017427F3779000DBD9DF /* View+ConditionalModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				1C939E9B27D656FB00D8B152 /* ActivityIndicatorView.swift */,
 				1CF7437127E34F38001F34A3 /* iOSSlider.swift */,
 				1CF7437327E35155001F34A3 /* LockerSlider.swift */,
+				1C8F017627F377D000DBD9DF /* RedCircleButtonStyle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				1CD9435A27EB2FC900BE4D1D /* Color+Scheme.swift in Sources */,
 				1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */,
 				1C939E9927D6517E00D8B152 /* UINavigationController+Customization.swift in Sources */,
+				1C8F017727F377D000DBD9DF /* RedCircleButtonStyle.swift in Sources */,
 				1CF7437427E35155001F34A3 /* LockerSlider.swift in Sources */,
 				1CF764C427D7B80500A2693D /* WriteAppStorageView.swift in Sources */,
 				1C06D2B527E238E500FB65F6 /* Preview.swift in Sources */,
@@ -507,6 +514,7 @@
 				2268B88B27C235720079807B /* NumberListView.swift in Sources */,
 				1C372ACD27B9081F004E0FA8 /* UINavigationView.swift in Sources */,
 				1CA6298027D3A54E00B6B582 /* Optional+Nil.swift in Sources */,
+				1C8F017527F3779000DBD9DF /* View+ConditionalModifier.swift in Sources */,
 				1C939E9C27D656FB00D8B152 /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
