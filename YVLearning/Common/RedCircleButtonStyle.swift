@@ -14,6 +14,7 @@ struct RedCircleButtonStyle: ButtonStyle {
                 .font(.title)
             configuration.label
                 .font(.headline)
+                .multilineTextAlignment(.center)
         }
         .padding(25)
         .background(Circle().fill(Color.red))
@@ -29,6 +30,7 @@ struct RedCircleButtonStyle_Previews: PreviewProvider {
         }
         .buttonStyle(.redCircleStyle)
         .padding()
+        .previewAsComponent()
     }
 }
 
