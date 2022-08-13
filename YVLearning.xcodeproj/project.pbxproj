@@ -28,6 +28,7 @@
 		1C734B4627DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C734B4527DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift */; };
 		1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBC727BA7A5E0073B4C4 /* MapView.swift */; };
 		1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */; };
+		1C8458FB28A8154300547D30 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8458FA28A8154300547D30 /* ApiManager.swift */; };
 		1C893592289D26C50063B50C /* YVGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C893591289D26C50063B50C /* YVGaugeView.swift */; };
 		1C8F017527F3779000DBD9DF /* View+ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8F017427F3779000DBD9DF /* View+ConditionalModifier.swift */; };
 		1C8F017727F377D000DBD9DF /* RedCircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8F017627F377D000DBD9DF /* RedCircleButtonStyle.swift */; };
@@ -102,6 +103,7 @@
 		1C734B4527DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuIgnoringSafeAreaView.swift; sourceTree = "<group>"; };
 		1C83CBC727BA7A5E0073B4C4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1C83CBCA27BA7F4C0073B4C4 /* UINavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationHandler.swift; sourceTree = "<group>"; };
+		1C8458FA28A8154300547D30 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		1C893591289D26C50063B50C /* YVGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVGaugeView.swift; sourceTree = "<group>"; };
 		1C8F017427F3779000DBD9DF /* View+ConditionalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ConditionalModifier.swift"; sourceTree = "<group>"; };
 		1C8F017627F377D000DBD9DF /* RedCircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedCircleButtonStyle.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				1C31156A27F3AD3F0047E1CB /* Shape+StrokeFill.swift */,
 				1C893591289D26C50063B50C /* YVGaugeView.swift */,
 				1CB16B3F28A02B4A00E3195C /* YVCircularProgressView.swift */,
+				1C8458FA28A8154300547D30 /* ApiManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				1CA629A127D3E06500B6B582 /* Optional+Bool.swift in Sources */,
 				1CF7437227E34F38001F34A3 /* iOSSlider.swift in Sources */,
 				1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */,
+				1C8458FB28A8154300547D30 /* ApiManager.swift in Sources */,
 				1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */,
 				2268B89427C2C7460079807B /* ToolbarView.swift in Sources */,
 				2268B88B27C235720079807B /* NumberListView.swift in Sources */,
