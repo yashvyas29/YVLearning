@@ -45,6 +45,7 @@
 		1CA6299F27D3E05600B6B582 /* Optional+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6299E27D3E05600B6B582 /* Optional+String.swift */; };
 		1CA629A127D3E06500B6B582 /* Optional+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA629A027D3E06500B6B582 /* Optional+Bool.swift */; };
 		1CB16B4028A02B4A00E3195C /* YVCircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB16B3F28A02B4A00E3195C /* YVCircularProgressView.swift */; };
+		1CD03A6228B62E8E00E9B3A4 /* Date+Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD03A6128B62E8E00E9B3A4 /* Date+Week.swift */; };
 		1CD9435A27EB2FC900BE4D1D /* Color+Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9435927EB2FC900BE4D1D /* Color+Scheme.swift */; };
 		1CF7437027E3441E001F34A3 /* TextSpacingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7436F27E3441E001F34A3 /* TextSpacingView.swift */; };
 		1CF7437227E34F38001F34A3 /* iOSSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF7437127E34F38001F34A3 /* iOSSlider.swift */; };
@@ -121,6 +122,7 @@
 		1CA629A027D3E06500B6B582 /* Optional+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Bool.swift"; sourceTree = "<group>"; };
 		1CA629A227D3E58B00B6B582 /* Combine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Combine.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1CB16B3F28A02B4A00E3195C /* YVCircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVCircularProgressView.swift; sourceTree = "<group>"; };
+		1CD03A6128B62E8E00E9B3A4 /* Date+Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Week.swift"; sourceTree = "<group>"; };
 		1CD9435927EB2FC900BE4D1D /* Color+Scheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Scheme.swift"; sourceTree = "<group>"; };
 		1CF7436F27E3441E001F34A3 /* TextSpacingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSpacingView.swift; sourceTree = "<group>"; };
 		1CF7437127E34F38001F34A3 /* iOSSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSlider.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				1C06D2B427E238E500FB65F6 /* Preview.swift */,
 				1CD9435927EB2FC900BE4D1D /* Color+Scheme.swift */,
 				1C8F017427F3779000DBD9DF /* View+ConditionalModifier.swift */,
+				1CD03A6128B62E8E00E9B3A4 /* Date+Week.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				2268B88D27C2C4040079807B /* NumberFormLinkView.swift in Sources */,
 				1C893592289D26C50063B50C /* YVGaugeView.swift in Sources */,
 				2268B88927C234270079807B /* ListRowSeparatorModifier.swift in Sources */,
+				1CD03A6228B62E8E00E9B3A4 /* Date+Week.swift in Sources */,
 				1CA6299427D3D36800B6B582 /* Logger+Categories.swift in Sources */,
 				1CA6297C27D3A49200B6B582 /* String+Placeholder.swift in Sources */,
 				1CA6299027D3ABFB00B6B582 /* NetworkMonitor.swift in Sources */,
