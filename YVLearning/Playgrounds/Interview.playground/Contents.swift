@@ -55,9 +55,10 @@ func reverseArray<T>(_ array: [T]) {
     var start = 0
     var end = array.count - 1
     while start < end {
-        let temp = reversedArray[start]
-        reversedArray[start] = reversedArray[end]
-        reversedArray[end] = temp
+//        let temp = reversedArray[start]
+//        reversedArray[start] = reversedArray[end]
+//        reversedArray[end] = temp
+        reversedArray.swapAt(start, end)
         start += 1
         end -= 1
     }
@@ -241,4 +242,256 @@ func largestPositiveMissingNumber(_ array: [Int]) -> Int {
     return answer
 }
 largestPositiveMissingNumber([1, 2, 3, 4])
+print()
+
+func stringContainsSubstring(string: String, subString: String) -> Bool {
+//    let range = string.ranges(of: subString)
+//    print(range)
+    return string.contains(subString)
+}
+print(stringContainsSubstring(string: "Yash Vyas", subString: "Yash"))
+print()
+
+func insertionSort(_ array: [Int]) -> [Int] {
+    var sortedArray = array             // 1
+    for index in 1..<sortedArray.count {         // 2
+        var currentIndex = index
+        while currentIndex > 0 && sortedArray[currentIndex] < sortedArray[currentIndex - 1] { // 3
+            sortedArray.swapAt(currentIndex - 1, currentIndex)
+            currentIndex -= 1
+        }
+    }
+    return sortedArray
+}
+print(insertionSort([ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]))
+print()
+
+func selectionSort(_ array: [Int]) -> [Int] {
+    guard array.count > 1 else { return array }  // 1
+
+    var a = array                    // 2
+
+    for x in 0 ..< a.count - 1 {     // 3
+
+        var lowest = x
+        for y in x + 1 ..< a.count {   // 4
+            if a[y] < a[lowest] {
+                lowest = y
+            }
+        }
+
+        if x != lowest {               // 5
+            a.swapAt(x, lowest)
+        }
+    }
+    return a
+}
+print(selectionSort([ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]))
+print()
+
+func bubbleSort(_ a: [Int]) -> [Int] {
+    guard a.count > 1 else { return a }  // 1
+    var array = a
+    for i in 0..<array.count {
+        for j in 1..<array.count - i {
+            if array[j] < array[j-1] {
+                let tmp = array[j-1]
+                array[j-1] = array[j]
+                array[j] = tmp
+            }
+        }
+    }
+    return array
+}
+print(bubbleSort([ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]))
+print()
+
+func mergeSort(_ array: [Int]) -> [Int] {
+    guard array.count > 1 else { return array }    // 1
+
+    func merge(leftPile: [Int], rightPile: [Int]) -> [Int] {
+        // 1
+        var leftIndex = 0
+        var rightIndex = 0
+
+        // 2
+        var orderedPile = [Int]()
+        orderedPile.reserveCapacity(leftPile.count + rightPile.count)
+
+        // 3
+        while leftIndex < leftPile.count && rightIndex < rightPile.count {
+            if leftPile[leftIndex] < rightPile[rightIndex] {
+                orderedPile.append(leftPile[leftIndex])
+                leftIndex += 1
+            } else if leftPile[leftIndex] > rightPile[rightIndex] {
+                orderedPile.append(rightPile[rightIndex])
+                rightIndex += 1
+            } else {
+                orderedPile.append(leftPile[leftIndex])
+                leftIndex += 1
+                orderedPile.append(rightPile[rightIndex])
+                rightIndex += 1
+            }
+        }
+
+        // 4
+        while leftIndex < leftPile.count {
+            orderedPile.append(leftPile[leftIndex])
+            leftIndex += 1
+        }
+
+        while rightIndex < rightPile.count {
+            orderedPile.append(rightPile[rightIndex])
+            rightIndex += 1
+        }
+
+        return orderedPile
+    }
+
+    let middleIndex = array.count / 2              // 2
+
+    let leftArray = mergeSort(Array(array[0..<middleIndex]))             // 3
+
+    let rightArray = mergeSort(Array(array[middleIndex..<array.count]))  // 4
+
+    return merge(leftPile: leftArray, rightPile: rightArray)             // 5
+}
+print(mergeSort([ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]))
+print()
+
+func mergeSortBottomUp<T>(_ a: [T], _ isOrderedBefore: (T, T) -> Bool) -> [T] {
+    let n = a.count
+
+    var z = [a, a]      // 1
+    var d = 0
+
+    var width = 1
+    while width < n {   // 2
+
+        var i = 0
+        while i < n {     // 3
+
+            var j = i
+            var l = i
+            var r = i + width
+
+            let lmax = min(l + width, n)
+            let rmax = min(r + width, n)
+
+            while l < lmax && r < rmax {                // 4
+                if isOrderedBefore(z[d][l], z[d][r]) {
+                    z[1 - d][j] = z[d][l]
+                    l += 1
+                } else {
+                    z[1 - d][j] = z[d][r]
+                    r += 1
+                }
+                j += 1
+            }
+            while l < lmax {
+                z[1 - d][j] = z[d][l]
+                j += 1
+                l += 1
+            }
+            while r < rmax {
+                z[1 - d][j] = z[d][r]
+                j += 1
+                r += 1
+            }
+
+            i += width*2
+        }
+
+        width *= 2
+        d = 1 - d      // 5
+    }
+    return z[d]
+}
+print(mergeSortBottomUp([ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ], <))
+print()
+
+// String search
+extension String {
+    func indexOf(_ pattern: String) -> Int? {
+        for i in self.indices {
+            var j = i
+            var found = true
+            for p in pattern.indices{
+                if j == self.endIndex || self[j] != pattern[p] {
+                    found = false
+                    break
+                } else {
+                    j = self.index(after: j)
+                }
+            }
+            if found {
+                return i.utf16Offset(in: self)
+//                return distance(from: startIndex, to: i)
+            }
+        }
+        return nil
+    }
+
+    func indexUsingBoyerMoore(of pattern: String) -> Index? {
+        // Cache the length of the search pattern because we're going to
+        // use it a few times and it's expensive to calculate.
+        let patternLength = pattern.count
+        guard patternLength > 0, patternLength <= count else { return nil }
+
+        // Make the skip table. This table determines how far we skip ahead
+        // when a character from the pattern is found.
+        var skipTable = [Character: Int]()
+        for (i, c) in pattern.enumerated() {
+            skipTable[c] = patternLength - i - 1
+        }
+
+        // This points at the last character in the pattern.
+        let p = pattern.index(before: pattern.endIndex)
+        let lastChar = pattern[p]
+
+        // The pattern is scanned right-to-left, so skip ahead in the string by
+        // the length of the pattern. (Minus 1 because startIndex already points
+        // at the first character in the source string.)
+        var i = index(startIndex, offsetBy: patternLength - 1)
+
+        // This is a helper function that steps backwards through both strings
+        // until we find a character that doesn’t match, or until we’ve reached
+        // the beginning of the pattern.
+        func backwards() -> Index? {
+            var q = p
+            var j = i
+            while q > pattern.startIndex {
+                j = index(before: j)
+                q = index(before: q)
+                if self[j] != pattern[q] { return nil }
+            }
+            return j
+        }
+
+        // The main loop. Keep going until the end of the string is reached.
+        while i < endIndex {
+            let c = self[i]
+
+            // Does the current character match the last character from the pattern?
+            if c == lastChar {
+
+                // There is a possible match. Do a brute-force search backwards.
+                if let k = backwards() { return k }
+
+                // If no match, we can only safely skip one character ahead.
+                i = index(after: i)
+            } else {
+                // The characters are not equal, so skip ahead. The amount to skip is
+                // determined by the skip table. If the character is not present in the
+                // pattern, we can skip ahead by the full pattern length. However, if
+                // the character *is* present in the pattern, there may be a match up
+                // ahead and we can't skip as far.
+                i = index(i, offsetBy: skipTable[c] ?? patternLength, limitedBy: endIndex) ?? endIndex
+            }
+        }
+        return nil
+    }
+}
+
+print("Yash Vyas".indexOf("Vyas"))
 print()
