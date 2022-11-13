@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             os_log(.info, "didFinishLaunchingWithOptions")
         }
          */
+        debugPrint("My name is: \("name".localized())")
         return true
     }
 
