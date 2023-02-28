@@ -43,13 +43,13 @@ currentValueSubject.send(4)
 
 enum MyError: Error { case error }
 
-let just = Just(1)
+let just = Just(1).eraseToAnyPublisher()
 // Future even executes even there is no sink
 let future = Future<Int, MyError> { promise in
     debugPrint("Future")
     promise(.success(1))
     // promise(.failure(.error))
-}
+}.eraseToAnyPublisher()
 // Deferred future only gets called after sink
 let deferredFuture = Deferred {
     Future<Int, MyError> { promise in
@@ -58,7 +58,8 @@ let deferredFuture = Deferred {
         // promise(.failure(.error))
     }
 }.eraseToAnyPublisher()
-let record = Record<Int, MyError>(output: [1, 2, 3], completion: .failure(.error))
+// Allows for recording a series of inputs and a completion, for later playback to each subscriber.
+let record = Record<Int, MyError>(output: [1, 2, 3], completion: .failure(.error)).eraseToAnyPublisher()
 /*
 let record = Record<Int, MyError> { recording in
     debugPrint("Record")
@@ -68,9 +69,9 @@ let record = Record<Int, MyError> { recording in
     recording.receive(completion: .finished)
 }
  */
-let empty = Empty<Int, MyError>()
-// let empty = Empty<Int, MyError>(completeImmediately: false)
-let fail = Fail<Int, MyError>(error: .error)
+let empty = Empty<Int, MyError>() // Never produce value, finishes imediately
+// let empty = Empty<Int, MyError>(completeImmediately: false) // Never produce value, never finishes
+let fail = Fail<Int, MyError>(error: .error) // Immediately terminates with the specified error.
 
 just.sink { completion in
     switch completion {
