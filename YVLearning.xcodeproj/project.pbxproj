@@ -69,6 +69,7 @@
 		2268B89227C2C67C0079807B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268B89127C2C67C0079807B /* LazyView.swift */; };
 		2268B89427C2C7460079807B /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268B89327C2C7460079807B /* ToolbarView.swift */; };
 		22FE1CCE27C16B9C009CD00F /* StructuredConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */; };
+		D320F35B2A270CEB00E72A7C /* SayPhraseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320F35A2A270CEB00E72A7C /* SayPhraseIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		2268B89327C2C7460079807B /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructuredConcurrency.swift; sourceTree = "<group>"; };
 		22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructuredConcurrency.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D320F35A2A270CEB00E72A7C /* SayPhraseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayPhraseIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 		1C42B49E27B7BBBE00D8D885 /* YVLearning */ = {
 			isa = PBXGroup;
 			children = (
+				D320F3592A270CC700E72A7C /* AppIntents */,
 				1CFAB8EE29194C1D00F25681 /* Localization */,
 				1C5CFC6527C0EEBD00BCB924 /* App */,
 				1CA6298127D3AAF500B6B582 /* Assets */,
@@ -405,6 +408,14 @@
 			path = Playgrounds;
 			sourceTree = "<group>";
 		};
+		D320F3592A270CC700E72A7C /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				D320F35A2A270CEB00E72A7C /* SayPhraseIntent.swift */,
+			);
+			path = AppIntents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -579,6 +590,7 @@
 				1CA6297927D3A06E00B6B582 /* RedactedView.swift in Sources */,
 				1C5CFC6227C0E57A00BCB924 /* RootPresentationMode.swift in Sources */,
 				1C83CBCB27BA7F4C0073B4C4 /* UINavigationHandler.swift in Sources */,
+				D320F35B2A270CEB00E72A7C /* SayPhraseIntent.swift in Sources */,
 				1CF7437027E3441E001F34A3 /* TextSpacingView.swift in Sources */,
 				1CA629A127D3E06500B6B582 /* Optional+Bool.swift in Sources */,
 				1CF7437227E34F38001F34A3 /* iOSSlider.swift in Sources */,

@@ -493,5 +493,96 @@ extension String {
     }
 }
 
-print("Yash Vyas".indexOf("Vyas"))
+print("Yash Vyas".indexOf("Vyas") ?? -1)
 print()
+
+/*
+ *
+ **
+ ***
+ ****
+ */
+func triangleOfAstrisks(_ rows: Int) {
+    for i in 1...rows {
+        for _ in 1...i {
+            print("*", terminator: "")
+        }
+        print()
+    }
+}
+
+triangleOfAstrisks(4)
+print()
+
+/*
+ *******
+  *****
+   ***
+    *
+ */
+func reverseTriangleOfAstrisks(_ rows: Int) {
+    for i in (1...rows).reversed() {
+        for _ in 0...rows-i {
+            print(" ", terminator: "")
+        }
+        for _ in 0...2*(i-1) {
+            print("*", terminator: "")
+        }
+        print()
+    }
+}
+
+reverseTriangleOfAstrisks(4)
+print()
+
+// Codility
+var arr = [1, 2, 3]
+if let element = arr.first(where: { $0 == 1 }),
+   let index = arr.firstIndex(of: element) {
+    arr.remove(at: index)
+}
+
+arr.removeAll { $0 == 1 }
+
+struct Subscription {
+    let identifier: String
+}
+extension Subscription: Equatable {}
+
+arr.removeFirst(2)
+
+arr.filter{ $0 == 1 }.first
+
+var dict: [String: () -> Void] = [:]
+dict.removeValue(forKey: "")
+
+class A {}
+extension A {
+    // @objc
+    func abc() {}
+}
+
+class A1: P1 {
+    // override
+    func abc() {
+        print("A1 -> abc")
+    }
+}
+
+let a1 = A1()
+a1.abc()
+
+protocol P1 {
+    func abc()
+}
+
+extension P1 { // Extension
+    func abc() {
+        print("P1 -> abc")
+    }
+}
+
+protocol P2: P1 {} // Inheritence
+protocol P3: P1, P2 {}  // Composition
+typealias P23 = P2 & P3 // Composition
+protocol P4: P23 {} // Composition

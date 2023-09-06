@@ -59,3 +59,48 @@ Task {
         debugPrint("Square of \(value) is \(squareValue)")
     }
 }
+
+Task.detached(priority: .background) {
+    debugPrint("Backround priority detached task.")
+    await withTaskGroup(of: String.self) { group in
+        group.addTask {
+            return "Yash"
+        }
+        group.addTask {
+            return "Vyas"
+        }
+        group.addTaskUnlessCancelled {
+            return "Full Name"
+        }
+    }
+}
+
+class TaskLocalExample {
+    @TaskLocal
+    static var traceID: Int?
+
+    static func initialize() {
+        print("traceID: \(String(describing: traceID))") // traceID: nil
+
+
+        $traceID.withValue(1234) { // bind the value
+            print("traceID: \(String(describing: traceID))") // traceID: 1234
+          call() // traceID: 1234
+
+          Task { // unstructured tasks do inherit task locals by copying
+            call() // traceID: 1234
+          }
+
+          Task.detached { // detached tasks do not inherit task-local values
+            call() // traceID: nil
+          }
+        }
+    }
+
+    static func call() {
+        print("traceID: \(String(describing: traceID))") // 1234
+    }
+}
+
+TaskLocalExample.initialize()
+TaskLocalExample.call()
