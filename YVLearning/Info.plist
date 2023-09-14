@@ -4,6 +4,13 @@
 <dict>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<false/>
+		<key>UITabBar</key>
+		<dict>
+			<key>UIImageName</key>
+			<string></string>
+		</dict>
 		<key>UIToolbar</key>
 		<dict>
 			<key>UIImageName</key>
@@ -15,9 +22,9 @@
 			<string></string>
 		</dict>
 		<key>UIColorName</key>
-		<string>Color.red</string>
+		<string>AccentColor</string>
 		<key>UIImageName</key>
-		<string>00.circle.fill</string>
+		<string></string>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

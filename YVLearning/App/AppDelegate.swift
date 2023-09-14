@@ -2,13 +2,14 @@
 // Copyright © 2022 by Hilti Corporation – all rights reserved
 //
 
-import os.log
+//import os.log
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
         /*
         if #available(iOS 14.0, *) {
             Logger.appCycle.debug("didFinishLaunchingWithOptions")
@@ -21,7 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             os_log(.info, "didFinishLaunchingWithOptions")
         }
          */
-        debugPrint("My name is: \("name".localized())")
+
+        /*
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+        application.registerForRemoteNotifications()
+         */
+        
+        // debugPrint("My name is: \("name".localized())")
+
         return true
     }
 
@@ -31,6 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        /*
+        let configuration = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+        if connectingSceneSession.role == .windowApplication {
+            configuration.delegateClass = SceneDelegate.self
+        }
+        return configuration
+         */
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
@@ -40,3 +59,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+/*
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    private var gcmMessageIDKey: String { "gcm.message_id" }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        debugPrint("willPresent: \(notification)")
+        let userInfo = notification.request.content.userInfo
+        if let messageID = userInfo[gcmMessageIDKey] {
+            debugPrint("Message ID: \(messageID)")
+        }
+        debugPrint(userInfo)
+        return [.alert, .badge, .sound]
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        debugPrint("didReceive: \(response)")
+        let userInfo = response.notification.request.content.userInfo
+        if let messageID = userInfo[gcmMessageIDKey] {
+            debugPrint("Message ID: \(messageID)")
+        }
+        debugPrint(userInfo)
+    }
+    
+    /*
+    // MessagingDelegate
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        let deviceToken:[String: String] = ["token": fcmToken ?? ""]
+        debugPrint("Device token:", deviceToken) // This token can be used for testing notifications on FCM
+    }
+     */
+}
+*/
