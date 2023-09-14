@@ -73,7 +73,8 @@ struct YVGaugeView: View {
         }
     }
 
-    private func circularView(color: Color, background: Color = .clear, progress: CGFloat, from: CGFloat = 0) -> some View {
+    private func circularView(color: Color, background: Color = .clear,
+                              progress: CGFloat, from: CGFloat = 0) -> some View {
         Circle()
             .trim(from: from, to: showProgress ? progress : 0)
             .stroke(color, style: .init(lineWidth: lineWidth, lineCap: .round))

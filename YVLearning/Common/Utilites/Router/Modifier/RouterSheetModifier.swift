@@ -19,11 +19,10 @@ struct RouterSheetModifier<Screen, ScreenType> where Screen: View, ScreenType: R
     var screen: (ScreenType) -> Screen
     let onDismiss: ((ScreenType) -> Void)?
 
-
     // MARK: Private
-    
+
     @State private var screenType: ScreenType?
-    
+
     private var isPresented: Binding<Bool> {
         Binding<Bool>(
             get: { screenType != nil },
@@ -34,7 +33,7 @@ struct RouterSheetModifier<Screen, ScreenType> where Screen: View, ScreenType: R
                 }
             })
     }
-    
+
     @ViewBuilder private var sheetContent: some View {
         if let type = screenType {
             screen(type)
@@ -52,7 +51,7 @@ extension RouterSheetModifier: ViewModifier {
             .onReceive(publisher) { screenType = $0 }
         return sheetBody(view: view)
     }
-    
+
     @ViewBuilder private func sheetBody(view: some View) -> some View {
         if #available(iOS 14.0, *) {
             if isFullScreenCover {

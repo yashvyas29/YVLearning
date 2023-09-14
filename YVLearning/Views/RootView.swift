@@ -44,12 +44,12 @@ struct ContentView1: View {
             ) {
                 Text("Go to Hello, World #2!")
             }
-            Button (action: {
+            Button(action: {
 //                self.rootIsActive = false
                 presentationMode.wrappedValue.dismiss()
-            }) {
+            }, label: {
                 Text("Pop")
-            }
+            })
         }
 //        .isDetailLink(false)
         .navigationBarTitle("One", displayMode: .inline)
@@ -69,12 +69,12 @@ struct ContentView2: View {
             ) {
                 Text("Go to Hello, World #3!")
             }
-            Button (action: {
+            Button(action: {
                 //                self.rootIsActive = false
                 presentationMode.wrappedValue.dismiss()
-            }) {
+            }, label: {
                 Text("Pop")
-            }
+            })
         }
 //        .isDetailLink(false)
         .navigationBarTitle("Two", displayMode: .inline)
@@ -88,12 +88,12 @@ struct ContentView3: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("Hello, World #3!")
-            Button (action: {
+            Button(action: {
 //                self.rootIsActive = false
                 rootPresentationMode.wrappedValue.dismiss()
-            }) {
+            }, label: {
                 Text("Pop to root")
-            }
+            })
         }.navigationBarTitle("Three", displayMode: .inline)
     }
 }

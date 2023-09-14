@@ -13,7 +13,6 @@ final class UINavigationView: UIViewControllerRepresentable, ObservableObject {
 
     private let navVC: UINavigationController
 
-
     init<Content: View>(rootView: Content) {
         navVC = UINavigationController(rootViewController: UIHostingController(rootView: rootView))
     }

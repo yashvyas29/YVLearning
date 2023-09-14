@@ -5,7 +5,8 @@
 //  Created by Vyacheslav Ansimov.
 //
 
-protocol RouterScreenProtocol: RouterNavigationViewScreenProtocol & RouterNavigationStackScreenProtocol & RouterSheetScreenProtocol {
+protocol RouterScreenProtocol:
+    RouterNavigationViewScreenProtocol & RouterNavigationStackScreenProtocol & RouterSheetScreenProtocol {
     var routeType: RouterScreenPresentationType { get }
 }
 
@@ -17,4 +18,3 @@ enum RouterScreenPresentationType {
     // To make it work, you have to use NavigationStack
     case navigationDestination
 }
-

@@ -3,8 +3,8 @@ import YVLearning
 // To use Task in playground
 import _Concurrency
 // To hide the unnecessary duplicate framework logs
-//import PlaygroundSupport
-//defer{ PlaygroundPage.current.finishExecution() }
+// import PlaygroundSupport
+// defer{ PlaygroundPage.current.finishExecution() }
 
 let structuredConcurrency = StructuredConcurrency()
 /*
@@ -81,7 +81,6 @@ class TaskLocalExample {
 
     static func initialize() {
         print("traceID: \(String(describing: traceID))") // traceID: nil
-
 
         $traceID.withValue(1234) { // bind the value
             print("traceID: \(String(describing: traceID))") // traceID: 1234

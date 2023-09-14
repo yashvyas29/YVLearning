@@ -38,7 +38,7 @@ struct TextSpacingView: View {
                         .stroke(style: .init(lineWidth: 2))
                         .foregroundColor(.yellow))
                 Text("Current line spacing: \(lineSpacing, specifier: "%.2f")")
-                iOSSlider(percentage: $lineSpacing)
+                IOSSlider(percentage: $lineSpacing)
                     .frame(height: 35)
             }
         }

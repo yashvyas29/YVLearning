@@ -1,5 +1,5 @@
 //
-//  iOSSlider.swift
+//  IOSSlider.swift
 //  YVLearning
 //
 //  Created by Yash Vyas on 17/03/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct iOSSlider: View {
+struct IOSSlider: View {
     @Binding var percentage: CGFloat
 
     var body: some View {
@@ -29,8 +29,8 @@ struct iOSSlider: View {
     }
 }
 
-struct iOSSlider_Previews: PreviewProvider {
+struct IOSSlider_Previews: PreviewProvider {
     static var previews: some View {
-        iOSSlider(percentage: .constant(10))
+        IOSSlider(percentage: .constant(10))
     }
 }

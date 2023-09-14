@@ -25,7 +25,7 @@ struct GridView: View {
 
     let columns3 = [
         GridItem(.fixed(100)),
-        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
 
     let items = 1...50

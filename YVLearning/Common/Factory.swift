@@ -34,12 +34,14 @@ public struct Factory<T> {
         self.registration = Registration<Void, T>(factory: factory, scope: nil)
     }
 
-    /// Initializes with factory closure that returns a new instance of the desired type. The scope defines the lifetime of that instance.
+    /// Initializes with factory closure that returns a new instance of the desired type.
+    /// The scope defines the lifetime of that instance.
     public init(scope: SharedContainer.Scope, factory: @escaping () -> T) {
         self.registration = Registration<Void, T>(factory: factory, scope: scope)
     }
 
-    /// Resolves and returns an instance of the desired object type. This may be a new instance or one that was created previously and then cached,
+    /// Resolves and returns an instance of the desired object type.
+    /// This may be a new instance or one that was created previously and then cached,
     /// depending on whether or not a scope was specified when the factory was created.
     ///
     /// Note return type could of T could still be <T?> depending on original Factory specification.
@@ -49,7 +51,8 @@ public struct Factory<T> {
 
     /// Registers a new factory that will be used to create and return an instance of the desired object type.
     ///
-    /// This registration overrides the original factory and its result will be returned on all new object resolutions. Registering a new
+    /// This registration overrides the original factory and its result will be returned on all new object resolutions.
+    /// Registering a new
     /// factory also clears the previous instance from the associated scope.
     ///
     /// All registrations are stored in SharedContainer.Registrations.
@@ -57,8 +60,9 @@ public struct Factory<T> {
         registration.register(factory: factory)
     }
 
-    /// Deletes any registered factory override and resets this Factory to use the factory closure specified during initialization. Also
-    /// resets the scope so that a new instance of the original type will be returned on the next resolution.
+    /// Deletes any registered factory override and resets this
+    /// Factory to use the factory closure specified during initialization.
+    /// Also resets the scope so that a new instance of the original type will be returned on the next resolution.
     public func reset() {
         registration.reset()
     }
@@ -66,8 +70,8 @@ public struct Factory<T> {
     private let registration: Registration<Void, T>
 }
 
-/// ParameterFactory manages the dependency injection process for a given object or service that needs one or more arguments
-/// passed to it during instantiation.
+/// ParameterFactory manages the dependency injection process for a given object or service
+/// that needs one or more arguments passed to it during instantiation.
 public struct ParameterFactory<P, T> {
 
     /// Initializes a Factory with a factory closure that returns a new instance of the desired type.
@@ -75,12 +79,14 @@ public struct ParameterFactory<P, T> {
         self.registration = Registration<P, T>(factory: factory, scope: nil)
     }
 
-    /// Initializes with factory closure that returns a new instance of the desired type. The scope defines the lifetime of that instance.
+    /// Initializes with factory closure that returns a new instance of the desired type.
+    /// The scope defines the lifetime of that instance.
     public init(scope: SharedContainer.Scope, factory: @escaping (_ params: P) -> T) {
         self.registration = Registration<P, T>(factory: factory, scope: scope)
     }
 
-    /// Resolves and returns an instance of the desired object type. This may be a new instance or one that was created previously and then cached,
+    /// Resolves and returns an instance of the desired object type.
+    /// This may be a new instance or one that was created previously and then cached,
     /// depending on whether or not a scope was specified when the factory was created.
     ///
     /// Note return type could of T could still be <T?> depending on original Factory specification.
@@ -90,16 +96,17 @@ public struct ParameterFactory<P, T> {
 
     /// Registers a new factory that will be used to create and return an instance of the desired object type.
     ///
-    /// This registration overrides the original factory and its result will be returned on all new object resolutions. Registering a new
-    /// factory also clears the previous instance from the associated scope.
+    /// This registration overrides the original factory and its result will be returned on all new object resolutions.
+    /// Registering a new factory also clears the previous instance from the associated scope.
     ///
     /// All registered factories are stored in SharedContainer.Registrations.
     public func register(factory: @escaping (_ params: P) -> T) {
         registration.register(factory: factory)
     }
 
-    /// Deletes any registered factory override and resets this Factory to use the factory closure specified during initialization. Also
-    /// resets the scope so that a new instance of the original type will be returned on the next resolution.
+    /// Deletes any registered factory override and resets this
+    /// Factory to use the factory closure specified during initialization.
+    /// Also resets the scope so that a new instance of the original type will be returned on the next resolution.
     public func reset() {
         registration.reset()
     }
@@ -116,7 +123,8 @@ open class SharedContainer {
 
     public class Registrations {
 
-        /// Pushes the current set of registration overrides onto a stack. Useful when testing when you want to push the current set of registrations,
+        /// Pushes the current set of registration overrides onto a stack.
+        /// Useful when testing when you want to push the current set of registrations,
         /// add your own, test, then pop the stack to restore the world to its original state.
         public static func push() {
             defer { lock.unlock() }
@@ -252,7 +260,8 @@ extension SharedContainer.Scope {
         }
     }
 
-    /// Defines a shared (weak) scope. The same instance will be returned by the factory as long as someone maintains a strong reference.
+    /// Defines a shared (weak) scope.
+    /// The same instance will be returned by the factory as long as someone maintains a strong reference.
     public static let shared = Shared()
     public final class Shared: SharedContainer.Scope {
         public override init() {
@@ -304,7 +313,8 @@ extension SharedContainer.Scope {
     }
 }
 
-/// Convenience property wrapper takes a factory and creates an instance of the desired type the first time the wrapped value is requested.
+/// Convenience property wrapper takes a factory and creates an instance of the
+/// desired type the first time the wrapped value is requested.
 @propertyWrapper public struct LazyInjected<T> {
     private var factory: Factory<T>
     private var dependency: T!
@@ -377,10 +387,12 @@ private struct Registration<P, T> {
     let factory: (P) -> T
     let scope: SharedContainer.Scope?
 
-    /// Resolves registration returning cached value from scope or new instance from factory. This is pretty much the heart of Factory.
+    /// Resolves registration returning cached value from scope or new instance from factory.
+    /// This is pretty much the heart of Factory.
     func resolve(_ params: P) -> T {
-        let _ = Container.autoRgistrationCheck
-        let currentFactory: (P) -> T = (SharedContainer.Registrations.factory(for: id) as? TypedFactory<P, T>)?.factory ?? factory
+        _ = Container.autoRgistrationCheck
+        let currentFactory: (P) -> T = (SharedContainer.Registrations
+            .factory(for: id) as? TypedFactory<P, T>)?.factory ?? factory
         let instance: T = scope?.resolve(id: id, factory: { currentFactory(params) }) ?? currentFactory(params)
         SharedContainer.Decorator.decorate?(instance)
         return instance

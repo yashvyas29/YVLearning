@@ -37,7 +37,8 @@ extension Date {
 
     func getWeeksFromCurrentWeekToStartOfTheYear() {
         let currentYear = calendar.component(.year, from: self)
-        guard let startDayOfTheYear = calendar.date(from: DateComponents(year: currentYear, month: 1, day: 1))?.startOfWeek else {
+        guard let startDayOfTheYear = calendar.date(
+            from: DateComponents(year: currentYear, month: 1, day: 1))?.startOfWeek else {
             print("Can not get the weeks of the year.")
             return
         }

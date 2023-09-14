@@ -169,7 +169,7 @@ Timer.publish(every: 1, on: .main, in: .default)
     .store(in: &cancellables)
  */
 
-[1,2,3,4,5,6]
+[1, 2, 3, 4, 5, 6]
     .publisher
     .flatMap { value in
         Just(value)
@@ -186,9 +186,9 @@ Timer.publish(every: 1, on: .main, in: .default)
     })
     .store(in: &cancellables)
 
-private func romanNumeral(from:Int) throws -> String {
-    let romanNumeralDict: [Int : String] =
-    [1:"I", 2:"II", 3:"III", 4:"IV", 5:"V"]
+private func romanNumeral(from: Int) throws -> String {
+    let romanNumeralDict: [Int: String] =
+    [1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"]
     guard let numeral = romanNumeralDict[from] else {
         throw MyError.error
     }
@@ -200,8 +200,8 @@ private func romanNumeral(from:Int) throws -> String {
     .tryMap { try romanNumeral(from: $0) }
     .replaceError(with: "X")
     .sink(
-        receiveCompletion: { print ("completion: \($0)") },
-        receiveValue: { print ("\($0)", terminator: " ") }
+        receiveCompletion: { print("completion: \($0)") },
+        receiveValue: { print("\($0)", terminator: " ") }
     )
     .store(in: &cancellables)
 
@@ -303,7 +303,7 @@ publisher
     .store(in: &subscriptions)
 // Transforms all elements from the upstream publisher with a provided closure.
 publisher
-    .map{ $0*2 }
+    .map { $0*2 }
     .sink(receiveValue: { print($0) })
     .store(in: &subscriptions)
 // Collects all received elements, and emits a single array of the collection when the upstream publisher finishes.
@@ -333,7 +333,8 @@ publisher
 publisher
     .ignoreOutput()
     .sink(receiveCompletion: { print($0) }, receiveValue: { print($0) })
-// Transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure.
+// Transforms elements from the upstream publisher by providing the current element
+// to a closure along with the last value returned by the closure.
 publisher
     .scan(0) { $0 + $1 }
     .sink(receiveValue: { print($0) })
@@ -361,7 +362,9 @@ publisher
     .sink(receiveValue: { print($0) })
 /*
  Backpressure
- There may be some cases though, where processing those received values takes longer while new values arrive. In this case, we may need to control the amount of values that arrive to avoid some kind of blocking or overflow.
+ There may be some cases though, where processing those received values takes longer while new values arrive.
+ In this case,
+ we may need to control the amount of values that arrive to avoid some kind of blocking or overflow.
 
  This concept of limiting the elements the subscriber receives is called backpressure.
  Operators: debounce, throttle, collect, buffer, drop
@@ -392,7 +395,6 @@ class CountSubscriber: Subscriber {
         debugPrint(completion)
     }
 }
-
 
 // Merge
 let publisher1 = PassthroughSubject<Int, Never>()

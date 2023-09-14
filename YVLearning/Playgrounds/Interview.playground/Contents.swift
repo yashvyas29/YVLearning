@@ -2,7 +2,8 @@ import Foundation
 
 func convertIntegerToWord(_ number: Int) {
     let singleDigit = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
-    let twoDigits = ["", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "nineteen"]
+    let twoDigits = ["", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+                     "Sixteen", "Seventeen", "Eighteen", "nineteen"]
     let tenMultiplier = ["", "", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninty"]
     let multiplierNumber = ["Hundred", "Thousand"]
 
@@ -84,9 +85,9 @@ print()
 func sumOfDigits(number: Int) -> Int {
     var num = number
     var sum = 0
-    while(num != 0) {
-        sum = sum + num % 10
-        num = num / 10
+    while num != 0 {
+        sum += num % 10
+        num /= 10
     }
     return sum
 }
@@ -138,14 +139,11 @@ func maxAndMinArrayElement(_ array: [Int]) {
 maxAndMinArrayElement([1, 2, 3, 4])
 print()
 
-
 func secondMaxArrayElement(_ array: [Int]) {
     var max = Int.min
     var secondMax = Int.min
-    for element in array {
-        if max < element {
-            max = element
-        }
+    for element in array where max < element {
+        max = element
     }
     for element in array {
         if secondMax < element && element < max {
@@ -211,10 +209,8 @@ print()
 func smallestPositiveMissingNumber(_ array: [Int]) -> Int {
     let sorted = array.sorted()
     var answer = 1
-    for element in sorted {
-        if element == answer {
-            answer += 1
-        }
+    for element in sorted where element == answer {
+        answer += 1
     }
     if answer >= sorted.last ?? 0 {
         print("There is no smallest positive missing number.")
@@ -229,10 +225,8 @@ print()
 func largestPositiveMissingNumber(_ array: [Int]) -> Int {
     let sorted = array.sorted()
     var answer = (array.last ?? 0) - 1
-    for element in sorted.reversed() {
-        if element == answer {
-            answer -= 1
-        }
+    for element in sorted.reversed() where element == answer {
+        answer -= 1
     }
     if answer <= 0 {
         print("There is no largest missing number.")
@@ -266,6 +260,7 @@ func insertionSort(_ array: [Int]) -> [Int] {
 print(insertionSort([ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]))
 print()
 
+/*
 func selectionSort(_ array: [Int]) -> [Int] {
     guard array.count > 1 else { return array }  // 1
 
@@ -416,7 +411,7 @@ extension String {
         for i in self.indices {
             var j = i
             var found = true
-            for p in pattern.indices{
+            for p in pattern.indices {
                 if j == self.endIndex || self[j] != pattern[p] {
                     found = false
                     break
@@ -534,6 +529,7 @@ func reverseTriangleOfAstrisks(_ rows: Int) {
 
 reverseTriangleOfAstrisks(4)
 print()
+ */
 
 // Codility
 var arr = [1, 2, 3]
@@ -551,7 +547,7 @@ extension Subscription: Equatable {}
 
 arr.removeFirst(2)
 
-arr.filter{ $0 == 1 }.first
+arr.filter { $0 == 1 }.first
 
 var dict: [String: () -> Void] = [:]
 dict.removeValue(forKey: "")

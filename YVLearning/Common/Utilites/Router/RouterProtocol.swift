@@ -58,9 +58,9 @@ extension RouterProtocol {
 
 // MARK: - Helper classes
 
-struct RouterSubjects<ScreenType, AlertType> where ScreenType: RouterScreenProtocol, AlertType: RouterAlertScreenProtocol {
+struct RouterSubjects<ScreenType, AlertType>
+where ScreenType: RouterScreenProtocol, AlertType: RouterAlertScreenProtocol {
     let screen = PassthroughSubject<ScreenType, Never>()
     let alert = PassthroughSubject<AlertType, Never>()
     let close = PassthroughSubject<Void, Never>()
 }
-

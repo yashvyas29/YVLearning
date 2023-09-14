@@ -19,8 +19,7 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
     private let lineWidth: CGFloat = 2
 
     @State private var ratio: CGFloat   = 0
-    @State private var startX: CGFloat? = nil
-
+    @State private var startX: CGFloat?
 
     // MARK: - Initializer
     init(value: Binding<V>, in bounds: ClosedRange<V>, step: V.Stride = 1) {
@@ -29,7 +28,6 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
         self.bounds = bounds
         self.step   = step
     }
-
 
     // MARK: - View
     // MARK: Public
@@ -54,7 +52,7 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
             .simultaneousGesture(DragGesture(minimumDistance: 0)
                 .onChanged({ update(value: $0, proxy: proxy) }))
             .onAppear {
-                ratio = min(1, max(0,CGFloat(value / bounds.upperBound)))
+                ratio = min(1, max(0, CGFloat(value / bounds.upperBound)))
             }
         }
     }
@@ -66,7 +64,6 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
             .frame(height: length + lineWidth)
     }
 
-
     // MARK: - Function
     // MARK: Private
     private func updateStatus(value: DragGesture.Value, proxy: GeometryProxy) {
@@ -77,10 +74,10 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
     }
 
     private func update(value: DragGesture.Value, proxy: GeometryProxy) {
-        guard let x = startX else { return }
-        startX = min(length, max(0, x))
+        guard let xAxis = startX else { return }
+        startX = min(length, max(0, xAxis))
 
-        var point = value.location.x - x
+        var point = value.location.x - xAxis
         let delta = proxy.size.width - length
 
         // Check the boundary
@@ -102,7 +99,7 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
 
             let remainder = ratio.remainder(dividingBy: unit)
             if remainder != 0 {
-                ratio = ratio - CGFloat(remainder)
+                ratio -= CGFloat(remainder)
             }
         }
 

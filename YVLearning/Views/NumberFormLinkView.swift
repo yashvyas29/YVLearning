@@ -19,8 +19,12 @@ struct NumberFormLinkView: View {
             if #available(iOS 14.0, *) {
                 mutableSelf.numberFormLink
                     .toolbar {
-                        ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) { Button("Add Low", action: viewModel.addLow) }
-                        ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) { Button("Add High", action: viewModel.addHigh) }
+                        ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+                            Button("Add Low", action: viewModel.addLow)
+                        }
+                        ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                            Button("Add High", action: viewModel.addHigh)
+                        }
                     }
             } else {
                 VStack {
@@ -90,7 +94,7 @@ struct NumberFormLink: View {
 
 class NumberFormLinkViewModel: ObservableObject {
     @Published var entries = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-    @Published var currentSelection: Int? = nil
+    @Published var currentSelection: Int?
 
     @objc func addLow() {
         let newEntry = (entries.min() ?? 1) - 1

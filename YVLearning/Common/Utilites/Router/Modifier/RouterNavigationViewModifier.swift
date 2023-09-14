@@ -10,16 +10,17 @@ import Combine
 
 protocol RouterNavigationViewScreenProtocol {}
 
-struct RouterNavigationViewModifier<Screen, ScreenType> where Screen: View, ScreenType: RouterNavigationViewScreenProtocol {
-    
+struct RouterNavigationViewModifier<Screen, ScreenType>
+where Screen: View, ScreenType: RouterNavigationViewScreenProtocol {
+
     // MARK: Public
-    
+
     let publisher: AnyPublisher<ScreenType, Never>
     var screen: (ScreenType) -> Screen
     let onDismiss: ((ScreenType) -> Void)?
-    
+
     // MARK: Private
-    
+
     @State private var screenType: ScreenType?
 }
 

@@ -37,7 +37,8 @@ class Resolver {
     }
 
     @discardableResult
-    func autoregister<Service, A>(_ service: Service.Type, name: String? = nil, initializer: @escaping (A) -> Service) -> ServiceEntry<Service> {
+    func autoregister<Service, A>(_ service: Service.Type, name: String? = nil,
+     initializer: @escaping (A) -> Service) -> ServiceEntry<Service> {
         container.autoregister(service, initializer: initializer)
     }
      */

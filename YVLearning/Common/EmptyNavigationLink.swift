@@ -14,7 +14,7 @@ struct EmptyNavigationLink<Destination: View>: View {
     init<T>(
         @ViewBuilder destination: @escaping (T) -> Destination,
         selection: Binding<T?>
-    )  {
+    ) {
         lazyDestination = LazyView(destination(selection.wrappedValue!))
         isActive = .init(
             get: { selection.wrappedValue != nil },

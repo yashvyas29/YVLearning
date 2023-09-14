@@ -15,7 +15,7 @@ struct StructuredConcurrency {
 
     func fetchImagesWithContinuation() async throws -> [UIImage] {
         return try await withCheckedThrowingContinuation { continuation in
-            fetchImagesWithCompletion() { result in
+            fetchImagesWithCompletion { result in
                 continuation.resume(with: result)
             }
         }

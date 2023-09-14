@@ -32,27 +32,27 @@ struct MenuIgnoringSafeAreaView: View {
                     ToolbarItem(placement: .primaryAction) {
                         Menu {
                             Section(header: Text("Primary actions")) {
-                                Button(action: {}) {
+                                Button(action: {}, label: {
                                     Label("Create a file", systemImage: "doc")
-                                }
+                                })
 
-                                Button(action: {}) {
+                                Button(action: {}, label: {
                                     Label("Create a folder", systemImage: "folder.badge.plus")
-                                }
+                                })
                             }
 
                             Section(header: Text("Secondary actions")) {
-                                Button(action: {}) {
+                                Button(action: {}, label: {
                                     Label("Remove old files", systemImage: "trash")
                                         .foregroundColor(.red)
-                                }
+                                })
                             }
 
                             Section(header: Text("Turnery actions")) {
-                                Button(action: {}) {
+                                Button(action: {}, label: {
                                     Label("Add old files", systemImage: "folder.badge.plus")
                                         .foregroundColor(.red)
-                                }
+                                })
                             }
                         }
                     label: {

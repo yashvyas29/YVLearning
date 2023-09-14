@@ -21,12 +21,12 @@ struct ScrollReaderView: View {
                 }
                 .padding()
 
-                ForEach(0..<100) { i in
-                    Text("Example \(i)")
+                ForEach(0..<100) { index in
+                    Text("Example \(index)")
                         .font(.title)
                         .frame(width: 200, height: 200)
-                        .background(colors[i % colors.count])
-                        .id(i)
+                        .background(colors[index % colors.count])
+                        .id(index)
                 }
             }
         }

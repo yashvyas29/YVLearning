@@ -25,17 +25,17 @@ struct SayPhraseIntent: AppIntent {
     // 3
     static var title: LocalizedStringResource = "Say a phrase."
     static var description = IntentDescription("Just says whatever phrase you type in.")
-    
+
     // 4
     @Parameter(title: "Phrase")
     var phrase: String?
-    
+
     // 5
     func perform() async throws -> some ProvidesDialog {
         guard let providedPhrase = phrase else {
             throw $phrase.needsValueError("What phrase do you want to say?")
         }
-        
+
         return .result(dialog: IntentDialog(stringLiteral: providedPhrase))
     }
 }
