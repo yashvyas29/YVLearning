@@ -31,5 +31,5 @@ jobs:
         with:
           project: YVLearning.xcodeproj
           scheme: YVLearning
-          destination: 'platform=iOS Simulator'
+          destination: 'platform = iOS Simulator'
           action: test
