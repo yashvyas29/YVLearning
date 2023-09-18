@@ -582,3 +582,7 @@ protocol P2: P1 {} // Inheritence
 protocol P3: P1, P2 {}  // Composition
 typealias P23 = P2 & P3 // Composition
 protocol P4: P23 {} // Composition
+
+"Yash Vyas".uppercased()
+"Yash Vyas".uppercased
+String.uppercased

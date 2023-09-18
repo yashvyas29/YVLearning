@@ -19,8 +19,6 @@
 		1C42B4A427B7BBC000D8D885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C42B4A327B7BBC000D8D885 /* Assets.xcassets */; };
 		1C42B4A727B7BBC000D8D885 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C42B4A627B7BBC000D8D885 /* Preview Assets.xcassets */; };
 		1C42B4B127B7BBC000D8D885 /* YVLearningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4B027B7BBC000D8D885 /* YVLearningTests.swift */; };
-		1C42B4BB27B7BBC000D8D885 /* YVLearningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4BA27B7BBC000D8D885 /* YVLearningUITests.swift */; };
-		1C42B4BD27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4BC27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift */; };
 		1C42B4CB27B7BC0400D8D885 /* LearnTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4CA27B7BC0400D8D885 /* LearnTask.swift */; };
 		1C42B4CE27B7BD2D00D8D885 /* LearnTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4CD27B7BD2D00D8D885 /* LearnTaskTest.swift */; };
 		1C5CFC6227C0E57A00BCB924 /* RootPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CFC6127C0E57A00BCB924 /* RootPresentationMode.swift */; };
@@ -88,13 +86,6 @@
 			remoteGlobalIDString = 1C42B49B27B7BBBE00D8D885;
 			remoteInfo = YVLearning;
 		};
-		1C42B4B727B7BBC000D8D885 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1C42B49427B7BBBE00D8D885 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C42B49B27B7BBBE00D8D885;
-			remoteInfo = YVLearning;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -113,9 +104,6 @@
 		1C42B4A627B7BBC000D8D885 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C42B4AC27B7BBC000D8D885 /* YVLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YVLearningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C42B4B027B7BBC000D8D885 /* YVLearningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVLearningTests.swift; sourceTree = "<group>"; };
-		1C42B4B627B7BBC000D8D885 /* YVLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YVLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C42B4BA27B7BBC000D8D885 /* YVLearningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVLearningUITests.swift; sourceTree = "<group>"; };
-		1C42B4BC27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVLearningUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1C42B4CA27B7BC0400D8D885 /* LearnTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTask.swift; sourceTree = "<group>"; };
 		1C42B4CD27B7BD2D00D8D885 /* LearnTaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTaskTest.swift; sourceTree = "<group>"; };
 		1C5CFC6127C0E57A00BCB924 /* RootPresentationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationMode.swift; sourceTree = "<group>"; };
@@ -195,13 +183,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C42B4B327B7BBC000D8D885 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -210,7 +191,6 @@
 			children = (
 				1C42B49E27B7BBBE00D8D885 /* YVLearning */,
 				1C42B4AF27B7BBC000D8D885 /* YVLearningTests */,
-				1C42B4B927B7BBC000D8D885 /* YVLearningUITests */,
 				1C42B49D27B7BBBE00D8D885 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -220,7 +200,6 @@
 			children = (
 				1C42B49C27B7BBBE00D8D885 /* YVLearning.app */,
 				1C42B4AC27B7BBC000D8D885 /* YVLearningTests.xctest */,
-				1C42B4B627B7BBC000D8D885 /* YVLearningUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,15 +240,6 @@
 				1C42B4B027B7BBC000D8D885 /* YVLearningTests.swift */,
 			);
 			path = YVLearningTests;
-			sourceTree = "<group>";
-		};
-		1C42B4B927B7BBC000D8D885 /* YVLearningUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1C42B4BA27B7BBC000D8D885 /* YVLearningUITests.swift */,
-				1C42B4BC27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift */,
-			);
-			path = YVLearningUITests;
 			sourceTree = "<group>";
 		};
 		1C42B4C927B7BBDD00D8D885 /* Structs */ = {
@@ -505,24 +475,6 @@
 			productReference = 1C42B4AC27B7BBC000D8D885 /* YVLearningTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1C42B4B527B7BBC000D8D885 /* YVLearningUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C42B4C627B7BBC000D8D885 /* Build configuration list for PBXNativeTarget "YVLearningUITests" */;
-			buildPhases = (
-				1C42B4B227B7BBC000D8D885 /* Sources */,
-				1C42B4B327B7BBC000D8D885 /* Frameworks */,
-				1C42B4B427B7BBC000D8D885 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1C42B4B827B7BBC000D8D885 /* PBXTargetDependency */,
-			);
-			name = YVLearningUITests;
-			productName = YVLearningUITests;
-			productReference = 1C42B4B627B7BBC000D8D885 /* YVLearningUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -537,10 +489,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					1C42B4AB27B7BBC000D8D885 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 1C42B49B27B7BBBE00D8D885;
-					};
-					1C42B4B527B7BBC000D8D885 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 1C42B49B27B7BBBE00D8D885;
 					};
@@ -562,7 +510,6 @@
 			targets = (
 				1C42B49B27B7BBBE00D8D885 /* YVLearning */,
 				1C42B4AB27B7BBC000D8D885 /* YVLearningTests */,
-				1C42B4B527B7BBC000D8D885 /* YVLearningUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -579,13 +526,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1C42B4AA27B7BBC000D8D885 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C42B4B427B7BBC000D8D885 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -697,15 +637,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C42B4B227B7BBC000D8D885 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C42B4BB27B7BBC000D8D885 /* YVLearningUITests.swift in Sources */,
-				1C42B4BD27B7BBC000D8D885 /* YVLearningUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -713,11 +644,6 @@
 			isa = PBXTargetDependency;
 			target = 1C42B49B27B7BBBE00D8D885 /* YVLearning */;
 			targetProxy = 1C42B4AD27B7BBC000D8D885 /* PBXContainerItemProxy */;
-		};
-		1C42B4B827B7BBC000D8D885 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1C42B49B27B7BBBE00D8D885 /* YVLearning */;
-			targetProxy = 1C42B4B727B7BBC000D8D885 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -956,40 +882,6 @@
 			};
 			name = Release;
 		};
-		1C42B4C727B7BBC000D8D885 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yash.YVLearningUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = YVLearning;
-			};
-			name = Debug;
-		};
-		1C42B4C827B7BBC000D8D885 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yash.YVLearningUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = YVLearning;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1016,15 +908,6 @@
 			buildConfigurations = (
 				1C42B4C427B7BBC000D8D885 /* Debug */,
 				1C42B4C527B7BBC000D8D885 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C42B4C627B7BBC000D8D885 /* Build configuration list for PBXNativeTarget "YVLearningUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C42B4C727B7BBC000D8D885 /* Debug */,
-				1C42B4C827B7BBC000D8D885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
