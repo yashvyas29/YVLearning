@@ -30,7 +30,7 @@ struct TextSpacingView: View {
             .background(Color.red)
             .border(.yellow, width: 1)
             VStack {
-                Text("Current latter spacing: \(letterSpacing, specifier: "%.2f")")
+                Text("Current letter spacing: \(letterSpacing, specifier: "%.2f")")
                 Slider(value: $letterSpacing, in: 0...100)
                     .padding(.horizontal)
                     .accentColor(.red)

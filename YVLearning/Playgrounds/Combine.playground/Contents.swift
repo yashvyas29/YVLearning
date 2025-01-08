@@ -9,14 +9,16 @@ var cancellables: Set<AnyCancellable> = []
 passThroughSubject.send(11)
 currentValueSubject.send(11)
 
-passThroughSubject.sink { completion in
-    switch completion {
-    case .finished:
-        debugPrint("Pass through subject finished.")
-    }
-} receiveValue: { value in
-    debugPrint("Pass through subject receiveValue \(value).")
-}
+passThroughSubject.sink(
+    receiveCompletion: { completion in
+        switch completion {
+            case .finished:
+                debugPrint("Pass through subject finished.")
+        }
+    },
+    receiveValue: { value in
+        debugPrint("Pass through subject receiveValue \(value).")
+    })
 .store(in: &cancellables)
 
 currentValueSubject.sink { completion in
@@ -43,13 +45,20 @@ currentValueSubject.send(4)
 
 enum MyError: Error { case error }
 
+/*
+ Use eraseToAnyPublisher() to expose an instance of AnyPublisher to the downstream subscriber,
+ rather than this publisher’s actual type. This form of type erasure preserves abstraction
+ across API boundaries, such as different modules.
+ */
 let just = Just(1).eraseToAnyPublisher()
+
 // Future executes even there is no sink
 let future = Future<Int, MyError> { promise in
     debugPrint("Future")
     promise(.success(1))
     // promise(.failure(.error))
 }.eraseToAnyPublisher()
+
 // Deferred future only gets called after sink
 let deferredFuture = Deferred {
     Future<Int, MyError> { promise in
@@ -58,6 +67,7 @@ let deferredFuture = Deferred {
         // promise(.failure(.error))
     }
 }.eraseToAnyPublisher()
+
 // Allows for recording a series of inputs and a completion, for later playback to each subscriber.
 let record = Record<Int, MyError>(output: [1, 2, 3], completion: .failure(.error)).eraseToAnyPublisher()
 /*
@@ -69,6 +79,7 @@ let record = Record<Int, MyError> { recording in
     recording.receive(completion: .finished)
 }
  */
+
 let empty = Empty<Int, MyError>() // Never produce value, finishes imediately
 // let empty = Empty<Int, MyError>(completeImmediately: false) // Never produce value, never finishes
 let fail = Fail<Int, MyError>(error: .error) // Immediately terminates with the specified error.
@@ -287,7 +298,7 @@ publisher
     .store(in: &subscriptions)
 [publisher].publisher
     .switchToLatest()
-    .sink(receiveValue: { print($0) })
+    .sink(receiveValue: { print("switchToLatest: \($0)") })
     .store(in: &subscriptions)
 publisher
     .merge(with: publisher)
@@ -316,10 +327,12 @@ publisher
     .reduce(0, +)
     .sink(receiveValue: { print($0) })
     .store(in: &subscriptions)
+// Publishes elements only after a specified time interval elapses between events.
 publisher
     .debounce(for: .seconds(0.5), scheduler: ImmediateScheduler.shared)
     .sink(receiveValue: { print($0) })
     .store(in: &subscriptions)
+// Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.
 publisher
     .throttle(for: .seconds(0.5), scheduler: ImmediateScheduler.shared, latest: true)
     .sink(receiveValue: { print($0) })
@@ -369,6 +382,7 @@ publisher
  This concept of limiting the elements the subscriber receives is called backpressure.
  Operators: debounce, throttle, collect, buffer, drop
  */
+
 class CountSubscriber: Subscriber {
     typealias Input = Int
     typealias Failure = Never

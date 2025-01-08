@@ -8,7 +8,6 @@
 import Foundation
 import Network
 
-@MainActor
 final class NetworkMonitor: ObservableObject {
     static let shared = NetworkMonitor()
     @Published private(set) var isConnected: Bool = true

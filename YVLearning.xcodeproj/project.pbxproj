@@ -76,6 +76,10 @@
 		D329F79D2AB1BB68008EAA23 /* RouterAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F7952AB1BB68008EAA23 /* RouterAlertModifier.swift */; };
 		D329F79E2AB1BB68008EAA23 /* RouterCloseModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F7962AB1BB68008EAA23 /* RouterCloseModifier.swift */; };
 		D329F79F2AB1BB68008EAA23 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F7972AB1BB68008EAA23 /* RouterProtocol.swift */; };
+		D38EDB582D2E4278007341BF /* SwiftDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EDB572D2E4278007341BF /* SwiftDataView.swift */; };
+		D38EDB5A2D2E4378007341BF /* YVSwiftDataSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */; };
+		D3F5BF782D2D2ABD0017F848 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5BF772D2D2ABD0017F848 /* Queue.swift */; };
+		D3F5BF7A2D2D2F6C0017F848 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5BF792D2D2F6C0017F848 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +170,12 @@
 		D329F7962AB1BB68008EAA23 /* RouterCloseModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterCloseModifier.swift; sourceTree = "<group>"; };
 		D329F7972AB1BB68008EAA23 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		D36493922AB2DD830072F055 /* YVLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YVLearning.entitlements; sourceTree = "<group>"; };
+		D38EDB572D2E4278007341BF /* SwiftDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataView.swift; sourceTree = "<group>"; };
+		D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVSwiftDataSchema.swift; sourceTree = "<group>"; };
+		D3C029A62ABB002400C5B80B /* DesignPattern.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DesignPattern.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D3F5BF772D2D2ABD0017F848 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		D3F5BF792D2D2F6C0017F848 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		D3F5BF7B2D2D2FB20017F848 /* SOLID.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SOLID.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +273,7 @@
 		1C5CFC6527C0EEBD00BCB924 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */,
 				1C5CFC8B27C104C700BCB924 /* YVLearningApp.swift */,
 				1C5CFC8627C0F87700BCB924 /* AppDelegate.swift */,
 				1C5CFC8727C0F87700BCB924 /* SceneDelegate.swift */,
@@ -273,6 +284,7 @@
 		1C83CBC627BA7A4B0073B4C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D38EDB572D2E4278007341BF /* SwiftDataView.swift */,
 				1C42B4A127B7BBBE00D8D885 /* ContentView.swift */,
 				1C83CBC727BA7A5E0073B4C4 /* MapView.swift */,
 				1C9708FE27BE5DE60048F780 /* RootView.swift */,
@@ -364,6 +376,8 @@
 		2268B88E27C2C45E0079807B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D3F5BF792D2D2F6C0017F848 /* Stack.swift */,
+				D3F5BF772D2D2ABD0017F848 /* Queue.swift */,
 				D329F78D2AB1BB68008EAA23 /* Utilites */,
 				1CAA71BB2933883300B914CC /* Factory.swift */,
 				1CF7437527E353E9001F34A3 /* Preview */,
@@ -390,9 +404,11 @@
 		22FE1CCF27C16BE3009CD00F /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				D3F5BF7B2D2D2FB20017F848 /* SOLID.playground */,
 				1CA629A227D3E58B00B6B582 /* Combine.playground */,
 				22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */,
 				1C29CD7F28CF4E7A0059DADB /* Interview.playground */,
+				D3C029A62ABB002400C5B80B /* DesignPattern.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -483,7 +499,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					1C42B49B27B7BBBE00D8D885 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -552,7 +568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = ": '\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n'\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -571,16 +587,19 @@
 				1C42B4A227B7BBBE00D8D885 /* ContentView.swift in Sources */,
 				1C734B4627DA1CDC008FD6F1 /* MenuIgnoringSafeAreaView.swift in Sources */,
 				1CF764C227D7B7F000A2693D /* ReadAppStorageView.swift in Sources */,
+				D38EDB5A2D2E4378007341BF /* YVSwiftDataSchema.swift in Sources */,
 				1C31156B27F3AD3F0047E1CB /* Shape+StrokeFill.swift in Sources */,
 				1C8858442990072F00CF31B8 /* CustomShape.swift in Sources */,
 				1CA6299227D3CC8C00B6B582 /* OSLog+Categories.swift in Sources */,
 				D329F79E2AB1BB68008EAA23 /* RouterCloseModifier.swift in Sources */,
 				D329F79B2AB1BB68008EAA23 /* RouterNavigationStackModifier.swift in Sources */,
 				1CAA71BC2933883300B914CC /* Factory.swift in Sources */,
+				D3F5BF7A2D2D2F6C0017F848 /* Stack.swift in Sources */,
 				1CD9435A27EB2FC900BE4D1D /* Color+Scheme.swift in Sources */,
 				1CB16B4028A02B4A00E3195C /* YVCircularProgressView.swift in Sources */,
 				1CEBF6632987E2A10069F970 /* StaticGridView.swift in Sources */,
 				1CEBF65F2987D2B00069F970 /* ScrollReaderView.swift in Sources */,
+				D38EDB582D2E4278007341BF /* SwiftDataView.swift in Sources */,
 				1C5CFC8C27C104C700BCB924 /* YVLearningApp.swift in Sources */,
 				1C939E9927D6517E00D8B152 /* UINavigationController+Customization.swift in Sources */,
 				1C8F017727F377D000DBD9DF /* RedCircleButtonStyle.swift in Sources */,
@@ -592,6 +611,7 @@
 				2268B89227C2C67C0079807B /* LazyView.swift in Sources */,
 				1C06D2B727E239EA00FB65F6 /* ComponentPreview.swift in Sources */,
 				1C5CFC8927C0F87700BCB924 /* SceneDelegate.swift in Sources */,
+				D3F5BF782D2D2ABD0017F848 /* Queue.swift in Sources */,
 				1C42B4CB27B7BC0400D8D885 /* LearnTask.swift in Sources */,
 				1CEBF6612987DFA60069F970 /* GridView.swift in Sources */,
 				2268B88D27C2C4040079807B /* NumberFormLinkView.swift in Sources */,
@@ -664,6 +684,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -698,6 +719,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -726,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -760,6 +783,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -789,11 +813,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YVLearning/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YVLearning/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -822,11 +845,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YVLearning/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YVLearning/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -847,7 +869,6 @@
 		1C42B4C427B7BBC000D8D885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -866,7 +887,6 @@
 		1C42B4C527B7BBC000D8D885 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

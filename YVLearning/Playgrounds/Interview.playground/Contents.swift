@@ -1,9 +1,29 @@
 import Foundation
 
+/*
+print("YASH".sorted(by: { $0 > $1 }))
+
+for char in "Yash Vyas".reversed() {
+    print(char)
+}
+
+let numberFormatter = NumberFormatter()
+numberFormatter.numberStyle = .spellOut
+let numberValue = numberFormatter.string(from: 1992)
+print(numberValue ?? "None")
+
+let jsonDecoder = JSONDecoder()
+jsonDecoder.dataDecodingStrategy = .base64
+jsonDecoder.dateDecodingStrategy = .iso8601
+jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+jsonDecoder.nonConformingFloatDecodingStrategy = .convertFromString(positiveInfinity: "", negativeInfinity: "", nan: "")
+ */
+
+/*
 func convertIntegerToWord(_ number: Int) {
     let singleDigit = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
     let twoDigits = ["", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
-                     "Sixteen", "Seventeen", "Eighteen", "nineteen"]
+                     "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
     let tenMultiplier = ["", "", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninty"]
     let multiplierNumber = ["Hundred", "Thousand"]
 
@@ -223,9 +243,9 @@ smallestPositiveMissingNumber([1, 3, 4])
 print()
 
 func largestPositiveMissingNumber(_ array: [Int]) -> Int {
-    let sorted = array.sorted()
-    var answer = (array.last ?? 0) - 1
-    for element in sorted.reversed() where element == answer {
+    let sorted = array.sorted(by: { $0 > $1 })
+    var answer = (array.first ?? 0) - 1
+    for element in sorted where element == answer {
         answer -= 1
     }
     if answer <= 0 {
@@ -239,8 +259,8 @@ largestPositiveMissingNumber([1, 2, 3, 4])
 print()
 
 func stringContainsSubstring(string: String, subString: String) -> Bool {
-//    let range = string.ranges(of: subString)
-//    print(range)
+    // let range = string.ranges(of: subString)
+    // print(range)
     return string.contains(subString)
 }
 print(stringContainsSubstring(string: "Yash Vyas", subString: "Yash"))
@@ -259,6 +279,7 @@ func insertionSort(_ array: [Int]) -> [Int] {
 }
 print(insertionSort([ 10, -1, 3, 9, 2, 27, 8, 5, 1, 3, 0, 26 ]))
 print()
+ */
 
 /*
 func selectionSort(_ array: [Int]) -> [Int] {
@@ -490,13 +511,14 @@ extension String {
 
 print("Yash Vyas".indexOf("Vyas") ?? -1)
 print()
+ */
 
 /*
  *
  **
  ***
  ****
- */
+ 
 func triangleOfAstrisks(_ rows: Int) {
     for i in 1...rows {
         for _ in 1...i {
@@ -552,6 +574,7 @@ arr.filter { $0 == 1 }.first
 var dict: [String: () -> Void] = [:]
 dict.removeValue(forKey: "")
 
+/*
 class A {}
 extension A {
     // @objc
@@ -586,3 +609,206 @@ protocol P4: P23 {} // Composition
 "Yash Vyas".uppercased()
 "Yash Vyas".uppercased
 String.uppercased
+ */
+
+// map vs flatMap
+/*
+let numbers = [1, 2, 3, 4]
+let mapped = numbers.map { Array(repeating: $0, count: $0) }
+// [[1], [2, 2], [3, 3, 3], [4, 4, 4, 4]]
+let flatMapped = numbers.flatMap { Array(repeating: $0, count: $0) }
+// [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+ */
+/*
+ flatMap returns an array containing the concatenated results of calling the given transformation
+ with each element of this sequence.
+ Use this method to receive a single-level collection when your transformation produces
+ a sequence or collection for each element.
+ */
+
+// map vs compactMap
+/*
+let possibleNumbers = ["1", "2", "three", "///4///", "5"]
+let mappedPN: [Int?] = possibleNumbers.map { str in Int(str) }
+// [1, 2, nil, nil, 5]
+
+let compactMapped: [Int] = possibleNumbers.compactMap { str in Int(str) }
+// [1, 2, 5]
+ */
+/*
+ compactMap returns an array containing the non-nil results of calling the given transformation
+ with each element of this sequence.
+ */
+
+// What will be printed ?
+// 1)
+/*
+print("\nExample1\n")
+final class MyClass {
+    func foo() {
+        DispatchQueue.main.async {
+            print("a")
+            DispatchQueue.main.async {
+                print("b")
+            }
+            print("c")
+            DispatchQueue.main.async {
+                print("d")
+            }
+            print("e")
+        }
+    }
+}
+
+let instance = MyClass()
+instance.foo()
+print("f")
+ */
+
+// 2)
+/*
+print("\nExample2\n")
+final class MyClass {
+    func foo() {
+        DispatchQueue.main.async {
+            print("a")
+            DispatchQueue.main.sync { // Deadlock
+                print("b")
+            }
+            print("c")
+            DispatchQueue.main.async {
+                print("d")
+            }
+            print("e")
+        }
+    }
+}
+
+let instance = MyClass()
+instance.foo()
+print("f")
+ */
+
+// 3)
+// print("\nExample3\n")
+/*
+ ARC will keep something in memory, as long as an allocated memory is strongly referenced by some variable.
+ If it(ARC) found some allocated memory doesn't have any strong reference it will dealloc it.
+ */
+/*
+ final class A {}
+ final class B {}
+
+ weak var a = A()
+ weak var b = B()
+
+ print(a)
+ print(b)
+ */
+
+// 4)
+/*
+print("\nExample4\n")
+final class Box: CustomDebugStringConvertible {
+    var device: String
+    
+    init(device: String) {
+        self.device = device
+    }
+
+    var debugDescription: String {
+        return "device: \(device)"
+    }
+}
+
+var box = Box(device: "iPhone X")
+var boxes = [box]
+print(boxes)
+
+box.device = "iPhone 5S"
+print(boxes)
+ */
+
+// 5)
+/*
+print("\nExample5\n")
+var a = 24
+let closure = { [a] in
+    print(a)
+}
+closure()
+a = 30
+closure()
+ */
+
+// 6)
+/*
+print("\nExample6\n")
+final class MyClass {
+    func foo() {
+        let queue = DispatchQueue(label: "test")
+        queue.async {
+            print("a")
+            queue.async {
+                print("b")
+            }
+            print("c")
+            queue.async {
+                print("d")
+            }
+            print("e")
+        }
+    }
+}
+
+let instance = MyClass()
+instance.foo()
+print("f")
+*/
+
+// 7)
+/*
+print("\nExample7\n")
+final class MyClass {
+    func foo() {
+        let queueTest1 = DispatchQueue(label: "test")
+        let queueTest2 = DispatchQueue(label: "test")
+        queueTest1.async {
+            print("a")
+        }
+        queueTest2.async {
+            print("b")
+        }
+    }
+}
+
+let instance = MyClass()
+instance.foo()
+ */
+
+// 8)
+/*
+ print("\nExample8\n")
+DispatchQueue.main.asyncAfter(deadline: .now()) {
+    print("A")
+}
+DispatchQueue.main.async {
+    print("B")
+}
+DispatchQueue.global().async {
+    print("C")
+}
+print("D")
+ */
+
+// Swift program to use filter() function
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// Transforming elements from an array
+let evenSquares = numbers.filter { $0 % 2 == 0 }.map { $0 * $0 }
+print(evenSquares)
+
+// Swift program to use reduce() function
+let words = ["geeks", "for", "geeks"]
+// Concatenating the array of string
+let sentence = words.reduce("", { $0 + " " + $1 })
+print(sentence)
