@@ -76,6 +76,7 @@
 		D329F79D2AB1BB68008EAA23 /* RouterAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F7952AB1BB68008EAA23 /* RouterAlertModifier.swift */; };
 		D329F79E2AB1BB68008EAA23 /* RouterCloseModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F7962AB1BB68008EAA23 /* RouterCloseModifier.swift */; };
 		D329F79F2AB1BB68008EAA23 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F7972AB1BB68008EAA23 /* RouterProtocol.swift */; };
+		D36986902D40F5FE0085BAD0 /* NavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D369868F2D40F5FE0085BAD0 /* NavigationStackView.swift */; };
 		D38EDB582D2E4278007341BF /* SwiftDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EDB572D2E4278007341BF /* SwiftDataView.swift */; };
 		D38EDB5A2D2E4378007341BF /* YVSwiftDataSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */; };
 		D3F5BF782D2D2ABD0017F848 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5BF772D2D2ABD0017F848 /* Queue.swift */; };
@@ -171,6 +172,7 @@
 		D329F7972AB1BB68008EAA23 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		D335CC452D38BCF800283C8F /* TextToSpeech.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TextToSpeech.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D36493922AB2DD830072F055 /* YVLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YVLearning.entitlements; sourceTree = "<group>"; };
+		D369868F2D40F5FE0085BAD0 /* NavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackView.swift; sourceTree = "<group>"; };
 		D38EDB572D2E4278007341BF /* SwiftDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataView.swift; sourceTree = "<group>"; };
 		D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVSwiftDataSchema.swift; sourceTree = "<group>"; };
 		D3C029A62ABB002400C5B80B /* DesignPattern.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DesignPattern.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -285,6 +287,7 @@
 		1C83CBC627BA7A4B0073B4C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D369868F2D40F5FE0085BAD0 /* NavigationStackView.swift */,
 				D38EDB572D2E4278007341BF /* SwiftDataView.swift */,
 				1C42B4A127B7BBBE00D8D885 /* ContentView.swift */,
 				1C83CBC727BA7A5E0073B4C4 /* MapView.swift */,
@@ -640,6 +643,7 @@
 				D329F79A2AB1BB68008EAA23 /* RouterSheetModifier.swift in Sources */,
 				1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */,
 				1C2F95D328D35B5B009D886A /* InjectPropertyWrapper.swift in Sources */,
+				D36986902D40F5FE0085BAD0 /* NavigationStackView.swift in Sources */,
 				2268B89427C2C7460079807B /* ToolbarView.swift in Sources */,
 				D329F7992AB1BB68008EAA23 /* RouterScreenProtocol.swift in Sources */,
 				2268B88B27C235720079807B /* NumberListView.swift in Sources */,
