@@ -169,6 +169,7 @@
 		D329F7952AB1BB68008EAA23 /* RouterAlertModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterAlertModifier.swift; sourceTree = "<group>"; };
 		D329F7962AB1BB68008EAA23 /* RouterCloseModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterCloseModifier.swift; sourceTree = "<group>"; };
 		D329F7972AB1BB68008EAA23 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		D335CC452D38BCF800283C8F /* TextToSpeech.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TextToSpeech.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D36493922AB2DD830072F055 /* YVLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YVLearning.entitlements; sourceTree = "<group>"; };
 		D38EDB572D2E4278007341BF /* SwiftDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataView.swift; sourceTree = "<group>"; };
 		D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVSwiftDataSchema.swift; sourceTree = "<group>"; };
@@ -404,6 +405,7 @@
 		22FE1CCF27C16BE3009CD00F /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				D335CC452D38BCF800283C8F /* TextToSpeech.playground */,
 				D3F5BF7B2D2D2FB20017F848 /* SOLID.playground */,
 				1CA629A227D3E58B00B6B582 /* Combine.playground */,
 				22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */,
