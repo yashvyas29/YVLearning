@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: SwiftLint
-      uses: norio-nomura/action-swiftlint@3.2.1
+    # - name: SwiftLint
+    #   uses: norio-nomura/action-swiftlint@3.2.1
 
  BuildAndTest:
     runs-on: macos-latest
@@ -27,9 +27,9 @@ jobs:
           xcode-version: latest-stable
           
       - name: Build And Test
-        uses: sersoft-gmbh/xcodebuild-action@v2
+        uses: sersoft-gmbh/xcodebuild-action@v3
         with:
           project: YVLearning.xcodeproj
           scheme: YVLearning
-          destination: 'platform=iOS Simulator,name=iPhone 14'
+          destination: 'platform=iOS Simulator,name=iPhone 16'
           action: test

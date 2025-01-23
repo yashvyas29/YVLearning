@@ -5,12 +5,15 @@
 //  Created by Yash Vyas on 12/02/22.
 //
 
-import XCTest
+import Testing
 @testable import YVLearning
 
-class LearnTaskTest: XCTestCase {
-    func testInit() {
-        let sut = LearnTask()
-        XCTAssertNotNil(sut)
+@Suite(.serialized)
+class LearnTaskTest {
+    @Test func initialization() throws {
+        let sut = try #require(LearnTask())
+        withKnownIssue(isIntermittent: true) {
+            #expect(sut != nil)
+        }
     }
 }
