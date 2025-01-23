@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "01AD86D5-C3CB-4EDA-A87C-664F5219D03D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:YVLearning.xcodeproj",
+      "identifier" : "1C42B49B27B7BBBE00D8D885",
+      "name" : "YVLearning"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:YVLearning.xcodeproj",
+        "identifier" : "1C42B4AB27B7BBC000D8D885",
+        "name" : "YVLearningTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -175,6 +175,7 @@
 		D369868F2D40F5FE0085BAD0 /* NavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackView.swift; sourceTree = "<group>"; };
 		D38EDB572D2E4278007341BF /* SwiftDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataView.swift; sourceTree = "<group>"; };
 		D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVSwiftDataSchema.swift; sourceTree = "<group>"; };
+		D391515A2D427B52004CD4DC /* YVLearning.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = YVLearning.xctestplan; sourceTree = "<group>"; };
 		D3C029A62ABB002400C5B80B /* DesignPattern.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DesignPattern.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D3F5BF772D2D2ABD0017F848 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		D3F5BF792D2D2F6C0017F848 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -202,6 +203,7 @@
 		1C42B49327B7BBBE00D8D885 = {
 			isa = PBXGroup;
 			children = (
+				D391515A2D427B52004CD4DC /* YVLearning.xctestplan */,
 				1C42B49E27B7BBBE00D8D885 /* YVLearning */,
 				1C42B4AF27B7BBC000D8D885 /* YVLearningTests */,
 				1C42B49D27B7BBBE00D8D885 /* Products */,
