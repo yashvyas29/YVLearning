@@ -57,6 +57,73 @@ struct NavigationStackView: View {
 }
 
 @available(iOS 16.0, *)
+final class Router: ObservableObject {
+    @Published var path = NavigationPath()
+    @Published var isPresented: Bool = false
+    @Published var isFullPresented: Bool = false
+}
+
+enum RouteDestination: String, CaseIterable {
+    case home, profile, settings, about
+}
+
+@available(iOS 16.0, *)
+struct NavigationContentView: View {
+    @EnvironmentObject var router: Router
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        NavigationStack(path: $router.path) {
+            ForEach(RouteDestination.allCases, id: \.self) { route in
+                Button(route.rawValue.capitalized) {
+                    switch route {
+                    case .home:
+                        router.isPresented = true
+                    case .profile:
+                        router.isFullPresented = true
+                    default:
+                        router.path.append(route)
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+            }
+            .navigationTitle("Screens")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: RouteDestination.self) { route in
+                switch route {
+                case .about:
+                    Text("Root").onTapGesture {
+                        router.path = .init()
+                    }
+                default:
+                    Text(route.rawValue.capitalized)
+                        .onTapGesture {
+                            let route = RouteDestination.allCases.randomElement() ?? .home
+                            print("Route on tap: \(route)")
+                            router.path.append(route)
+                        }
+                }
+            }
+            .sheet(isPresented: $router.isPresented) {
+                print("Dismissed")
+            } content: {
+                Text("Presented")
+                    .onTapGesture {
+                        print("On Tap")
+                        router.isPresented = false
+                    }
+            }
+            .fullScreenCover(isPresented: $router.isFullPresented, content: {
+                Text("Full Screen Presented")
+                    .onTapGesture {
+                        router.isFullPresented = false
+                    }
+            })
+        }
+    }
+}
+
+@available(iOS 16.0, *)
 struct NavigationStackView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStackView()

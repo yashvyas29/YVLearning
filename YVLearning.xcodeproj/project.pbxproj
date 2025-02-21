@@ -67,6 +67,7 @@
 		2268B89227C2C67C0079807B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268B89127C2C67C0079807B /* LazyView.swift */; };
 		2268B89427C2C7460079807B /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268B89327C2C7460079807B /* ToolbarView.swift */; };
 		22FE1CCE27C16B9C009CD00F /* StructuredConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */; };
+		D31F686D2D5A06980018D107 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F686C2D5A06970018D107 /* CardView.swift */; };
 		D320F35B2A270CEB00E72A7C /* SayPhraseIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320F35A2A270CEB00E72A7C /* SayPhraseIntent.swift */; };
 		D329F7982AB1BB68008EAA23 /* MVIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F78E2AB1BB68008EAA23 /* MVIContainer.swift */; };
 		D329F7992AB1BB68008EAA23 /* RouterScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D329F7902AB1BB68008EAA23 /* RouterScreenProtocol.swift */; };
@@ -79,8 +80,15 @@
 		D36986902D40F5FE0085BAD0 /* NavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D369868F2D40F5FE0085BAD0 /* NavigationStackView.swift */; };
 		D38EDB582D2E4278007341BF /* SwiftDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EDB572D2E4278007341BF /* SwiftDataView.swift */; };
 		D38EDB5A2D2E4378007341BF /* YVSwiftDataSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */; };
+		D3D319B22D5C916F000E41C6 /* UseImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D319B12D5C916F000E41C6 /* UseImagePickerView.swift */; };
+		D3D319B42D5C93A5000E41C6 /* PhotosPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D319B32D5C93A5000E41C6 /* PhotosPickerView.swift */; };
+		D3D319B62D5C93F8000E41C6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D319B52D5C93F8000E41C6 /* ImagePickerView.swift */; };
 		D3F5BF782D2D2ABD0017F848 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5BF772D2D2ABD0017F848 /* Queue.swift */; };
 		D3F5BF7A2D2D2F6C0017F848 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5BF792D2D2F6C0017F848 /* Stack.swift */; };
+		D3FA6E062D5F4088001D3627 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA6E052D5F4088001D3627 /* FormView.swift */; };
+		D3FA6E132D5F4CDD001D3627 /* NameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA6E122D5F4CDD001D3627 /* NameListView.swift */; };
+		D3FA6E152D5F6291001D3627 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA6E142D5F628C001D3627 /* Binding.swift */; };
+		D3FA6E172D5F6562001D3627 /* UICardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA6E162D5F6562001D3627 /* UICardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +169,7 @@
 		2268B89327C2C7460079807B /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		22FE1CCD27C16B9C009CD00F /* StructuredConcurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructuredConcurrency.swift; sourceTree = "<group>"; };
 		22FE1CD027C16BE3009CD00F /* StructuredConcurrency.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructuredConcurrency.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D31F686C2D5A06970018D107 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D320F35A2A270CEB00E72A7C /* SayPhraseIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayPhraseIntent.swift; sourceTree = "<group>"; };
 		D329F78E2AB1BB68008EAA23 /* MVIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVIContainer.swift; sourceTree = "<group>"; };
 		D329F7902AB1BB68008EAA23 /* RouterScreenProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterScreenProtocol.swift; sourceTree = "<group>"; };
@@ -177,9 +186,16 @@
 		D38EDB592D2E4378007341BF /* YVSwiftDataSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YVSwiftDataSchema.swift; sourceTree = "<group>"; };
 		D391515A2D427B52004CD4DC /* YVLearning.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = YVLearning.xctestplan; sourceTree = "<group>"; };
 		D3C029A62ABB002400C5B80B /* DesignPattern.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DesignPattern.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D3D319B12D5C916F000E41C6 /* UseImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseImagePickerView.swift; sourceTree = "<group>"; };
+		D3D319B32D5C93A5000E41C6 /* PhotosPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerView.swift; sourceTree = "<group>"; };
+		D3D319B52D5C93F8000E41C6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		D3F5BF772D2D2ABD0017F848 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		D3F5BF792D2D2F6C0017F848 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		D3F5BF7B2D2D2FB20017F848 /* SOLID.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SOLID.playground; sourceTree = "<group>"; };
+		D3FA6E052D5F4088001D3627 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		D3FA6E122D5F4CDD001D3627 /* NameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameListView.swift; sourceTree = "<group>"; };
+		D3FA6E142D5F628C001D3627 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		D3FA6E162D5F6562001D3627 /* UICardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +305,12 @@
 		1C83CBC627BA7A4B0073B4C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3FA6E162D5F6562001D3627 /* UICardView.swift */,
+				D3FA6E122D5F4CDD001D3627 /* NameListView.swift */,
+				D3FA6E052D5F4088001D3627 /* FormView.swift */,
+				D3D319B32D5C93A5000E41C6 /* PhotosPickerView.swift */,
+				D3D319B12D5C916F000E41C6 /* UseImagePickerView.swift */,
+				D31F686C2D5A06970018D107 /* CardView.swift */,
 				D369868F2D40F5FE0085BAD0 /* NavigationStackView.swift */,
 				D38EDB572D2E4278007341BF /* SwiftDataView.swift */,
 				1C42B4A127B7BBBE00D8D885 /* ContentView.swift */,
@@ -320,6 +342,7 @@
 		1CA6297A27D3A47100B6B582 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D3FA6E142D5F628C001D3627 /* Binding.swift */,
 				1CA6299D27D3E03B00B6B582 /* Optional */,
 				1CA6297B27D3A49200B6B582 /* String+Placeholder.swift */,
 				1CA6297D27D3A49F00B6B582 /* View+Redacted.swift */,
@@ -382,6 +405,7 @@
 		2268B88E27C2C45E0079807B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D3D319B52D5C93F8000E41C6 /* ImagePickerView.swift */,
 				D3F5BF792D2D2F6C0017F848 /* Stack.swift */,
 				D3F5BF772D2D2ABD0017F848 /* Queue.swift */,
 				D329F78D2AB1BB68008EAA23 /* Utilites */,
@@ -598,6 +622,7 @@
 				1C31156B27F3AD3F0047E1CB /* Shape+StrokeFill.swift in Sources */,
 				1C8858442990072F00CF31B8 /* CustomShape.swift in Sources */,
 				1CA6299227D3CC8C00B6B582 /* OSLog+Categories.swift in Sources */,
+				D31F686D2D5A06980018D107 /* CardView.swift in Sources */,
 				D329F79E2AB1BB68008EAA23 /* RouterCloseModifier.swift in Sources */,
 				D329F79B2AB1BB68008EAA23 /* RouterNavigationStackModifier.swift in Sources */,
 				1CAA71BC2933883300B914CC /* Factory.swift in Sources */,
@@ -613,12 +638,15 @@
 				1CF7437427E35155001F34A3 /* LockerSlider.swift in Sources */,
 				1CF764C427D7B80500A2693D /* WriteAppStorageView.swift in Sources */,
 				1C06D2B527E238E500FB65F6 /* Preview.swift in Sources */,
+				D3D319B62D5C93F8000E41C6 /* ImagePickerView.swift in Sources */,
+				D3FA6E172D5F6562001D3627 /* UICardView.swift in Sources */,
 				1CFAB8F629194FC800F25681 /* String+Localization.swift in Sources */,
 				1CF62B3B28B782E400E29FB0 /* AutoLayoutBuilder.swift in Sources */,
 				2268B89227C2C67C0079807B /* LazyView.swift in Sources */,
 				1C06D2B727E239EA00FB65F6 /* ComponentPreview.swift in Sources */,
 				1C5CFC8927C0F87700BCB924 /* SceneDelegate.swift in Sources */,
 				D3F5BF782D2D2ABD0017F848 /* Queue.swift in Sources */,
+				D3D319B22D5C916F000E41C6 /* UseImagePickerView.swift in Sources */,
 				1C42B4CB27B7BC0400D8D885 /* LearnTask.swift in Sources */,
 				1CEBF6612987DFA60069F970 /* GridView.swift in Sources */,
 				2268B88D27C2C4040079807B /* NumberFormLinkView.swift in Sources */,
@@ -639,16 +667,20 @@
 				D320F35B2A270CEB00E72A7C /* SayPhraseIntent.swift in Sources */,
 				1CF7437027E3441E001F34A3 /* TextSpacingView.swift in Sources */,
 				1CA629A127D3E06500B6B582 /* Optional+Bool.swift in Sources */,
+				D3FA6E062D5F4088001D3627 /* FormView.swift in Sources */,
 				1CF7437227E34F38001F34A3 /* IOSSlider.swift in Sources */,
+				D3FA6E132D5F4CDD001D3627 /* NameListView.swift in Sources */,
 				1C83CBC827BA7A5E0073B4C4 /* MapView.swift in Sources */,
 				1C8458FB28A8154300547D30 /* ApiManager.swift in Sources */,
 				D329F79A2AB1BB68008EAA23 /* RouterSheetModifier.swift in Sources */,
 				1C9708FF27BE5DE60048F780 /* RootView.swift in Sources */,
 				1C2F95D328D35B5B009D886A /* InjectPropertyWrapper.swift in Sources */,
 				D36986902D40F5FE0085BAD0 /* NavigationStackView.swift in Sources */,
+				D3FA6E152D5F6291001D3627 /* Binding.swift in Sources */,
 				2268B89427C2C7460079807B /* ToolbarView.swift in Sources */,
 				D329F7992AB1BB68008EAA23 /* RouterScreenProtocol.swift in Sources */,
 				2268B88B27C235720079807B /* NumberListView.swift in Sources */,
+				D3D319B42D5C93A5000E41C6 /* PhotosPickerView.swift in Sources */,
 				1C372ACD27B9081F004E0FA8 /* UINavigationView.swift in Sources */,
 				1CA6298027D3A54E00B6B582 /* Optional+Nil.swift in Sources */,
 				1C8F017527F3779000DBD9DF /* View+ConditionalModifier.swift in Sources */,

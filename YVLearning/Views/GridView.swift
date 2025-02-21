@@ -39,6 +39,37 @@ struct GridView: View {
     var body: some View {
         ScrollView {
             VStack {
+                if #available(iOS 16.0, *) {
+                    VStack {
+                        Grid(horizontalSpacing: 1, verticalSpacing: 0) {
+                            GridRow {
+                                ForEach(0..<5) { _ in
+                                    Color.red
+                                }
+                            }
+                            Divider()
+                                .frame(height: 10)
+                                .background(Color.green)
+                            GridRow {
+                                Color.blue
+                                    .gridCellColumns(5)
+                            }
+                        }
+                        Grid {
+                            GridRow {
+                                Text("Hello")
+                                Image(systemName: "globe")
+                            }
+                            Divider()
+                                .gridCellUnsizedAxes(.horizontal)
+                            GridRow {
+                                Image(systemName: "hand.wave")
+                                Text("World")
+                            }
+                        }
+                    }
+                    .frame(height: 320)
+                }
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(data, id: \.self) { item in

@@ -12,11 +12,9 @@ struct NumberListView: View {
     var body: some View {
         List(numbers, id: \.self) { number in
             Text("\(number)")
-                .padding(.leading, 16)
-//                .listRowSeparator(background: .red)
+                
         }
-        .listStyle(.plain)
-        .padding(.leading, -16)
+        
     }
 }
 
