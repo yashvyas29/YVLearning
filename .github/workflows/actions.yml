@@ -26,18 +26,18 @@ jobs:
         with:
           xcode-version: latest-stable
 
-      # - name: Information
-      #   run: |
-      #     echo "Mac OS Version"
-      #     sw_vers -productVersion
-      #     printf "\nXcode Version"
-      #     xcodebuild -version
-      #     printf "\nSDKs"
-      #     xcodebuild -showsdks
-      #     printf "\nRuntimes and iOS Simulators"
-      #     xcrun simctl list runtimes devices iOS
-      #     printf "\n Download Platform"
-      #     xcodebuild -downloadPlatform iOS
+      - name: Information
+        run: |
+          echo "Mac OS Version"
+          sw_vers -productVersion
+          printf "\nXcode Version"
+          xcodebuild -version
+          printf "\nSDKs"
+          xcodebuild -showsdks
+          printf "\nRuntimes and iOS Simulators"
+          xcrun simctl list runtimes devices iOS
+          printf "\n Download Platform"
+          xcodebuild -downloadPlatform iOS
 
       - name: Test
         uses: sersoft-gmbh/xcodebuild-action@v3.2.0

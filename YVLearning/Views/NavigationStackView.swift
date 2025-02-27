@@ -52,6 +52,20 @@ struct NavigationStackView: View {
             .navigationDestination(for: String.self) { userName in
                 Text(userName)
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.accent, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Image(systemName: "list.bullet.rectangle")
+                            .font(.subheadline)
+                        Text("Navigation List")
+                            .font(.title2)
+                    }
+                    .foregroundColor(.white)
+                }
+            }
         }
     }
 }
