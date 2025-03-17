@@ -5,8 +5,6 @@
 //  Created by Yash Vyas on 05/03/22.
 //
 
-import Foundation
-
 extension Optional where Wrapped == Bool {
     var isTrue: Bool {
         if let localSelf = self {
