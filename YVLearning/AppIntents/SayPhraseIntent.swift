@@ -10,11 +10,12 @@ import AppIntents
 // 1
 @available(iOS 16.0, *)
 struct IntentProvider: AppShortcutsProvider {
+    static let applicationName = "YVLearning"
     static var appShortcuts: [AppShortcut] {
         return [AppShortcut(intent: SayPhraseIntent(), phrases: [
-            "Repeat a phrase",
-            "Say a phrase",
-            "Repeat something back"
+            "Repeat a phrase in \(.applicationName)",
+            "Say a phrase in \(.applicationName)",
+            "Repeat something back in \(.applicationName)"
         ])]
     }
 }
