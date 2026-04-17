@@ -21,6 +21,16 @@
       "sourceType": "github",
       "computedHash": "66f4a1245750df4438a53696b0288cccf7bf575581b3050420871c3db7f8ffa4"
     },
+    "swift-testing": {
+      "source": "bocato/swift-testing-agent-skill",
+      "sourceType": "github",
+      "computedHash": "7527cbdcc065008285c6b2a179cd5be573532bd5779ca96311612882c7d16bb0"
+    },
+    "swift-testing-pro": {
+      "source": "twostraws/swift-testing-agent-skill",
+      "sourceType": "github",
+      "computedHash": "90504b29146ccd7e88d8ba7244c6c4e4d2b410fb21bdd4ce578f10583b158481"
+    },
     "swiftui-design-principles": {
       "source": "arjitj2/swiftui-design-principles",
       "sourceType": "github",
