@@ -160,6 +160,12 @@ Usage notes:
 <location>project</location>
 </skill>
 
+<skill>
+<name>ios-security</name>
+<description>Implement, review, or audit iOS security mechanisms in YVLearning — jailbreak/debug/RE detection, SSL pinning, string obfuscation, and binary integrity. Use when adding any manager from YVLearning/Common/Security/, designing a security posture, reviewing security code for correctness, or asking about threat modelling for iOS apps.</description>
+<location>project</location>
+</skill>
+
 </available_skills>
 <!-- SKILLS_TABLE_END -->
 

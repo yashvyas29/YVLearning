@@ -27,7 +27,8 @@
 | Data & Database | `.codemie/guides/data/database-patterns.md` | SwiftData models, versioned schemas, migrations, persistence |
 | Testing | `.codemie/guides/testing/testing-patterns.md` | XCTest patterns, unit tests, fixtures, async testing |
 | Development Practices | `.codemie/guides/development/development-practices.md` | Code style, error handling, logging, async patterns, conventions |
-| Security | `.codemie/guides/security/security-patterns.md` | Input validation, form validation rules, data security |
+| Security | `.codemie/guides/security/security-patterns.md` | Input validation, form validation rules, data security, runtime security managers |
+| iOS Security (skill) | `.agents/skills/ios-security/SKILL.md` | All 7 runtime security managers — jailbreak, debug, RE, SSL pinning, obfuscation, binary integrity |
 
 ---
 
@@ -43,6 +44,7 @@
 | **Testing** | Writing tests, running tests, test coverage, unit tests | "Write tests for...", "Fix failing test", "Run test suite" | `.codemie/guides/testing/testing-patterns.md` |
 | **Development Practices** | Code quality, error handling, logging, naming conventions, async patterns | "How do I handle errors?", "Add logging", "Follow the conventions", "Make this async" | `.codemie/guides/development/development-practices.md` |
 | **Security** | Input validation, form validation, data security, protecting sensitive data | "Validate user input", "Add form validation", "Secure this field" | `.codemie/guides/security/security-patterns.md` |
+| **iOS Security (runtime)** | Jailbreak/debug detection, SSL pinning, obfuscation, RE detection, binary integrity, app attestation | "Detect jailbreak", "Add SSL pinning", "Obfuscate API key", "Check if debugger attached", "Protect against Frida", "Verify app integrity" | `.agents/skills/ios-security/SKILL.md` |
 
 ---
 

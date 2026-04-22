@@ -163,3 +163,75 @@ if let error = $email {
 | Custom regex | `.custom(regex:)` | Define pattern in rule |
 
 ---
+
+## Runtime Security Managers
+
+All managers live in `YVLearning/Common/Security/`. For full usage patterns and a threat model, invoke the `ios-security` skill.
+
+### Manager Inventory
+
+| Manager | File | Purpose |
+|---------|------|---------|
+| `KeychainManager` | `KeychainManager.swift` | Persist credentials/tokens securely |
+| `SecureEnclaveManager` | `SecureEnclaveManager.swift` | Hardware-backed P-256 key generation and signing |
+| `AppAttestManager` | `AppAttestManager.swift` | Cryptographic proof of genuine app + device (server-side) |
+| `DeviceCheckManager` | `DeviceCheckManager.swift` | Persistent per-device bits via Apple's API (server-side) |
+| `JailbreakDetectionManager` | `JailbreakDetectionManager.swift` | Detect jailbroken devices at runtime |
+| `DebugDetectionManager` | `DebugDetectionManager.swift` | Detect attached debuggers and simulator |
+| `ReverseEngineeringDetector` | `ReverseEngineeringDetector.swift` | Detect Frida, Cycript, Substrate injection |
+| `SSLPinningManager` | `SSLPinningManager.swift` | Public key pinning for URLSession connections |
+| `ObfuscationManager` / `XORObfuscatedString` | `ObfuscationManager.swift` | Prevent plaintext secrets appearing in binary |
+| `SensitiveBuffer` | `ObfuscationManager.swift` | Zero sensitive `Data` from memory after use |
+| `BinaryIntegrityManager` | `BinaryIntegrityManager.swift` | Detect side-loaded/cracked builds, tampered resources |
+
+### Usage Rules
+
+- Always wrap runtime checks in `#if !DEBUG` — all checks produce false positives in Xcode dev runs.
+- Never `fatalError()` on a failed security check in production. Prefer graceful degradation.
+- Layered detection is required — no single check is bypass-proof.
+- Security checks are synchronous and read-only. They must not modify app state.
+- Wrap SSL pinning setup in app startup (before any URLSession request is made).
+
+### Quick Patterns
+
+```swift
+// Jailbreak + debug + RE detection gate
+#if !DEBUG
+func isEnvironmentTrusted() -> Bool {
+    !JailbreakDetectionManager.shared.isJailbroken &&
+    !DebugDetectionManager.shared.isDebugged &&
+    !ReverseEngineeringDetector.shared.isUnderAttack
+}
+#endif
+
+// SSL Pinning setup (App init / AppDelegate)
+SSLPinningManager.shared.addPin(sha256Hash: "<primary-hash>", for: "api.example.com")
+SSLPinningManager.shared.addPin(sha256Hash: "<backup-hash>",  for: "api.example.com")
+let session = URLSession(configuration: .default,
+                         delegate: SSLPinningManager.shared,
+                         delegateQueue: nil)
+
+// Obfuscated string (embed pre-encoded bytes, decode at point of use only)
+private static let apiKey = XORObfuscatedString(encoded: [0x3C, 0x27, 0x23], key: 0x4F)
+let key = Self.apiKey.decoded  // only lives in memory during this scope
+
+// Binary integrity check
+#if !DEBUG
+let integrity = BinaryIntegrityManager.shared
+guard integrity.isRunningFromValidContainer else { return }
+#endif
+```
+
+### For Full Reference
+
+See the `ios-security` skill: `.agents/skills/ios-security/SKILL.md`
+
+| Reference file | Covers |
+|----------------|--------|
+| `references/threat-model.md` | Threat landscape, defence-in-depth strategy |
+| `references/runtime-protection.md` | Jailbreak, debug, RE detection patterns |
+| `references/network-security.md` | SSL pinning, obtaining hashes, backup pins |
+| `references/data-protection.md` | Obfuscation, SensitiveBuffer, Keychain, SecureEnclave |
+| `references/app-integrity.md` | BinaryIntegrityManager, AppAttest, DeviceCheck |
+
+---
