@@ -7,6 +7,7 @@
 
 import Foundation
 import Darwin
+import MachO
 
 // MARK: - Protocol
 
@@ -126,7 +127,12 @@ struct ReverseEngineeringDetector: ReverseEngineeringDetecting {
 
         // Set socket to non-blocking so the attempt doesn't stall the app
         let flags = fcntl(sockfd, F_GETFL, 0)
-        fcntl(sockfd, F_SETFL, flags | O_NONBLOCK)
+        let result = fcntl(sockfd, F_SETFL, flags | O_NONBLOCK)
+        // If setting non-blocking fails, proceed with best-effort (socket stays blocking)
+        if result == -1 {
+            // Failed to set non-blocking; avoid a potentially blocking connect
+            return false
+        }
 
         var addr = sockaddr_in()
         addr.sin_family = sa_family_t(AF_INET)
@@ -145,3 +151,4 @@ struct ReverseEngineeringDetector: ReverseEngineeringDetecting {
         return connectResult == 0 || errno == EINPROGRESS
     }
 }
+
