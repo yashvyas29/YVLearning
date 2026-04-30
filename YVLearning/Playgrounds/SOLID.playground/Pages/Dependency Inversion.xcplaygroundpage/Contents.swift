@@ -8,12 +8,11 @@ import Foundation
 
 class Persistence {
     private var logger = Logger()
-    
+
     func save(data: Data, to url: URL) throws {
         do {
             try data.write(to: url)
-        }
-        catch {
+        } catch {
             logger.log("\(error)", severity: 10)
         }
     }
@@ -37,8 +36,7 @@ class Persistence {
     func save(data: Data, to url: URL) throws {
         do {
             try data.write(to: url)
-        }
-        catch {
+        } catch {
             logger.log("\(error)", severity: 10)
         }
     }

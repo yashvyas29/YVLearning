@@ -34,7 +34,8 @@ extension UINavigationHandler {
     }
 
     func showDetail<Content: View>(_ view: Content) {
-        navigationController.showDetailViewController(UIHostingController(rootView: view), sender: nil)
+        navigationController.showDetailViewController(
+            UIHostingController(rootView: view), sender: nil)
     }
 
     func pop(animated: Bool = true) {

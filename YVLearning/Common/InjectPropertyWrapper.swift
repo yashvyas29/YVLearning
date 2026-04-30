@@ -18,10 +18,10 @@ struct Inject<Component> {
 
 class Resolver {
     static let shared = Resolver()
-//    private var container = Container()
+    // private var container = Container()
 
     func resolve<T>(_ type: T.Type) -> T {
-//        container.resolve(type)!
+        // container.resolve(type)!
         fatalError("not yet implemented")
     }
 

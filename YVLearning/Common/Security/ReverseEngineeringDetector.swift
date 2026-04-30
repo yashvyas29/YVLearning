@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import Foundation
 import Darwin
+import Foundation
 import MachO
 
 // MARK: - Protocol
@@ -54,12 +54,12 @@ struct ReverseEngineeringDetector: ReverseEngineeringDetecting {
     // MARK: - Indicator
 
     enum Indicator: String, CaseIterable, Sendable {
-        case fridaDetected      = "Frida instrumentation framework detected"
-        case hookingLibrary     = "Runtime hooking library detected (Substrate/Substitute/libhooker)"
-        case sslBypass          = "SSL bypass tool detected (SSLKillSwitch)"
-        case uiInspectionTool   = "UI inspection tool detected (Reveal)"
-        case cycriptDetected    = "Cycript runtime detected"
-        case fridaPortOpen      = "Frida server port 27042 is open on localhost"
+        case fridaDetected = "Frida instrumentation framework detected"
+        case hookingLibrary = "Runtime hooking library detected (Substrate/Substitute/libhooker)"
+        case sslBypass = "SSL bypass tool detected (SSLKillSwitch)"
+        case uiInspectionTool = "UI inspection tool detected (Reveal)"
+        case cycriptDetected = "Cycript runtime detected"
+        case fridaPortOpen = "Frida server port 27042 is open on localhost"
     }
 
     // MARK: - ReverseEngineeringDetecting
@@ -71,12 +71,12 @@ struct ReverseEngineeringDetector: ReverseEngineeringDetecting {
     var detectedIndicators: [Indicator] {
         let images = loadedImageNames
         var found: [Indicator] = []
-        if images.contains(where: isFridaDylib)    { found.append(.fridaDetected) }
-        if images.contains(where: isHookingDylib)  { found.append(.hookingLibrary) }
+        if images.contains(where: isFridaDylib) { found.append(.fridaDetected) }
+        if images.contains(where: isHookingDylib) { found.append(.hookingLibrary) }
         if images.contains(where: isSSLBypassDylib) { found.append(.sslBypass) }
-        if images.contains(where: isRevealDylib)   { found.append(.uiInspectionTool) }
-        if images.contains(where: isCycriptDylib)  { found.append(.cycriptDetected) }
-        if isFridaPortReachable                    { found.append(.fridaPortOpen) }
+        if images.contains(where: isRevealDylib) { found.append(.uiInspectionTool) }
+        if images.contains(where: isCycriptDylib) { found.append(.cycriptDetected) }
+        if isFridaPortReachable { found.append(.fridaPortOpen) }
         return found
     }
 
@@ -94,11 +94,9 @@ struct ReverseEngineeringDetector: ReverseEngineeringDetecting {
     }
 
     private func isHookingDylib(_ name: String) -> Bool {
-        name.contains("mobilesubstrate") ||
-        name.contains("substrate") ||
-        name.contains("libsubstitute") ||
-        name.contains("libhooker") ||
-        name.contains("substituteloader")
+        name.contains("mobilesubstrate") || name.contains("substrate")
+            || name.contains("libsubstitute")
+            || name.contains("libhooker") || name.contains("substituteloader")
     }
 
     private func isSSLBypassDylib(_ name: String) -> Bool {
@@ -151,4 +149,3 @@ struct ReverseEngineeringDetector: ReverseEngineeringDetecting {
         return connectResult == 0 || errno == EINPROGRESS
     }
 }
-

@@ -18,7 +18,7 @@ struct MenuIgnoringSafeAreaView: View {
                     .ignoresSafeArea()
                 Menu("Actions") {
                     ForEach(menuOptions, id: \.self, content: { Text($0) })
-                    //                List(menuOptions, id: \.self, rowContent: { Text($0) })
+                    // List(menuOptions, id: \.self, rowContent: { Text($0) })
                     Button("Duplicate", action: {})
                     Button("Rename", action: {})
                     Button("Delete", action: {})
@@ -32,33 +32,40 @@ struct MenuIgnoringSafeAreaView: View {
                     ToolbarItem(placement: .primaryAction) {
                         Menu {
                             Section(header: Text("Primary actions")) {
-                                Button(action: {}, label: {
-                                    Label("Create a file", systemImage: "doc")
-                                })
+                                Button(
+                                    action: {},
+                                    label: {
+                                        Label("Create a file", systemImage: "doc")
+                                    })
 
-                                Button(action: {}, label: {
-                                    Label("Create a folder", systemImage: "folder.badge.plus")
-                                })
+                                Button(
+                                    action: {},
+                                    label: {
+                                        Label("Create a folder", systemImage: "folder.badge.plus")
+                                    })
                             }
 
                             Section(header: Text("Secondary actions")) {
-                                Button(action: {}, label: {
-                                    Label("Remove old files", systemImage: "trash")
-                                        .foregroundColor(.red)
-                                })
+                                Button(
+                                    action: {},
+                                    label: {
+                                        Label("Remove old files", systemImage: "trash")
+                                            .foregroundColor(.red)
+                                    })
                             }
 
                             Section(header: Text("Turnery actions")) {
-                                Button(action: {}, label: {
-                                    Label("Add old files", systemImage: "folder.badge.plus")
-                                        .foregroundColor(.red)
-                                })
+                                Button(
+                                    action: {},
+                                    label: {
+                                        Label("Add old files", systemImage: "folder.badge.plus")
+                                            .foregroundColor(.red)
+                                    })
                             }
+                        } label: {
+                            Label("Add", systemImage: "plus")
                         }
-                    label: {
-                        Label("Add", systemImage: "plus")
-                    }
-                    .foregroundColor(.yellow)
+                        .foregroundColor(.yellow)
                     }
                 }
             }

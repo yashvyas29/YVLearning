@@ -1,7 +1,7 @@
 //: [Previous](@previous)
 
-import UIKit
 import PlaygroundSupport
+import UIKit
 
 protocol Observer {
     func notify()
@@ -31,17 +31,17 @@ extension UIButton: Subject {
     }
 
     func unregister(_ observer: Observer) {
-        UIButton.observers = UIButton.observers.filter{$0.uid != observer.uid}
+        UIButton.observers = UIButton.observers.filter { $0.uid != observer.uid }
     }
 
     func onStateChanged() {
-        UIButton.observers.forEach { (observer) in
+        for observer in UIButton.observers {
             observer.notify()
         }
     }
 }
 
-class MyViewController : UIViewController {
+class MyViewController: UIViewController {
     var labels = [UILabel]()
 
     override func loadView() {
@@ -53,18 +53,21 @@ class MyViewController : UIViewController {
         notifyButton.setTitleColor(.black, for: .normal)
         notifyButton.backgroundColor = .lightGray
         view.addSubview(notifyButton)
-        notifyButton.addTarget(self, action: #selector(onNotifyPressed(sender:)), for: UIControl.Event.touchUpInside)
+        notifyButton.addTarget(
+            self, action: #selector(onNotifyPressed(sender:)), for: UIControl.Event.touchUpInside)
 
         let unregisterButton = UIButton(frame: CGRect(x: 0, y: 100, width: 380, height: 44))
         unregisterButton.setTitle("Unregister observer", for: .normal)
         unregisterButton.setTitleColor(.white, for: .normal)
         unregisterButton.backgroundColor = .red
         view.addSubview(unregisterButton)
-        unregisterButton.addTarget(self, action: #selector(onUnregisterPressed(sender:)), for: UIControl.Event.touchUpInside)
+        unregisterButton.addTarget(
+            self, action: #selector(onUnregisterPressed(sender:)),
+            for: UIControl.Event.touchUpInside)
 
         let labelCount = 10
 
-        for i in 0 ..< labelCount {
+        for i in 0..<labelCount {
             let label = UILabel(frame: CGRect(x: 0, y: 200 + (i * 30), width: 380, height: 20))
             label.text = "Label # \(i + 1) listening..."
             label.textColor = .black

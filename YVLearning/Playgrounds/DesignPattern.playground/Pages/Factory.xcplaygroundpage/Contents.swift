@@ -31,9 +31,9 @@ enum Serializers {
 func makeSerializer(_ type: Serializers) -> Serializable? {
     let result: Serializable?
     switch type {
-        case .json: result = JSONSerializer()
-        case .plist: result = PropertyListSerializer()
-        case .xml: result = XMLSerializer()
+    case .json: result = JSONSerializer()
+    case .plist: result = PropertyListSerializer()
+    case .xml: result = XMLSerializer()
     }
     return result
 }
@@ -48,9 +48,9 @@ struct SerializerFactory {
     static func makeSerializer(_ type: Serializers) -> Serializable? {
         let result: Serializable?
         switch type {
-            case .json: result = JSONSerializer()
-            case .plist: result = PropertyListSerializer()
-            case .xml: result = XMLSerializer()
+        case .json: result = JSONSerializer()
+        case .plist: result = PropertyListSerializer()
+        case .xml: result = XMLSerializer()
         }
         return result
     }

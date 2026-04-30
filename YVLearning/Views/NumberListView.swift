@@ -12,9 +12,9 @@ struct NumberListView: View {
     var body: some View {
         List(numbers, id: \.self) { number in
             Text("\(number)")
-                
+
         }
-        
+
     }
 }
 

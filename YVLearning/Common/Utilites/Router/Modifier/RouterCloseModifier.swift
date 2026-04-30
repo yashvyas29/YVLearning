@@ -5,8 +5,8 @@
 //  Created by Vyacheslav Ansimov.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct RouterCloseModifier: ViewModifier {
 

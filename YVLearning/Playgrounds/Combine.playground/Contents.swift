@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+
 // import PlaygroundSupport
 
 let passThroughSubject = PassthroughSubject<Int, Never>()
@@ -12,13 +13,14 @@ currentValueSubject.send(11)
 passThroughSubject.sink(
     receiveCompletion: { completion in
         switch completion {
-            case .finished:
-                debugPrint("Pass through subject finished.")
+        case .finished:
+            debugPrint("Pass through subject finished.")
         }
     },
     receiveValue: { value in
         debugPrint("Pass through subject receiveValue \(value).")
-    })
+    }
+)
 .store(in: &cancellables)
 
 currentValueSubject.sink { completion in
@@ -69,7 +71,8 @@ let deferredFuture = Deferred {
 }.eraseToAnyPublisher()
 
 // Allows for recording a series of inputs and a completion, for later playback to each subscriber.
-let record = Record<Int, MyError>(output: [1, 2, 3], completion: .failure(.error)).eraseToAnyPublisher()
+let record = Record<Int, MyError>(output: [1, 2, 3], completion: .failure(.error))
+    .eraseToAnyPublisher()
 /*
 let record = Record<Int, MyError> { recording in
     debugPrint("Record")
@@ -80,9 +83,9 @@ let record = Record<Int, MyError> { recording in
 }
  */
 
-let empty = Empty<Int, MyError>() // Never produce value, finishes imediately
+let empty = Empty<Int, MyError>()  // Never produce value, finishes imediately
 // let empty = Empty<Int, MyError>(completeImmediately: false) // Never produce value, never finishes
-let fail = Fail<Int, MyError>(error: .error) // Immediately terminates with the specified error.
+let fail = Fail<Int, MyError>(error: .error)  // Immediately terminates with the specified error.
 
 just.sink { completion in
     switch completion {
@@ -190,16 +193,19 @@ Timer.publish(every: 1, on: .main, in: .default)
             }
             .replaceError(with: 666)
     }
-    .sink(receiveCompletion: { (completion) in
-        print(completion)
-    }, receiveValue: { (value) in
-        print(value)
-    })
+    .sink(
+        receiveCompletion: { (completion) in
+            print(completion)
+        },
+        receiveValue: { (value) in
+            print(value)
+        }
+    )
     .store(in: &cancellables)
 
 private func romanNumeral(from: Int) throws -> String {
     let romanNumeralDict: [Int: String] =
-    [1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"]
+        [1: "I", 2: "II", 3: "III", 4: "IV", 5: "V"]
     guard let numeral = romanNumeralDict[from] else {
         throw MyError.error
     }
@@ -235,7 +241,7 @@ class StringSubscriber: Subscriber {
 }
 
 let stringPublisher = [
-    "Warsaw", "Barcelona", "New York", "Toronto"
+    "Warsaw", "Barcelona", "New York", "Toronto",
 ].publisher
 
 let stringSubscriber = StringSubscriber()
@@ -262,11 +268,11 @@ class GenericSubscriber<T>: Subscriber {
 }
 
 let publisherOfInts = [
-    1, 2, 3, 4
+    1, 2, 3, 4,
 ].publisher
 
 let publisherOfStrings = [
-    "1", "2", "3", "4"
+    "1", "2", "3", "4",
 ].publisher
 
 let subscriberOfInt = GenericSubscriber<Int>()
@@ -314,7 +320,7 @@ publisher
     .store(in: &subscriptions)
 // Transforms all elements from the upstream publisher with a provided closure.
 publisher
-    .map { $0*2 }
+    .map { $0 * 2 }
     .sink(receiveValue: { print($0) })
     .store(in: &subscriptions)
 // Collects all received elements, and emits a single array of the collection when the upstream publisher finishes.
@@ -360,17 +366,23 @@ publisher
 // Backtrace
 publisher
     .print()
-    .handleEvents(receiveSubscription: { subscription in
-        debugPrint(subscription)
-    }, receiveOutput: { output in
-        debugPrint(output)
-    }, receiveCompletion: { completion in
-        debugPrint(completion)
-    }, receiveCancel: {
-        debugPrint("Cancel")
-    }, receiveRequest: { demand in
-        debugPrint(demand)
-    })
+    .handleEvents(
+        receiveSubscription: { subscription in
+            debugPrint(subscription)
+        },
+        receiveOutput: { output in
+            debugPrint(output)
+        },
+        receiveCompletion: { completion in
+            debugPrint(completion)
+        },
+        receiveCancel: {
+            debugPrint("Cancel")
+        },
+        receiveRequest: { demand in
+            debugPrint(demand)
+        }
+    )
     .breakpointOnError()
     .sink(receiveValue: { print($0) })
 /*
@@ -417,9 +429,9 @@ let mergedPublisher = publisher1.merge(with: publisher2)
     .sink { value in
         print("Received value: \(value)")
     }
-publisher1.send(1) // Output: Received value: 1
-publisher2.send(2) // Output: Received value: 2
-publisher1.send(3) // Output: Received value: 3
+publisher1.send(1)  // Output: Received value: 1
+publisher2.send(2)  // Output: Received value: 2
+publisher1.send(3)  // Output: Received value: 3
 
 // CombineLatest
 let temperaturePublisher = PassthroughSubject<Int, Never>()
@@ -428,9 +440,9 @@ let weatherPublisher = Publishers.CombineLatest(temperaturePublisher, humidityPu
     .sink { temperature, humidity in
         print("Temperature: \(temperature), Humidity: \(humidity)")
     }
-temperaturePublisher.send(72) // No output yet
-humidityPublisher.send(45)     // Output: Temperature: 72, Humidity: 45
-temperaturePublisher.send(74) // Output: Temperature: 74, Humidity: 45
+temperaturePublisher.send(72)  // No output yet
+humidityPublisher.send(45)  // Output: Temperature: 72, Humidity: 45
+temperaturePublisher.send(74)  // Output: Temperature: 74, Humidity: 45
 
 // Zip
 let usernamePublisher = PassthroughSubject<String, Never>()
@@ -439,24 +451,26 @@ let userPublisher = usernamePublisher.zip(agePublisher)
     .sink { username, age in
         print("Username: \(username), Age: \(age)")
     }
-usernamePublisher.send("Yash") // No output yet
-agePublisher.send(30)          // Output: Username: johndoe, Age: 30
-usernamePublisher.send("Vyas") // No output yet
-agePublisher.send(28)          // Output: Username: janedoe, Age: 28
+usernamePublisher.send("Yash")  // No output yet
+agePublisher.send(30)  // Output: Username: johndoe, Age: 30
+usernamePublisher.send("Vyas")  // No output yet
+agePublisher.send(28)  // Output: Username: janedoe, Age: 28
 
 let intSubject = PassthroughSubject<Int, Error>()
 let stringSubject = PassthroughSubject<String, Error>()
 Publishers.Zip(intSubject, stringSubject)
-    .sink(receiveCompletion: { completion in
-        switch completion {
-        case .finished:
-            print("Finished")
-        case .failure:
-            print("Failure")
-        }
-    }, receiveValue: { value in
-        print(value)
-    })
+    .sink(
+        receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                print("Finished")
+            case .failure:
+                print("Failure")
+            }
+        },
+        receiveValue: { value in
+            print(value)
+        })
 intSubject.send(1)
 intSubject.send(2)
 stringSubject.send("a")

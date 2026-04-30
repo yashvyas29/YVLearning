@@ -5,11 +5,10 @@
 //  Created by Yash Vyas on 07/01/25.
 //
 
-
 private final class Node<T> {
     var key: T?
     var next: Node?
-    
+
     init(_ value: T? = nil) {
         key = value
     }
@@ -18,7 +17,7 @@ private final class Node<T> {
 final class Queue<T> {
     fileprivate var head: Node<T>?
     private var tail: Node<T>?
-    
+
     func enqueue(_ value: T) {
         let newNode = Node<T>(value)
         // First element's value has not been set?
@@ -32,12 +31,12 @@ final class Queue<T> {
         tail?.next = newNode
         tail = newNode
     }
-    
+
     func dequeue() -> T? {
         guard let headItem = head?.key else {
             return nil
         }
-        
+
         if let nextNode = head?.next {
             head = nextNode
         } else {
@@ -46,11 +45,11 @@ final class Queue<T> {
         }
         return headItem
     }
-    
+
     func isEmpty() -> Bool {
         return head == nil
     }
-    
+
     func peek() -> T? {
         return head?.key
     }
@@ -59,17 +58,17 @@ final class Queue<T> {
 struct QueueIterator<T>: IteratorProtocol {
     private let queue: Queue<T>
     private var currentNode: Node<T>?
-    
+
     init(_ queue: Queue<T>) {
         self.queue = queue
         currentNode = queue.head
     }
-    
+
     mutating func next() -> T? {
         guard let node = currentNode else {
             return nil
         }
-        
+
         let nextKey = currentNode?.key
         currentNode = node.next
         return nextKey

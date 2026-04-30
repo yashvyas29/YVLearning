@@ -2,50 +2,60 @@
 
 import Foundation
 
-
 // MARK: - Common Currency Class with All Functionalities
 
 class CurrencyManager {
-    func fetchRates(for sourceCurrency: String,
-                    to targetCurrency: String,
-                    completion: (Error?, Double) -> Void) {
+    func fetchRates(
+        for sourceCurrency: String,
+        to targetCurrency: String,
+        completion: (Error?, Double) -> Void
+    ) {
         //...
     }
 
-    func save(rate: Double,
-              for sourceCurrency: String,
-              to targetCurrency: String) {
+    func save(
+        rate: Double,
+        for sourceCurrency: String,
+        to targetCurrency: String
+    ) {
         //...
     }
 
-    func loadRate(for sourceCurrency: String,
-                  to targetCurrency: String) -> Double? {
+    func loadRate(
+        for sourceCurrency: String,
+        to targetCurrency: String
+    ) -> Double? {
         //...
         return 0
     }
 
-    func convert(amount: Double,
-                 from sourceCurrency: String,
-                 to targetCurrency: String) -> Double {
+    func convert(
+        amount: Double,
+        from sourceCurrency: String,
+        to targetCurrency: String
+    ) -> Double {
         //...
         return 0
     }
 }
 
-
 // MARK: - Refactor to three different classes
 
 class CurrencyConverter {
-    func convert(amount: Double,
-                 from sourceCurrency: String,
-                 to targetCurrency: String) -> Double {
+    func convert(
+        amount: Double,
+        from sourceCurrency: String,
+        to targetCurrency: String
+    ) -> Double {
         //...
         return 0
     }
 }
 
 class NetworkController {
-    func fetchRates(for sourceCurrency: String, to targetCurrency: String, completion: (Error?, Double) -> Void) {
+    func fetchRates(
+        for sourceCurrency: String, to targetCurrency: String, completion: (Error?, Double) -> Void
+    ) {
         //...
     }
 }

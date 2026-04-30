@@ -45,8 +45,10 @@ extension UIViewController {
             viewController
         }
 
-        func updateUIViewController(_ uiViewController: UIViewController,
-                                    context: Context) {
+        func updateUIViewController(
+            _ uiViewController: UIViewController,
+            context: Context
+        ) {
             // We don’t need to write any update code in this case.
         }
     }

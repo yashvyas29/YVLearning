@@ -1,6 +1,6 @@
 protocol PaymentGateway {
     func receivePayment(amount: Double)
-    var totalPayments: Double {get}
+    var totalPayments: Double { get }
 }
 
 class PayPal: PaymentGateway {
@@ -29,7 +29,6 @@ class Stripe: PaymentGateway {
     }
 }
 
-
 let paypal = PayPal()
 paypal.receivePayment(amount: 100)
 paypal.receivePayment(amount: 200)
@@ -41,7 +40,6 @@ stripe.receivePayment(amount: 25)
 stripe.receivePayment(amount: 9.99)
 
 var paymentGateways: [PaymentGateway] = [paypal, stripe]
-
 
 // third-party class, that doesn't conform to PaymentGateway
 class AmazonPayments {
@@ -56,7 +54,6 @@ class AmazonPayments {
         return payments
     }
 }
-
 
 extension AmazonPayments: PaymentGateway {
     func receivePayment(amount: Double) {

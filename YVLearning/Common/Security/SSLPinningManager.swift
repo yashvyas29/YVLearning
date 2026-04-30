@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import Foundation
 import CryptoKit
+import Foundation
 import Security
 
 // MARK: - Protocol
@@ -125,7 +125,8 @@ final class SSLPinningManager: NSObject, SSLPinningManaging, @unchecked Sendable
     func urlSession(
         _ session: URLSession,
         didReceive challenge: URLAuthenticationChallenge,
-        completionHandler: @escaping @Sendable (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+        completionHandler:
+            @escaping @Sendable (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
     ) {
         guard
             challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,

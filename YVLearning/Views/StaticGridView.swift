@@ -59,7 +59,7 @@ struct StaticGridView: View {
                 Divider()
 
                 GridRow {
-//                    Text("Total")
+                    // Text("Total")
                     Text("$4600")
                         .gridCellColumns(2)
                         .multilineTextAlignment(.trailing)

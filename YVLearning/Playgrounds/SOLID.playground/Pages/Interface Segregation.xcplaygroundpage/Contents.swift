@@ -8,15 +8,14 @@ import UIKit
 
 protocol ImageProtocol {
     var base64Encoded: String { get }
-    var jpegData: Data? { get}
+    var jpegData: Data? { get }
     var pngData: Data? { get }
 
     init(data: Data)
-    
+
     init(from url: URL) throws
     func save(to url: URL) throws
 }
-
 
 //MARK: - Segregated Protocols
 
@@ -30,7 +29,7 @@ protocol Base64Encoding: ImageProtocol {
 }
 
 protocol ImageEncoding: ImageProtocol {
-    var jpegData: Data? { get}
+    var jpegData: Data? { get }
     var pngData: Data? { get }
 }
 
@@ -38,7 +37,6 @@ protocol ImagePersistence: ImageProtocol {
     func load(from url: URL) -> Self?
     func save(to url: URL) throws
 }
-
 
 //MARK: - Default behavior implemented in extensions
 
@@ -51,7 +49,8 @@ extension Base64Encoding {
 extension ImageEncoding {
     var jpegData: Data? {
         guard let uiImage = UIImage.init(data: self.data),
-              let jpegData = uiImage.jpegData(compressionQuality: 1) else {
+            let jpegData = uiImage.jpegData(compressionQuality: 1)
+        else {
             return nil
         }
         return jpegData
@@ -59,13 +58,13 @@ extension ImageEncoding {
 
     var pngData: Data? {
         guard let uiImage = UIImage.init(data: self.data),
-              let pngData = uiImage.pngData() else {
+            let pngData = uiImage.pngData()
+        else {
             return nil
         }
         return pngData
     }
 }
-
 
 // MARK: - Adopters
 

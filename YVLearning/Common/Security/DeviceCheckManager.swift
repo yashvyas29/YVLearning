@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import Foundation
 import DeviceCheck
+import Foundation
 
 // MARK: - System Service Protocol
 
@@ -106,7 +106,8 @@ struct DeviceCheckManager: DeviceCheckManaging {
             case .notSupported:
                 return "DeviceCheck is not supported on this device or in the simulator."
             case .tokenGenerationFailed(let error):
-                return "Token generation failed: \(error?.localizedDescription ?? "unexpected nil response from Apple.")"
+                return
+                    "Token generation failed: \(error?.localizedDescription ?? "unexpected nil response from Apple.")"
             }
         }
     }

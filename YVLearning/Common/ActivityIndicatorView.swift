@@ -15,7 +15,9 @@ public struct ActivityIndicatorView: UIViewRepresentable {
     public func makeUIView(context: UIViewRepresentableContext<Self>) -> UIActivityIndicatorView {
         UIActivityIndicatorView()
     }
-    public func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<Self>) {
+    public func updateUIView(
+        _ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<Self>
+    ) {
         if isAnimating {
             uiView.startAnimating()
         } else {

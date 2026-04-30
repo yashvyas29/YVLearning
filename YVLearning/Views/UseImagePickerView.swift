@@ -20,14 +20,17 @@ struct UseImagePickerView: View {
                     .scaledToFit()
             }
 
-            Button(action: {
-                isImagePickerPresented = true
-            }, label: {
-                HStack {
-                    Image(systemName: "photo.badge.plus.fill")
-                    Text("Pick Image")
+            Button(
+                action: {
+                    isImagePickerPresented = true
+                },
+                label: {
+                    HStack {
+                        Image(systemName: "photo.badge.plus.fill")
+                        Text("Pick Image")
+                    }
                 }
-            })
+            )
             .buttonStyle(.borderless)
             .font(.title)
         }

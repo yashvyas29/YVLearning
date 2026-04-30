@@ -33,7 +33,6 @@ final class Handler<T>: RequestHandling, CustomStringConvertible {
     }
 }
 
-
 let dataHandler = Handler<Data>(next: nil)
 let stringHandler = Handler<String>(next: dataHandler)
 let dateHandler = Handler<Date>(next: stringHandler)

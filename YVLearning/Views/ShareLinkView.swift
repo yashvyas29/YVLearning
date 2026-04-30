@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ShareLinkView: View {
 
-    private let shareItem = URL(string: "https://developer.apple.com/documentation/SwiftUI/ShareLink")!
+    private let shareItem = URL(
+        string: "https://developer.apple.com/documentation/SwiftUI/ShareLink")!
     private let cornerRadius = 20.0
     private let spacing = 44.0
 
@@ -89,8 +90,10 @@ struct ShareLinkView: View {
     }
 
     func shareBeforeiOS16() {
-        let activityVC = UIActivityViewController(activityItems: [shareItem], applicationActivities: nil)
-        UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
+        let activityVC = UIActivityViewController(
+            activityItems: [shareItem], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(
+            activityVC, animated: true, completion: nil)
     }
 
 }

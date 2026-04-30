@@ -25,8 +25,10 @@ struct RedCircleButtonStyle: ButtonStyle {
 
 struct RedCircleButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
-        Button(action: { print("Pressed") },
-               label: { Text("Add Item") })
+        Button(
+            action: { print("Pressed") },
+            label: { Text("Add Item") }
+        )
         .buttonStyle(.redCircleStyle)
         .padding()
         .previewAsComponent()

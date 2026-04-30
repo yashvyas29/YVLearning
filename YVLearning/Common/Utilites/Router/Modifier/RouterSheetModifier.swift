@@ -5,12 +5,13 @@
 //  Created by Vyacheslav Ansimov.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 protocol RouterSheetScreenProtocol {}
 
-struct RouterSheetModifier<Screen, ScreenType> where Screen: View, ScreenType: RouterSheetScreenProtocol {
+struct RouterSheetModifier<Screen, ScreenType>
+where Screen: View, ScreenType: RouterSheetScreenProtocol {
 
     // MARK: Public
 
@@ -47,7 +48,8 @@ struct RouterSheetModifier<Screen, ScreenType> where Screen: View, ScreenType: R
 
 extension RouterSheetModifier: ViewModifier {
     func body(content: Content) -> some View {
-        let view = content
+        let view =
+            content
             .onReceive(publisher) { screenType = $0 }
         return sheetBody(view: view)
     }

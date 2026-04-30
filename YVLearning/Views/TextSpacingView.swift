@@ -34,9 +34,10 @@ struct TextSpacingView: View {
                 Slider(value: $letterSpacing, in: 0...100)
                     .padding(.horizontal)
                     .accentColor(.red)
-                    .overlay(RoundedRectangle(cornerRadius: 50)
-                        .stroke(style: .init(lineWidth: 2))
-                        .foregroundColor(.yellow))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 50)
+                            .stroke(style: .init(lineWidth: 2))
+                            .foregroundColor(.yellow))
                 Text("Current line spacing: \(lineSpacing, specifier: "%.2f")")
                 IOSSlider(percentage: $lineSpacing)
                     .frame(height: 35)

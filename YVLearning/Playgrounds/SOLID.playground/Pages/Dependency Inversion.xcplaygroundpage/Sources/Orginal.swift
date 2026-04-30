@@ -4,7 +4,7 @@ import Foundation
 
 class Persistence {
     private var logger = Logger()
-    
+
     func save(data: Data, to url: URL) throws {
         do {
             try data.write(to: url)

@@ -17,7 +17,7 @@ struct MyLinearAnimation: CustomAnimation {
         if time <= duration {
             value.scaled(by: time / duration)
         } else {
-            nil // animation has finished
+            nil  // animation has finished
         }
     }
 

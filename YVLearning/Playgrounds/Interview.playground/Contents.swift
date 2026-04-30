@@ -518,7 +518,7 @@ print()
  **
  ***
  ****
- 
+
 func triangleOfAstrisks(_ rows: Int) {
     for i in 1...rows {
         for _ in 1...i {
@@ -556,7 +556,8 @@ print()
 // Codility
 var arr = [1, 2, 3]
 if let element = arr.first(where: { $0 == 1 }),
-   let index = arr.firstIndex(of: element) {
+    let index = arr.firstIndex(of: element)
+{
     arr.remove(at: index)
 }
 
@@ -711,7 +712,7 @@ print("f")
 print("\nExample4\n")
 final class Box: CustomDebugStringConvertible {
     var device: String
-    
+
     init(device: String) {
         self.device = device
     }

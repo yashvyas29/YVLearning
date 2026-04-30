@@ -15,7 +15,10 @@ extension Date {
 
     func getWeeksFromCurrentWeekToEndOfTheYear() {
         let currentYear = calendar.component(.year, from: self)
-        guard let lastDayOfTheYear = calendar.date(from: DateComponents(year: currentYear, month: 12, day: 31)) else {
+        guard
+            let lastDayOfTheYear = calendar.date(
+                from: DateComponents(year: currentYear, month: 12, day: 31))
+        else {
             print("Can not get the weeks of the year.")
             return
         }
@@ -27,7 +30,8 @@ extension Date {
                 return
             }
             print("\(startDay.formatted()) - \(endDay.formatted())")
-            guard let nextDate = calendar.date(byAdding: .weekOfYear, value: 1, to: currentDate) else {
+            guard let nextDate = calendar.date(byAdding: .weekOfYear, value: 1, to: currentDate)
+            else {
                 print("Can not get the weeks of the year.")
                 return
             }
@@ -37,8 +41,10 @@ extension Date {
 
     func getWeeksFromCurrentWeekToStartOfTheYear() {
         let currentYear = calendar.component(.year, from: self)
-        guard let startDayOfTheYear = calendar.date(
-            from: DateComponents(year: currentYear, month: 1, day: 1))?.startOfWeek else {
+        guard
+            let startDayOfTheYear = calendar.date(
+                from: DateComponents(year: currentYear, month: 1, day: 1))?.startOfWeek
+        else {
             print("Can not get the weeks of the year.")
             return
         }
@@ -50,7 +56,8 @@ extension Date {
                 return
             }
             print("\(startDay.formatted()) - \(endDay.formatted())")
-            guard let nextDate = calendar.date(byAdding: .weekOfYear, value: -1, to: currentDate) else {
+            guard let nextDate = calendar.date(byAdding: .weekOfYear, value: -1, to: currentDate)
+            else {
                 print("Can not get the weeks of the year.")
                 return
             }
@@ -60,8 +67,12 @@ extension Date {
 
     func getWeeksOfYear() {
         let currentYear = calendar.component(.year, from: self)
-        guard let lastDayOfTheYear = calendar.date(from: DateComponents(year: currentYear, month: 12, day: 31)),
-        var currentDate = calendar.date(from: DateComponents(year: currentYear, month: 1, day: 1)) else {
+        guard
+            let lastDayOfTheYear = calendar.date(
+                from: DateComponents(year: currentYear, month: 12, day: 31)),
+            var currentDate = calendar.date(
+                from: DateComponents(year: currentYear, month: 1, day: 1))
+        else {
             print("Can not get the weeks of the year.")
             return
         }
@@ -72,7 +83,8 @@ extension Date {
                 return
             }
             print("\(startDay.formatted()) - \(endDay.formatted())")
-            guard let nextDate = calendar.date(byAdding: .weekOfYear, value: 1, to: currentDate) else {
+            guard let nextDate = calendar.date(byAdding: .weekOfYear, value: 1, to: currentDate)
+            else {
                 print("Can not get the weeks of the year.")
                 return
             }

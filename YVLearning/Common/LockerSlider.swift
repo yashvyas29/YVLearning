@@ -15,18 +15,18 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
     private let bounds: ClosedRange<V>
     private let step: V.Stride
 
-    private let length: CGFloat    = 50
+    private let length: CGFloat = 50
     private let lineWidth: CGFloat = 2
 
-    @State private var ratio: CGFloat   = 0
+    @State private var ratio: CGFloat = 0
     @State private var startX: CGFloat?
 
     // MARK: - Initializer
     init(value: Binding<V>, in bounds: ClosedRange<V>, step: V.Stride = 1) {
-        _value  = value
+        _value = value
 
         self.bounds = bounds
-        self.step   = step
+        self.step = step
     }
 
     // MARK: - View
@@ -36,21 +36,24 @@ struct LockerSlider<V>: View where V: BinaryFloatingPoint, V.Stride: BinaryFloat
             ZStack(alignment: .leading) {
                 // Track
                 RoundedRectangle(cornerRadius: length / 2)
-                    .foregroundColor(Color(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)))
+                    .foregroundColor(.red)
 
                 // Thumb
                 Circle()
                     .foregroundColor(.yellow)
                     .frame(width: length, height: length)
                     .offset(x: (proxy.size.width - length) * ratio)
-                    .gesture(DragGesture(minimumDistance: 0)
-                        .onChanged({ updateStatus(value: $0, proxy: proxy) })
-                        .onEnded { _ in startX = nil })
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged({ updateStatus(value: $0, proxy: proxy) })
+                            .onEnded { _ in startX = nil })
             }
             .frame(height: length)
             .overlay(overlay)
-            .simultaneousGesture(DragGesture(minimumDistance: 0)
-                .onChanged({ update(value: $0, proxy: proxy) }))
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged({ update(value: $0, proxy: proxy) })
+            )
             .onAppear {
                 ratio = min(1, max(0, CGFloat(value / bounds.upperBound)))
             }

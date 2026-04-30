@@ -21,10 +21,12 @@ struct IOSSlider: View {
             }
             .frame(maxHeight: 60)
             .cornerRadius(15)
-            .gesture(DragGesture(minimumDistance: 0)
-                .onChanged({ value in
-                    self.percentage = min(max(0, CGFloat(value.location.x / geometry.size.width * 100)), 100)
-                }))
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged({ value in
+                        self.percentage = min(
+                            max(0, CGFloat(value.location.x / geometry.size.width * 100)), 100)
+                    }))
         }
     }
 }

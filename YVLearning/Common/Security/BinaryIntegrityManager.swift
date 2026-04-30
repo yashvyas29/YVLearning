@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import Foundation
 import CryptoKit
+import Foundation
 
 // MARK: - Protocol
 
@@ -85,8 +85,8 @@ struct BinaryIntegrityManager: BinaryIntegrityManaging {
     /// (e.g. `/tmp`, `/var/mobile/Documents`), this check returns `false`.
     var isRunningFromValidContainer: Bool {
         let path = Bundle.main.bundlePath
-        return path.contains("/var/containers/Bundle/Application/") ||
-               path.contains("/CoreSimulator/")
+        return path.contains("/var/containers/Bundle/Application/")
+            || path.contains("/CoreSimulator/")
     }
 
     // MARK: - Distribution Type

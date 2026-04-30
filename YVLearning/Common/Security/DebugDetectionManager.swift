@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import Foundation
 import Darwin
+import Foundation
 
 // MARK: - Protocol
 
@@ -54,8 +54,8 @@ struct DebugDetectionManager: DebugDetecting {
 
     enum Indicator: String, CaseIterable, Sendable {
         case debuggerAttached = "Debugger attached (P_TRACED flag set via sysctl)"
-        case ttyAttached      = "Process stdin/stdout/stderr is connected to a TTY"
-        case simulator        = "Running in the iOS Simulator"
+        case ttyAttached = "Process stdin/stdout/stderr is connected to a TTY"
+        case simulator = "Running in the iOS Simulator"
     }
 
     // MARK: - DebugDetecting
@@ -72,8 +72,8 @@ struct DebugDetectionManager: DebugDetecting {
     /// All indicators that triggered, including the simulator flag.
     var detectedIndicators: [Indicator] {
         var found: [Indicator] = []
-        if hasDebuggerAttached     { found.append(.debuggerAttached) }
-        if hasControllingTTY       { found.append(.ttyAttached) }
+        if hasDebuggerAttached { found.append(.debuggerAttached) }
+        if hasControllingTTY { found.append(.ttyAttached) }
         if hasSimulatorEnvironment { found.append(.simulator) }
         return found
     }

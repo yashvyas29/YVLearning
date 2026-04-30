@@ -11,9 +11,11 @@ struct ApiManager {
     static let shared = ApiManager()
     private init() {}
 
-    func request<D: Decodable, E: Encodable>(urlString: String,
-                                             httpMethod: HTTPMethod = .get,
-                                             type: D.Type, data: E? = nil) async throws -> D {
+    func request<D: Decodable, E: Encodable>(
+        urlString: String,
+        httpMethod: HTTPMethod = .get,
+        type: D.Type, data: E? = nil
+    ) async throws -> D {
         guard let url = URL(string: urlString) else {
             throw ApiError.invalidUrl
         }

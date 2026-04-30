@@ -8,8 +8,10 @@ final public class AppSettings {
 
     private let concurrentQueue = DispatchQueue(label: "concurrentQueue", attributes: .concurrent)
 
-    private var settings: [String: Any] = ["Theme": "Dark",
-                                           "MaxConsurrentDownloads": 4]
+    private var settings: [String: Any] = [
+        "Theme": "Dark",
+        "MaxConsurrentDownloads": 4,
+    ]
 
     private init() {}
 
@@ -30,7 +32,7 @@ final public class AppSettings {
     }
 
     public func set(value: Any, forKey key: String) {
-        concurrentQueue.async( flags: .barrier ) {
+        concurrentQueue.async(flags: .barrier) {
             self.settings[key] = value
         }
     }

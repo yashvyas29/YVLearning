@@ -69,8 +69,8 @@ struct DetailView: View {
 
 struct NumberFormLink: View {
     @ObservedObject var viewModel: NumberFormLinkViewModel
-//    @Binding var entries: [Int]
-//    var currentSelection: Binding<Int?>
+    // @Binding var entries: [Int]
+    // var currentSelection: Binding<Int?>
 
     var body: some View {
         ZStack {
@@ -87,8 +87,9 @@ struct NumberFormLink: View {
             }
         }
         .navigationBarTitle("NumberFormLink", displayMode: .inline)
-        .navigationBarItems(leading: Button("Add Low", action: viewModel.addLow),
-                            trailing: Button("Add High", action: viewModel.addHigh))
+        .navigationBarItems(
+            leading: Button("Add Low", action: viewModel.addLow),
+            trailing: Button("Add High", action: viewModel.addHigh))
     }
 }
 

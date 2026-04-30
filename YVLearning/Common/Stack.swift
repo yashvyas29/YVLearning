@@ -19,7 +19,7 @@ extension Stackable {
 struct Stack<Element>: Stackable where Element: Equatable {
     private var storage = [Element]()
     func peek() -> Element? { storage.last }
-    mutating func push(_ element: Element) { storage.append(element)  }
+    mutating func push(_ element: Element) { storage.append(element) }
     mutating func pop() -> Element? { storage.popLast() }
 }
 
@@ -30,7 +30,7 @@ extension Stack: Equatable {
 extension Stack: CustomStringConvertible {
     var description: String { "\(storage)" }
 }
-    
+
 extension Stack: ExpressibleByArrayLiteral {
     init(arrayLiteral elements: Self.Element...) { storage = elements }
 }

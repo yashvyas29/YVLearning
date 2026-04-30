@@ -52,7 +52,8 @@ struct FormFieldValidation {
             if isNotValid(regEx: regEx) { return error }
         case .password(let errorMessage):
             let error = errorMessage ?? "Password is not valid."
-            let regEx = "(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}"
+            let regEx =
+                "(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}"
             /*
              (?=.*[A-Z].*[A-Z])        Ensure string has two uppercase letters.
              (?=.*[!@#$&*])            Ensure string has one special case letter.
@@ -70,7 +71,7 @@ struct FormFieldValidation {
     }
 
     func isNotValid(regEx: String) -> Bool {
-        let predicate = NSPredicate(format:"SELF MATCHES %@", regEx)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regEx)
         return !predicate.evaluate(with: value)
     }
 }

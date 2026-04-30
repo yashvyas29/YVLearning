@@ -55,17 +55,19 @@ struct YVGaugeView: View {
             .foregroundColor(.red)
             .font(.title)
 
-            YVCircularProgressView(color: .red, progress: $progress, backgroundColor: .black, lineWidth: lineWidth)
-                .frame(width: 200)
-                .onAppear {
-                    Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                        if progress <= 0.9 {
-                            progress += 0.1
-                        } else {
-                            timer.invalidate()
-                        }
+            YVCircularProgressView(
+                color: .red, progress: $progress, backgroundColor: .black, lineWidth: lineWidth
+            )
+            .frame(width: 200)
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                    if progress <= 0.9 {
+                        progress += 0.1
+                    } else {
+                        timer.invalidate()
                     }
                 }
+            }
         }
         .padding()
         .onAppear {
@@ -73,14 +75,20 @@ struct YVGaugeView: View {
         }
     }
 
-    private func circularView(color: Color, background: Color = .clear,
-                              progress: CGFloat, from: CGFloat = 0) -> some View {
+    private func circularView(
+        color: Color, background: Color = .clear,
+        progress: CGFloat, from: CGFloat = 0
+    ) -> some View {
         Circle()
             .trim(from: from, to: showProgress ? progress : 0)
             .stroke(color, style: .init(lineWidth: lineWidth, lineCap: .round))
             .rotationEffect(Angle(degrees: -90))
-            .overlay(Circle()
-                .stroke(background == .clear ? background : background.opacity(0.1), lineWidth: lineWidth))
+            .overlay(
+                Circle()
+                    .stroke(
+                        background == .clear ? background : background.opacity(0.1),
+                        lineWidth: lineWidth)
+            )
             .animation(.linear(duration: 1), value: showProgress)
             .padding()
     }

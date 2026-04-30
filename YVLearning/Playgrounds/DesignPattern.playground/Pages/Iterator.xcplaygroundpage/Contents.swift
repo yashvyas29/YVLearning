@@ -52,7 +52,6 @@ final class Queue<T> {
     }
 }
 
-
 struct QueueIterator<T>: IteratorProtocol {
     private let queue: Queue<T>
     private var currentNode: Node<T>?
@@ -79,8 +78,6 @@ extension Queue: Sequence {
     }
 }
 
-
-
 var queue = Queue<Int>()
 queue.enqueue(1)
 queue.enqueue(2)
@@ -93,6 +90,5 @@ var queryIterator = queue.makeIterator()
 while let item = queryIterator.next() {
     print(item)
 }
-
 
 //: [Next](@next)

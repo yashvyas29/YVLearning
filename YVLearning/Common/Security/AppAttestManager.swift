@@ -5,9 +5,9 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import Foundation
-import DeviceCheck
 import CryptoKit
+import DeviceCheck
+import Foundation
 
 // MARK: - System Service Protocol
 
@@ -16,8 +16,12 @@ import CryptoKit
 protocol AppAttestService {
     var isSupported: Bool { get }
     func generateKey(completionHandler: @escaping @Sendable (String?, Error?) -> Void)
-    func attestKey(_ keyId: String, clientDataHash: Data, completionHandler: @escaping @Sendable (Data?, Error?) -> Void)
-    func generateAssertion(_ keyId: String, clientDataHash: Data, completionHandler: @escaping @Sendable (Data?, Error?) -> Void)
+    func attestKey(
+        _ keyId: String, clientDataHash: Data,
+        completionHandler: @escaping @Sendable (Data?, Error?) -> Void)
+    func generateAssertion(
+        _ keyId: String, clientDataHash: Data,
+        completionHandler: @escaping @Sendable (Data?, Error?) -> Void)
 }
 
 @available(iOS 14.0, *)
@@ -206,9 +210,11 @@ struct AppAttestManager: AppAttestManaging {
             case .keyIdLoadFailed(let error):
                 return "Failed to load key ID from Keychain: \(error.localizedDescription)"
             case .attestationFailed(let error):
-                return "Key attestation failed: \(error?.localizedDescription ?? "unexpected nil response.")"
+                return
+                    "Key attestation failed: \(error?.localizedDescription ?? "unexpected nil response.")"
             case .assertionFailed(let error):
-                return "Assertion generation failed: \(error?.localizedDescription ?? "unexpected nil response.")"
+                return
+                    "Assertion generation failed: \(error?.localizedDescription ?? "unexpected nil response.")"
             }
         }
     }

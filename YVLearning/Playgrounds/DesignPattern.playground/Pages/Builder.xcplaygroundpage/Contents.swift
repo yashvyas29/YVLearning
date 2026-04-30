@@ -1,4 +1,3 @@
-
 //:[Previous](@previous)
 
 import UIKit
@@ -15,8 +14,9 @@ struct User {
 
     private init?(builder: Builder) {
         guard let id = builder.id,
-              let firstName = builder.firstName,
-              let lastName = builder.lastName else {
+            let firstName = builder.firstName,
+            let lastName = builder.lastName
+        else {
             return nil
         }
         self.id = id
@@ -103,7 +103,8 @@ if let user = User.Builder()
     .setId("1")
     .setFirstName("Yash")
     .setLastName("Vyas")
-    .build() {
+    .build()
+{
     debugPrint(user.fullName)
 } else {
     debugPrint("User not created.")

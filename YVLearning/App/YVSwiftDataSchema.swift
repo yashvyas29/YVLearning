@@ -12,7 +12,7 @@ enum YV_ShemaMigrationPlan_02_00_00: SchemaMigrationPlan {
     static var schemas: [any VersionedSchema.Type] {
         [
             YV_VersionedSchema_01_00_00.self,
-            YV_VersionedSchema_02_00_00.self
+            YV_VersionedSchema_02_00_00.self,
         ]
     }
 

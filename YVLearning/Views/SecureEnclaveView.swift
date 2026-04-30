@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import SwiftUI
 import CryptoKit
+import SwiftUI
 
 // MARK: - ViewModel
 
@@ -50,7 +50,8 @@ final class SecureEnclaveViewModel {
             return
         }
         guard let data = message.data(using: .utf8),
-              let sigData = Data(hexString: signatureHex) else {
+            let sigData = Data(hexString: signatureHex)
+        else {
             setStatus("Invalid input data.", success: false)
             return
         }
@@ -188,8 +189,10 @@ struct SecureEnclaveView: View {
         } header: {
             Text("Signing (Secure Enclave)")
         } footer: {
-            Text("The P-256 private key is generated and stored inside the Secure Enclave. Only its wrapped reference is saved to the Keychain.")
-                .font(.caption)
+            Text(
+                "The P-256 private key is generated and stored inside the Secure Enclave. Only its wrapped reference is saved to the Keychain."
+            )
+            .font(.caption)
         }
     }
 
@@ -215,8 +218,10 @@ struct SecureEnclaveView: View {
         } header: {
             Text("Keychain")
         } footer: {
-            Text("Stores and retrieves a generic password item using kSecClassGenericPassword with kSecAttrAccessibleWhenUnlockedThisDeviceOnly.")
-                .font(.caption)
+            Text(
+                "Stores and retrieves a generic password item using kSecClassGenericPassword with kSecAttrAccessibleWhenUnlockedThisDeviceOnly."
+            )
+            .font(.caption)
         }
     }
 
@@ -227,9 +232,12 @@ struct SecureEnclaveView: View {
                     .foregroundStyle(.secondary)
                     .font(.callout)
             } else {
-                Label(viewModel.statusMessage, systemImage: viewModel.isSuccess ? "checkmark.circle.fill" : "xmark.circle.fill")
-                    .foregroundStyle(viewModel.isSuccess ? .green : .red)
-                    .font(.callout)
+                Label(
+                    viewModel.statusMessage,
+                    systemImage: viewModel.isSuccess ? "checkmark.circle.fill" : "xmark.circle.fill"
+                )
+                .foregroundStyle(viewModel.isSuccess ? .green : .red)
+                .font(.callout)
             }
         }
     }
@@ -237,8 +245,8 @@ struct SecureEnclaveView: View {
 
 // MARK: - Hex Helpers
 
-private extension Data {
-    init?(hexString: String) {
+extension Data {
+    fileprivate init?(hexString: String) {
         let clean = hexString.filter { $0.isHexDigit }
         guard clean.count % 2 == 0 else { return nil }
         var bytes: [UInt8] = []
@@ -252,7 +260,7 @@ private extension Data {
         self.init(bytes)
     }
 
-    var hexString: String {
+    fileprivate var hexString: String {
         map { String(format: "%02x", $0) }.joined()
     }
 }

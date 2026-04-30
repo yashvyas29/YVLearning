@@ -2,7 +2,7 @@
 
 import Foundation
 
-fileprivate protocol CoffeeMachineState {
+private protocol CoffeeMachineState {
     func isReadyToBrew() -> Bool
     func brew()
 }
@@ -18,11 +18,11 @@ extension CoffeeMachineState {
     }
 }
 
-fileprivate struct StandbyState: CoffeeMachineState {
+private struct StandbyState: CoffeeMachineState {
 
 }
 
-fileprivate struct FillWaterTankState: CoffeeMachineState {
+private struct FillWaterTankState: CoffeeMachineState {
     var context: CoffeeMachine
 
     func isReadyToBrew() -> Bool {
@@ -36,7 +36,7 @@ fileprivate struct FillWaterTankState: CoffeeMachineState {
     }
 }
 
-fileprivate struct EmptyCapsuleBinState: CoffeeMachineState {
+private struct EmptyCapsuleBinState: CoffeeMachineState {
     var context: CoffeeMachine
 
     func isReadyToBrew() -> Bool {
@@ -51,7 +51,7 @@ fileprivate struct EmptyCapsuleBinState: CoffeeMachineState {
     }
 }
 
-fileprivate struct InsertCapsuleState: CoffeeMachineState {
+private struct InsertCapsuleState: CoffeeMachineState {
     var context: CoffeeMachine
 
     func isReadyToBrew() -> Bool {
@@ -65,7 +65,7 @@ fileprivate struct InsertCapsuleState: CoffeeMachineState {
     }
 }
 
-fileprivate struct BrewCoffeeState: CoffeeMachineState {
+private struct BrewCoffeeState: CoffeeMachineState {
     var context: CoffeeMachine
 
     func brew() {

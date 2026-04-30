@@ -5,8 +5,8 @@
 //  Created by Vyacheslav Ansimov.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 protocol RouterAlertScreenProtocol {}
 
@@ -30,15 +30,17 @@ extension RouterAlertModifier: ViewModifier {
         content
             .onReceive(publisher) { screenType = $0 }
             .alert(
-                isPresented: .init(get: { screenType != nil },
-                                   set: { if !$0 { screenType = nil } }),
+                isPresented: .init(
+                    get: { screenType != nil },
+                    set: { if !$0 { screenType = nil } }),
                 content: {
                     if let type = screenType {
                         return alert(type)
                     } else {
-                        return Alert(title: Text("Something went wrong"),
-                                     message: nil,
-                                     dismissButton: .cancel())
+                        return Alert(
+                            title: Text("Something went wrong"),
+                            message: nil,
+                            dismissButton: .cancel())
                     }
                 })
     }

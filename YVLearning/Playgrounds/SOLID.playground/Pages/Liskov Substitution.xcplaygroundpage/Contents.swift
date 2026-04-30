@@ -14,11 +14,11 @@ var shapes = [Shape]()
 
 class Rectangle: Shape {
     private var l, w: Double
-    
+
     override func area() -> Double {
         return l * w
     }
-    
+
     init(length: Double, width: Double) {
         l = length
         w = width
@@ -27,11 +27,11 @@ class Rectangle: Shape {
 
 class Square: Shape {
     private var a: Double
-    
+
     override func area() -> Double {
         return a * a
     }
-    
+
     init(side: Double) {
         a = side
     }
@@ -39,11 +39,11 @@ class Square: Shape {
 
 class Circle: Shape {
     private var r: Double
-    
+
     override func area() -> Double {
         return Double.pi * r * r
     }
-    
+
     init(radius: Double) {
         r = radius
     }
@@ -57,7 +57,7 @@ shapes.append(square)
 shapes.append(rectangle)
 shapes.append(circle)
 // 1 + 6 + 12.56
-let totalArea = shapes.reduce(0, { $0 + $1.area() } )
+let totalArea = shapes.reduce(0, { $0 + $1.area() })
 print(totalArea)
 // Output: 19.5663706143592
 

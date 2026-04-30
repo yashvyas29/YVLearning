@@ -16,7 +16,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
         imagePickerVC.delegate = context.coordinator
         return imagePickerVC
     }
-    
+
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
         // Used to update UIKit class after state changes to SwiftUI
     }
@@ -26,7 +26,9 @@ struct ImagePickerView: UIViewControllerRepresentable {
     }
 }
 
-final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate
+{
 
     let context: ImagePickerView
 
@@ -34,7 +36,10 @@ final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate, U
         self.context = context
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
         guard let image = info[.originalImage] as? UIImage else { return }
         context.selectedImage(image)
     }

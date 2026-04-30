@@ -45,9 +45,9 @@ struct NavigationStackView: View {
                         path = .init()
                     }
                 }
-                    .onTapGesture {
-                        path.append(userId)
-                    }
+                .onTapGesture {
+                    path.append(userId)
+                }
             }
             .navigationDestination(for: String.self) { userName in
                 Text(userName)
@@ -127,12 +127,14 @@ struct NavigationContentView: View {
                         router.isPresented = false
                     }
             }
-            .fullScreenCover(isPresented: $router.isFullPresented, content: {
-                Text("Full Screen Presented")
-                    .onTapGesture {
-                        router.isFullPresented = false
-                    }
-            })
+            .fullScreenCover(
+                isPresented: $router.isFullPresented,
+                content: {
+                    Text("Full Screen Presented")
+                        .onTapGesture {
+                            router.isFullPresented = false
+                        }
+                })
         }
     }
 }

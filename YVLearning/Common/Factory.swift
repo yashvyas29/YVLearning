@@ -206,7 +206,7 @@ open class SharedContainer {
                 if let instance = box.instance as? T {
                     if let optional = instance as? OptionalProtocol {
                         if optional.hasWrappedValue {
-                           return instance
+                            return instance
                         }
                     } else {
                         return instance
@@ -289,9 +289,9 @@ extension SharedContainer.Scope {
 
     /// Resets all scope caches.
     public static func reset(includingSingletons: Bool = false) {
-        Self.scopes.forEach {
-            if !($0 is Singleton) || includingSingletons {
-                $0.reset()
+        for scope in Self.scopes {
+            if !(scope is Singleton) || includingSingletons {
+                scope.reset()
             }
         }
     }
@@ -301,61 +301,61 @@ extension SharedContainer.Scope {
 }
 
 #if swift(>=5.1)
-/// Convenience property wrapper takes a factory and creates an instance of the desired type.
-@propertyWrapper public struct Injected<T> {
-    private var dependency: T
-    public init(_ factory: Factory<T>) {
-        self.dependency = factory()
+    /// Convenience property wrapper takes a factory and creates an instance of the desired type.
+    @propertyWrapper public struct Injected<T> {
+        private var dependency: T
+        public init(_ factory: Factory<T>) {
+            self.dependency = factory()
+        }
+        public var wrappedValue: T {
+            get { return dependency }
+            mutating set { dependency = newValue }
+        }
     }
-    public var wrappedValue: T {
-        get { return dependency }
-        mutating set { dependency = newValue }
-    }
-}
 
-/// Convenience property wrapper takes a factory and creates an instance of the
-/// desired type the first time the wrapped value is requested.
-@propertyWrapper public struct LazyInjected<T> {
-    private var factory: Factory<T>
-    private var dependency: T!
-    private var initialize = true
-    public init(_ factory: Factory<T>) {
-        self.factory = factory
-    }
-    public var wrappedValue: T {
-        mutating get {
-            if initialize {
-                dependency = factory()
-                initialize = false
+    /// Convenience property wrapper takes a factory and creates an instance of the
+    /// desired type the first time the wrapped value is requested.
+    @propertyWrapper public struct LazyInjected<T> {
+        private var factory: Factory<T>
+        private var dependency: T!
+        private var initialize = true
+        public init(_ factory: Factory<T>) {
+            self.factory = factory
+        }
+        public var wrappedValue: T {
+            mutating get {
+                if initialize {
+                    dependency = factory()
+                    initialize = false
+                }
+                return dependency
             }
-            return dependency
-        }
-        mutating set {
-            dependency = newValue
+            mutating set {
+                dependency = newValue
+            }
         }
     }
-}
 
-@propertyWrapper public struct WeakLazyInjected<T> {
-    private var factory: Factory<T>
-    private weak var dependency: AnyObject?
-    private var initialize = true
-    public init(_ factory: Factory<T>) {
-        self.factory = factory
-    }
-    public var wrappedValue: T? {
-        mutating get {
-            if initialize {
-                dependency = factory() as AnyObject
-                initialize = false
+    @propertyWrapper public struct WeakLazyInjected<T> {
+        private var factory: Factory<T>
+        private weak var dependency: AnyObject?
+        private var initialize = true
+        public init(_ factory: Factory<T>) {
+            self.factory = factory
+        }
+        public var wrappedValue: T? {
+            mutating get {
+                if initialize {
+                    dependency = factory() as AnyObject
+                    initialize = false
+                }
+                return dependency as? T
             }
-            return dependency as? T
-        }
-        mutating set {
-            dependency = newValue as AnyObject
+            mutating set {
+                dependency = newValue as AnyObject
+            }
         }
     }
-}
 #endif
 
 /// Enable automatic registrations
@@ -391,16 +391,19 @@ private struct Registration<P, T> {
     /// This is pretty much the heart of Factory.
     func resolve(_ params: P) -> T {
         _ = Container.autoRgistrationCheck
-        let currentFactory: (P) -> T = (SharedContainer.Registrations
+        let currentFactory: (P) -> T =
+            (SharedContainer.Registrations
             .factory(for: id) as? TypedFactory<P, T>)?.factory ?? factory
-        let instance: T = scope?.resolve(id: id, factory: { currentFactory(params) }) ?? currentFactory(params)
+        let instance: T =
+            scope?.resolve(id: id, factory: { currentFactory(params) }) ?? currentFactory(params)
         SharedContainer.Decorator.decorate?(instance)
         return instance
     }
 
     /// Registers a factory override and resets cache.
     func register(factory: @escaping (_ params: P) -> T) {
-        SharedContainer.Registrations.register(id: id, factory: TypedFactory<P, T>(factory: factory))
+        SharedContainer.Registrations.register(
+            id: id, factory: TypedFactory<P, T>(factory: factory))
         scope?.reset(id)
     }
 

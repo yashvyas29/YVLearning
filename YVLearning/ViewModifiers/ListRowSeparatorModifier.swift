@@ -8,8 +8,10 @@
 import SwiftUI
 
 extension View {
-    func listRowSeparator(insets: EdgeInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0),
-                          background: Color = .white) -> some View {
+    func listRowSeparator(
+        insets: EdgeInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0),
+        background: Color = .white
+    ) -> some View {
         modifier(ListRowSeparatorModifier(insets: insets, background: background))
     }
 }
@@ -29,16 +31,16 @@ struct ListRowSeparatorModifier: ViewModifier {
             .overlay(
                 VStack {
                     HStack {}
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 1)
-                    .background(background)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 1)
+                        .background(background)
                     Spacer()
                     HStack {}
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 1)
-                    .background(background)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 1)
+                        .background(background)
                 }
-                    .padding(.top, -1)
+                .padding(.top, -1)
             )
     }
 }

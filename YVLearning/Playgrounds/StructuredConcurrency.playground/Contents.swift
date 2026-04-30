@@ -2,6 +2,7 @@
 import YVLearning
 // To use Task in playground
 import _Concurrency
+
 // To hide the unnecessary duplicate framework logs
 // import PlaygroundSupport
 // defer{ PlaygroundPage.current.finishExecution() }
@@ -55,7 +56,8 @@ Task {
     debugPrint("Sum of all the values: \(sum)")
     var asyncIntSquareIterator = asyncIntSquareStream(forValues: values).makeAsyncIterator()
     while let value = valueIterator.next(),
-          let squareValue = await asyncIntSquareIterator.next() {
+        let squareValue = await asyncIntSquareIterator.next()
+    {
         debugPrint("Square of \(value) is \(squareValue)")
     }
 }
@@ -80,24 +82,24 @@ class TaskLocalExample {
     static var traceID: Int?
 
     static func initialize() {
-        print("traceID: \(String(describing: traceID))") // traceID: nil
+        print("traceID: \(String(describing: traceID))")  // traceID: nil
 
-        $traceID.withValue(1234) { // bind the value
-            print("traceID: \(String(describing: traceID))") // traceID: 1234
-          call() // traceID: 1234
+        $traceID.withValue(1234) {  // bind the value
+            print("traceID: \(String(describing: traceID))")  // traceID: 1234
+            call()  // traceID: 1234
 
-          Task { // unstructured tasks do inherit task locals by copying
-            call() // traceID: 1234
-          }
+            Task {  // unstructured tasks do inherit task locals by copying
+                call()  // traceID: 1234
+            }
 
-          Task.detached { // detached tasks do not inherit task-local values
-            call() // traceID: nil
-          }
+            Task.detached {  // detached tasks do not inherit task-local values
+                call()  // traceID: nil
+            }
         }
     }
 
     static func call() {
-        print("traceID: \(String(describing: traceID))") // 1234
+        print("traceID: \(String(describing: traceID))")  // 1234
     }
 }
 

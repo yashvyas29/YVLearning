@@ -29,20 +29,27 @@ struct FormView: View {
             Spacer(minLength: 10)
             VStack(alignment: .leading) {
                 HStack {
-                    TextField("TextField", text: $formState.text, onEditingChanged: { editing in
-                        print("onEditingChanged")
-                        print(editing)
-                    }, onCommit: {
-                        print("onCommit")
-                    })
-                    .onReceive(formState.text.publisher, perform: { _ in
-                        print("onReceive of TextField")
-                        print(formState.text)
-                        let textLimit = 10
-                        if formState.text.count >= textLimit {
-                            formState.text = String(formState.text.prefix(textLimit))
+                    TextField(
+                        "TextField", text: $formState.text,
+                        onEditingChanged: { editing in
+                            print("onEditingChanged")
+                            print(editing)
+                        },
+                        onCommit: {
+                            print("onCommit")
                         }
-                    })
+                    )
+                    .onReceive(
+                        formState.text.publisher,
+                        perform: { _ in
+                            print("onReceive of TextField")
+                            print(formState.text)
+                            let textLimit = 10
+                            if formState.text.count >= textLimit {
+                                formState.text = String(formState.text.prefix(textLimit))
+                            }
+                        }
+                    )
                     .textFieldStyle(.roundedBorder)
                     .onAppear {
                         UITextField.appearance().clearButtonMode = .whileEditing

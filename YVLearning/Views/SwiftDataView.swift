@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 08/01/25.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @available(iOS 17.0, *)
 struct SwiftDataView: View {
@@ -59,7 +59,8 @@ struct SwiftDataView: View {
             }
             .scrollDismissesKeyboard(.immediately)
             .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                UIApplication.shared.sendAction(
+                    #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
             .navigationTitle("Swift Data")
             .toolbar {

@@ -21,7 +21,7 @@ struct NumberButtonView: View {
     var body: some View {
         Button("Show Screen \(number)") {
             navView.show(
-                NumberButtonView(number: number+1)
+                NumberButtonView(number: number + 1)
             )
         }
     }

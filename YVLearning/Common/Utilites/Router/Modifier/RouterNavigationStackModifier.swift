@@ -5,8 +5,8 @@
 //  Created by Vyacheslav Ansimov.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 protocol RouterNavigationStackScreenProtocol {}
 
@@ -31,20 +31,23 @@ extension RouterNavigationStackModifier: ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
             content
-                .navigationDestination(isPresented: Binding<Bool>(
-                    get: { screenType != nil },
-                    set: {
-                        if !$0 {
-                            if let type = screenType { onDismiss?(type) }
-                            screenType = nil
-                        }
-                    }), destination: {
+                .navigationDestination(
+                    isPresented: Binding<Bool>(
+                        get: { screenType != nil },
+                        set: {
+                            if !$0 {
+                                if let type = screenType { onDismiss?(type) }
+                                screenType = nil
+                            }
+                        }),
+                    destination: {
                         if let type = screenType {
                             screen(type)
                         } else {
                             EmptyView()
                         }
-                    })
+                    }
+                )
                 .onReceive(publisher) { screenType = $0 }
         } else {
             content

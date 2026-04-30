@@ -24,10 +24,10 @@ class UICardView: UIView {
             label.leadingAnchor.constraint(equalTo: leadingAnchor),
             label.trailingAnchor.constraint(equalTo: trailingAnchor),
             label.topAnchor.constraint(equalTo: topAnchor),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor)
+            label.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -40,7 +40,7 @@ struct SwiftUICardView: UIViewRepresentable {
     func makeUIView(context: Context) -> UICardView {
         .init()
     }
-    
+
     func updateUIView(_ uiView: UICardView, context: Context) {
         print(#function)
         uiView.label.text = text

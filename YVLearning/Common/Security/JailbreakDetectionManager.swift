@@ -51,10 +51,10 @@ struct JailbreakDetectionManager: JailbreakDetecting {
     // MARK: - Indicator
 
     enum Indicator: String, CaseIterable, Sendable {
-        case suspiciousFilePath  = "Suspicious jailbreak file path detected"
-        case sandboxViolation    = "App can write outside its sandbox"
+        case suspiciousFilePath = "Suspicious jailbreak file path detected"
+        case sandboxViolation = "App can write outside its sandbox"
         case applicationsSymlink = "/Applications is a symbolic link"
-        case dylibInjection      = "DYLD_INSERT_LIBRARIES environment variable is set"
+        case dylibInjection = "DYLD_INSERT_LIBRARIES environment variable is set"
     }
 
     // MARK: - JailbreakDetecting
@@ -65,10 +65,10 @@ struct JailbreakDetectionManager: JailbreakDetecting {
     /// Returns all indicators triggered during detection.
     var detectedIndicators: [Indicator] {
         var found: [Indicator] = []
-        if hasSuspiciousFiles     { found.append(.suspiciousFilePath) }
-        if hasSandboxViolation    { found.append(.sandboxViolation) }
+        if hasSuspiciousFiles { found.append(.suspiciousFilePath) }
+        if hasSandboxViolation { found.append(.sandboxViolation) }
         if hasApplicationsSymlink { found.append(.applicationsSymlink) }
-        if hasDylibInjection      { found.append(.dylibInjection) }
+        if hasDylibInjection { found.append(.dylibInjection) }
         return found
     }
 
@@ -92,7 +92,7 @@ struct JailbreakDetectionManager: JailbreakDetecting {
             "/etc/apt",
             "/etc/ssh/sshd_config",
             "/System/Library/LaunchDaemons/com.ikey.bbot.plist",
-            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist"
+            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
         ]
         return paths.contains { FileManager.default.fileExists(atPath: $0) }
     }

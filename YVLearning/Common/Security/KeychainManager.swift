@@ -26,8 +26,6 @@ protocol KeychainManaging {
 struct KeychainManager: KeychainManaging {
     static let shared = KeychainManager()
 
-    init() {}
-
     // MARK: - Data Operations
 
     func save(_ data: Data, for key: String) throws {
@@ -35,7 +33,7 @@ struct KeychainManager: KeychainManaging {
             kSecClass: kSecClassGenericPassword,
             kSecAttrAccount: key,
             kSecValueData: data,
-            kSecAttrAccessible: kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+            kSecAttrAccessible: kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
         ]
         let status = SecItemAdd(query as CFDictionary, nil)
         if status == errSecDuplicateItem {
@@ -50,7 +48,7 @@ struct KeychainManager: KeychainManaging {
             kSecClass: kSecClassGenericPassword,
             kSecAttrAccount: key,
             kSecReturnData: true,
-            kSecMatchLimit: kSecMatchLimitOne
+            kSecMatchLimit: kSecMatchLimitOne,
         ]
         var result: AnyObject?
         let status = SecItemCopyMatching(query as CFDictionary, &result)
@@ -68,7 +66,7 @@ struct KeychainManager: KeychainManaging {
     func update(_ data: Data, for key: String) throws {
         let query: [CFString: Any] = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: key
+            kSecAttrAccount: key,
         ]
         let attributes: [CFString: Any] = [kSecValueData: data]
         let status = SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
@@ -78,7 +76,7 @@ struct KeychainManager: KeychainManaging {
     func delete(for key: String) throws {
         let query: [CFString: Any] = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: key
+            kSecAttrAccount: key,
         ]
         let status = SecItemDelete(query as CFDictionary)
         guard status == errSecSuccess || status == errSecItemNotFound else {
@@ -95,7 +93,9 @@ struct KeychainManager: KeychainManaging {
 
     func loadString(for key: String) throws -> String {
         let data = try load(for: key)
-        guard let string = String(data: data, encoding: .utf8) else { throw KeychainError.decodingFailed }
+        guard let string = String(data: data, encoding: .utf8) else {
+            throw KeychainError.decodingFailed
+        }
         return string
     }
 
@@ -112,13 +112,13 @@ struct KeychainManager: KeychainManaging {
 
         var errorDescription: String? {
             switch self {
-            case .saveFailed(let status):   return "Keychain save failed (OSStatus \(status))."
-            case .loadFailed(let status):   return "Keychain load failed (OSStatus \(status))."
+            case .saveFailed(let status): return "Keychain save failed (OSStatus \(status))."
+            case .loadFailed(let status): return "Keychain load failed (OSStatus \(status))."
             case .updateFailed(let status): return "Keychain update failed (OSStatus \(status))."
             case .deleteFailed(let status): return "Keychain delete failed (OSStatus \(status))."
-            case .itemNotFound:             return "Item not found in Keychain."
-            case .encodingFailed:           return "Failed to encode string to Data."
-            case .decodingFailed:           return "Failed to decode Data to String."
+            case .itemNotFound: return "Item not found in Keychain."
+            case .encodingFailed: return "Failed to encode string to Data."
+            case .decodingFailed: return "Failed to decode Data to String."
             }
         }
     }

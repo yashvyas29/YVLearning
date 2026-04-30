@@ -18,9 +18,12 @@ struct YVCircularProgressView: View {
             .trim(from: 0, to: progress)
             .stroke(color, style: .init(lineWidth: lineWidth, lineCap: .round))
             .rotationEffect(Angle(degrees: -90))
-            .overlay(Circle()
-                .stroke(backgroundColor == .clear ? backgroundColor : backgroundColor.opacity(0.1),
-                        lineWidth: lineWidth))
+            .overlay(
+                Circle()
+                    .stroke(
+                        backgroundColor == .clear ? backgroundColor : backgroundColor.opacity(0.1),
+                        lineWidth: lineWidth)
+            )
             .animation(.linear(duration: 1), value: progress)
             .padding()
     }

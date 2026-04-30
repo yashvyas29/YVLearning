@@ -5,8 +5,8 @@
 //  Created by Yash Vyas on 22/04/2026.
 //
 
-import Foundation
 import CryptoKit
+import Foundation
 
 // MARK: - Protocol
 
@@ -16,8 +16,12 @@ protocol SecureEnclaveManaging {
     @discardableResult
     func generateAndStoreKey(tag: String) throws -> SecureEnclave.P256.Signing.PrivateKey
     func loadOrCreateKey(tag: String) throws -> SecureEnclave.P256.Signing.PrivateKey
-    func sign(_ data: Data, with privateKey: SecureEnclave.P256.Signing.PrivateKey) throws -> P256.Signing.ECDSASignature
-    func verify(_ signature: P256.Signing.ECDSASignature, for data: Data, using publicKey: P256.Signing.PublicKey) -> Bool
+    func sign(_ data: Data, with privateKey: SecureEnclave.P256.Signing.PrivateKey) throws
+        -> P256.Signing.ECDSASignature
+    func verify(
+        _ signature: P256.Signing.ECDSASignature, for data: Data,
+        using publicKey: P256.Signing.PublicKey
+    ) -> Bool
     func deleteKey(tag: String) throws
 }
 
@@ -83,7 +87,9 @@ struct SecureEnclaveManager: SecureEnclaveManaging {
     // MARK: - Signing & Verification
 
     /// Signs `data` using the given Secure Enclave private key.
-    func sign(_ data: Data, with privateKey: SecureEnclave.P256.Signing.PrivateKey) throws -> P256.Signing.ECDSASignature {
+    func sign(_ data: Data, with privateKey: SecureEnclave.P256.Signing.PrivateKey) throws
+        -> P256.Signing.ECDSASignature
+    {
         do {
             return try privateKey.signature(for: data)
         } catch {
