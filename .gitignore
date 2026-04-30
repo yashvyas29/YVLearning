@@ -50,3 +50,9 @@ Carthage
 
 # Pods
 Pods
+
+# Claude local permissions
+settings.local.json
+
+# Reports
+.reports
