@@ -14,7 +14,7 @@ class RandomIntWithID {
     }()
 }
 
-let n = RandomIntWithID()
-print(n.uid)
+let randomIntWithID = RandomIntWithID()
+print(randomIntWithID.uid)
 
 //: [Next](@next)

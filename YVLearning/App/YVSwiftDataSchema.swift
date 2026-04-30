@@ -8,26 +8,26 @@
 import SwiftData
 
 @available(iOS 17.0, *)
-enum YV_ShemaMigrationPlan_02_00_00: SchemaMigrationPlan {
+enum YVShemaMigrationPlan020000: SchemaMigrationPlan {
     static var schemas: [any VersionedSchema.Type] {
         [
-            YV_VersionedSchema_01_00_00.self,
-            YV_VersionedSchema_02_00_00.self,
+            YVVersionedSchema010000.self,
+            YVVersionedSchema020000.self
         ]
     }
 
     static var stages: [MigrationStage] {
         [
             .lightweight(
-                fromVersion: YV_VersionedSchema_01_00_00.self,
-                toVersion: YV_VersionedSchema_02_00_00.self
+                fromVersion: YVVersionedSchema010000.self,
+                toVersion: YVVersionedSchema020000.self
             )
         ]
     }
 }
 
 @available(iOS 17.0, *)
-enum YV_VersionedSchema_02_00_00: VersionedSchema {
+enum YVVersionedSchema020000: VersionedSchema {
     static var models: [any PersistentModel.Type] {
         [User.self]
     }
@@ -53,7 +53,7 @@ enum YV_VersionedSchema_02_00_00: VersionedSchema {
 }
 
 @available(iOS 17.0, *)
-enum YV_VersionedSchema_01_00_00: VersionedSchema {
+enum YVVersionedSchema010000: VersionedSchema {
     static var models: [any PersistentModel.Type] {
         [User.self]
     }

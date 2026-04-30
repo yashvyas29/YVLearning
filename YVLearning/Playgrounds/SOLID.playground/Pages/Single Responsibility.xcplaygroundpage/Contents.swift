@@ -10,7 +10,7 @@ class CurrencyManager {
         to targetCurrency: String,
         completion: (Error?, Double) -> Void
     ) {
-        //...
+        // ...
     }
 
     func save(
@@ -18,14 +18,14 @@ class CurrencyManager {
         for sourceCurrency: String,
         to targetCurrency: String
     ) {
-        //...
+        // ...
     }
 
     func loadRate(
         for sourceCurrency: String,
         to targetCurrency: String
     ) -> Double? {
-        //...
+        // ...
         return 0
     }
 
@@ -34,7 +34,7 @@ class CurrencyManager {
         from sourceCurrency: String,
         to targetCurrency: String
     ) -> Double {
-        //...
+        // ...
         return 0
     }
 }
@@ -47,7 +47,7 @@ class CurrencyConverter {
         from sourceCurrency: String,
         to targetCurrency: String
     ) -> Double {
-        //...
+        // ...
         return 0
     }
 }
@@ -56,13 +56,13 @@ class NetworkController {
     func fetchRates(
         for sourceCurrency: String, to targetCurrency: String, completion: (Error?, Double) -> Void
     ) {
-        //...
+        // ...
     }
 }
 
 class LocalPersistence {
     func save<T>(value: T, for key: String /*sourceCurrency: String, to targetCurrency: String*/) {
-        //...
+        // ...
     }
 }
 

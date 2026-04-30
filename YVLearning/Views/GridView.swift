@@ -20,12 +20,12 @@ struct GridView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible()),
-        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
 
     let columns3 = [
         GridItem(.fixed(100)),
-        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
 
     let items = 1...50
@@ -33,7 +33,7 @@ struct GridView: View {
     let rows = [
         GridItem(.fixed(50)),
         GridItem(.flexible()),
-        GridItem(.fixed(50)),
+        GridItem(.fixed(50))
     ]
 
     var body: some View {

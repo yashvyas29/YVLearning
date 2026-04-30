@@ -15,8 +15,8 @@ class NameClass: NSCopying {
         self.lastName = lastName
     }
 
-    func clone() -> NameClass {
-        return self.copy() as! NameClass
+    func clone() -> NameClass? {
+        return self.copy() as? NameClass
     }
 }
 

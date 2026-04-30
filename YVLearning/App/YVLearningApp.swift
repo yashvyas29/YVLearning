@@ -58,7 +58,7 @@ import SwiftData
 @main
 @available(iOS 17, *)
 struct YVLearningApp: App {
-    let schema: Schema = .init(versionedSchema: YV_VersionedSchema_02_00_00.self)
+    let schema: Schema = .init(versionedSchema: YVVersionedSchema020000.self)
     let modelContainer: ModelContainer
 
     init() {
@@ -73,7 +73,7 @@ struct YVLearningApp: App {
              */
             modelContainer = try .init(
                 for: schema,
-                migrationPlan: YV_ShemaMigrationPlan_02_00_00.self,
+                migrationPlan: YVShemaMigrationPlan020000.self,
                 configurations: [.init(isStoredInMemoryOnly: true)]
             )
         } catch {

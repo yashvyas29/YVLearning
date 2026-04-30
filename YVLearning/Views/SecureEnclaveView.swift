@@ -190,7 +190,10 @@ struct SecureEnclaveView: View {
             Text("Signing (Secure Enclave)")
         } footer: {
             Text(
-                "The P-256 private key is generated and stored inside the Secure Enclave. Only its wrapped reference is saved to the Keychain."
+                """
+                The P-256 private key is generated and stored inside the Secure Enclave.
+                Only its wrapped reference is saved to the Keychain.
+                """
             )
             .font(.caption)
         }
@@ -219,7 +222,10 @@ struct SecureEnclaveView: View {
             Text("Keychain")
         } footer: {
             Text(
-                "Stores and retrieves a generic password item using kSecClassGenericPassword with kSecAttrAccessibleWhenUnlockedThisDeviceOnly."
+                """
+                Stores and retrieves a generic password item using
+                kSecClassGenericPassword with kSecAttrAccessibleWhenUnlockedThisDeviceOnly.
+                """
             )
             .font(.caption)
         }

@@ -33,7 +33,7 @@ struct ScreenPreview<Screen: View>: View {
             // "iPhone 13 Pro Max",
             // "iPad (9th generation)",
             // "iPad Pro (12.9-inch) (5th generation)",
-            "iPod touch (7th generation)",
+            "iPod touch (7th generation)"
         ]
     }
 }

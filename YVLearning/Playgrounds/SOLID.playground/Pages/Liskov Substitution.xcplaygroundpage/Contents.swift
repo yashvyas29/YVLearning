@@ -13,39 +13,39 @@ class Shape {
 var shapes = [Shape]()
 
 class Rectangle: Shape {
-    private var l, w: Double
+    private var length, width: Double
 
     override func area() -> Double {
-        return l * w
+        return length * width
     }
 
     init(length: Double, width: Double) {
-        l = length
-        w = width
+        self.length = length
+        self.width = width
     }
 }
 
 class Square: Shape {
-    private var a: Double
+    private var side: Double
 
     override func area() -> Double {
-        return a * a
+        return side * side
     }
 
     init(side: Double) {
-        a = side
+        self.side = side
     }
 }
 
 class Circle: Shape {
-    private var r: Double
+    private var radius: Double
 
     override func area() -> Double {
-        return Double.pi * r * r
+        return Double.pi * radius * radius
     }
 
     init(radius: Double) {
-        r = radius
+        self.radius = radius
     }
 }
 

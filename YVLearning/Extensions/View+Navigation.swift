@@ -9,8 +9,7 @@ import SwiftUI
 
 extension View {
     func navigate<Destination: View>(to destination: Destination, when isActive: Binding<Bool>)
-        -> some View
-    {
+        -> some View {
         ZStack {
             self
             NavigationLink(

@@ -19,7 +19,7 @@ struct MapView: View {
             coordinate: CLLocationCoordinate2D(latitude: 51.501, longitude: -0.141)),
         Location(
             name: "Tower of London",
-            coordinate: CLLocationCoordinate2D(latitude: 51.508, longitude: -0.076)),
+            coordinate: CLLocationCoordinate2D(latitude: 51.508, longitude: -0.076))
     ]
 
     var body: some View {

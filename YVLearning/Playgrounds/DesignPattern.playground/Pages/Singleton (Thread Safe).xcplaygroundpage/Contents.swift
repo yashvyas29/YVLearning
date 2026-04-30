@@ -10,7 +10,7 @@ final public class AppSettings {
 
     private var settings: [String: Any] = [
         "Theme": "Dark",
-        "MaxConsurrentDownloads": 4,
+        "MaxConsurrentDownloads": 4
     ]
 
     private init() {}

@@ -10,7 +10,7 @@ import SwiftUI
 
 @available(iOS 17.0, *)
 struct SwiftDataView: View {
-    typealias User = YV_VersionedSchema_02_00_00.User
+    typealias User = YVVersionedSchema020000.User
 
     @Environment(\.modelContext) private var modelContext
     @Query private var users: [User]

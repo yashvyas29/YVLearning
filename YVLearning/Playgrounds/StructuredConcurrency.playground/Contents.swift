@@ -56,8 +56,7 @@ Task {
     debugPrint("Sum of all the values: \(sum)")
     var asyncIntSquareIterator = asyncIntSquareStream(forValues: values).makeAsyncIterator()
     while let value = valueIterator.next(),
-        let squareValue = await asyncIntSquareIterator.next()
-    {
+        let squareValue = await asyncIntSquareIterator.next() {
         debugPrint("Square of \(value) is \(squareValue)")
     }
 }

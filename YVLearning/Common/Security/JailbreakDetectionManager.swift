@@ -92,7 +92,7 @@ struct JailbreakDetectionManager: JailbreakDetecting {
             "/etc/apt",
             "/etc/ssh/sshd_config",
             "/System/Library/LaunchDaemons/com.ikey.bbot.plist",
-            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
+            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist"
         ]
         return paths.contains { FileManager.default.fileExists(atPath: $0) }
     }

@@ -88,8 +88,7 @@ struct SecureEnclaveManager: SecureEnclaveManaging {
 
     /// Signs `data` using the given Secure Enclave private key.
     func sign(_ data: Data, with privateKey: SecureEnclave.P256.Signing.PrivateKey) throws
-        -> P256.Signing.ECDSASignature
-    {
+        -> P256.Signing.ECDSASignature {
         do {
             return try privateKey.signature(for: data)
         } catch {

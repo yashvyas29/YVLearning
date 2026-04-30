@@ -5,7 +5,7 @@
 import UIKit
 
 class Shape {
-    //...
+    // ...
 }
 
 extension Shape: CustomStringConvertible {

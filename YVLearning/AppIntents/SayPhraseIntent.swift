@@ -18,7 +18,7 @@ struct IntentProvider: AppShortcutsProvider {
                 phrases: [
                     "Repeat a phrase in \(.applicationName)",
                     "Say a phrase in \(.applicationName)",
-                    "Repeat something back in \(.applicationName)",
+                    "Repeat something back in \(.applicationName)"
                 ])
         ]
     }

@@ -5,3 +5,11 @@ nesting:
   function_level:
     warning: 2
     error: 3
+
+large_tuple:
+  warning: 3
+  error: 5
+
+file_length:
+  warning: 500
+  error: 1000

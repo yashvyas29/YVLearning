@@ -241,7 +241,7 @@ class StringSubscriber: Subscriber {
 }
 
 let stringPublisher = [
-    "Warsaw", "Barcelona", "New York", "Toronto",
+    "Warsaw", "Barcelona", "New York", "Toronto"
 ].publisher
 
 let stringSubscriber = StringSubscriber()
@@ -268,11 +268,11 @@ class GenericSubscriber<T>: Subscriber {
 }
 
 let publisherOfInts = [
-    1, 2, 3, 4,
+    1, 2, 3, 4
 ].publisher
 
 let publisherOfStrings = [
-    "1", "2", "3", "4",
+    "1", "2", "3", "4"
 ].publisher
 
 let subscriberOfInt = GenericSubscriber<Int>()

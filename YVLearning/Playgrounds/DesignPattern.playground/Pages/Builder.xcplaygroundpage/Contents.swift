@@ -1,4 +1,4 @@
-//:[Previous](@previous)
+//: [Previous](@previous)
 
 import UIKit
 
@@ -103,8 +103,7 @@ if let user = User.Builder()
     .setId("1")
     .setFirstName("Yash")
     .setLastName("Vyas")
-    .build()
-{
+    .build() {
     debugPrint(user.fullName)
 } else {
     debugPrint("User not created.")
@@ -143,4 +142,4 @@ if let user = builder.build1() {
     debugPrint("User not created.")
 }
 
-//:[Next](@next)
+//: [Next](@next)

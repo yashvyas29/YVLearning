@@ -4,7 +4,7 @@
 
 import UIKit
 
-//MARK: - Fat Protocol
+// MARK: - Fat Protocol
 
 protocol ImageProtocol {
     var base64Encoded: String { get }
@@ -17,7 +17,7 @@ protocol ImageProtocol {
     func save(to url: URL) throws
 }
 
-//MARK: - Segregated Protocols
+// MARK: - Segregated Protocols
 
 protocol ImageProtocol {
     var data: Data { get }
@@ -38,7 +38,7 @@ protocol ImagePersistence: ImageProtocol {
     func save(to url: URL) throws
 }
 
-//MARK: - Default behavior implemented in extensions
+// MARK: - Default behavior implemented in extensions
 
 extension Base64Encoding {
     var base64Encoded: String {

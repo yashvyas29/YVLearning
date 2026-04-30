@@ -7,8 +7,7 @@
 
 protocol RouterScreenProtocol:
     RouterNavigationViewScreenProtocol & RouterNavigationStackScreenProtocol
-        & RouterSheetScreenProtocol
-{
+        & RouterSheetScreenProtocol {
     var routeType: RouterScreenPresentationType { get }
 }
 

@@ -27,8 +27,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
 }
 
 final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate
-{
+    UINavigationControllerDelegate {
 
     let context: ImagePickerView
 

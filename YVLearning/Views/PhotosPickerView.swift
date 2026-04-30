@@ -10,8 +10,8 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct PhotosPickerView: View {
-    @State private var photoPickerItem: PhotosPickerItem? = nil
-    @State private var selectedImage: Image? = nil
+    @State private var photoPickerItem: PhotosPickerItem?
+    @State private var selectedImage: Image?
 
     var body: some View {
         PhotosPicker(

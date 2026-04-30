@@ -100,7 +100,7 @@ final class SensitiveBuffer: @unchecked Sendable {
         // Write through the buffer pointer to reduce the chance the
         // optimizer treats this as a dead store.
         storage.withUnsafeMutableBufferPointer { buffer in
-            for i in buffer.indices { buffer[i] = 0 }
+            for index in buffer.indices { buffer[index] = 0 }
         }
         storage.removeAll(keepingCapacity: false)
     }

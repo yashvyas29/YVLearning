@@ -10,7 +10,7 @@ import SwiftUI
 struct UseImagePickerView: View {
 
     @State private var isImagePickerPresented: Bool = false
-    @State private var selectedImage: UIImage? = nil
+    @State private var selectedImage: UIImage?
 
     var body: some View {
         VStack(spacing: 44) {

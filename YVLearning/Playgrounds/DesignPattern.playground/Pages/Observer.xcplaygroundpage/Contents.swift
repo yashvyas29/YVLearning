@@ -67,9 +67,9 @@ class MyViewController: UIViewController {
 
         let labelCount = 10
 
-        for i in 0..<labelCount {
-            let label = UILabel(frame: CGRect(x: 0, y: 200 + (i * 30), width: 380, height: 20))
-            label.text = "Label # \(i + 1) listening..."
+        for index in 0..<labelCount {
+            let label = UILabel(frame: CGRect(x: 0, y: 200 + (index * 30), width: 380, height: 20))
+            label.text = "Label # \(index + 1) listening..."
             label.textColor = .black
             label.textAlignment = .center
             view.addSubview(label)
