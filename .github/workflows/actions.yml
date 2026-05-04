@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4.2.2
-    # - name: SwiftLint
-    #   uses: norio-nomura/action-swiftlint@3.2.1
+      uses: actions/checkout@v6.0.2
+    - name: SwiftLint
+      uses: norio-nomura/action-swiftlint@3.2.1
 
  BuildAndTest:
     runs-on: macos-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v6.0.2
 
       - name: Xcode
-        uses: maxim-lobanov/setup-xcode@v1.6.0
+        uses: maxim-lobanov/setup-xcode@v1.7.0
         with:
           xcode-version: latest-stable
 
@@ -30,19 +30,77 @@ jobs:
         run: |
           echo "Mac OS Version"
           sw_vers -productVersion
-          printf "\nXcode Version"
+          printf "\nXcode Version\n"
           xcodebuild -version
-          printf "\nSDKs"
+          printf "\nSDKs\n"
           xcodebuild -showsdks
-          printf "\nRuntimes and iOS Simulators"
+          printf "Runtimes and iOS Simulators\n"
           xcrun simctl list runtimes devices iOS
-          printf "\n Download Platform"
-          xcodebuild -downloadPlatform iOS
+
+      - name: Download iOS Platform
+        run: xcodebuild -downloadPlatform iOS
+
+      - name: Boot iPhone 17 Simulator
+        shell: bash
+        run: |
+          # set -e
+
+          # echo "🔍 Finding newest iOS runtime…"
+          # RUNTIME_ID=$(xcrun simctl list runtimes -j |
+          #   jq -r '.runtimes[]
+          #     | select(.platform=="iOS" and .isAvailable)
+          #     | .identifier' |
+          #   sort -V | tail -n 1)
+
+          # echo "✅ Runtime: $RUNTIME_ID"
+
+          # echo "🔍 Selecting newest iPhone by generation…"
+          # DEVICE=$(xcrun simctl list devices -j |
+          #   jq -r --arg RT "$RUNTIME_ID" '
+          #     .devices[$RT][]
+          #     | select(.name | startswith("iPhone"))
+          #     | [
+          #         (.name | capture("iPhone (?<gen>[0-9]+)")?.gen // "0" | tonumber),
+          #         .name,
+          #         .udid
+          #       ]
+          #     | @tsv
+          #   ' |
+          #   sort -n -k1,1 |
+          #   tail -n 1)
+
+          # if [ -z "$DEVICE" ]; then
+          #   echo "❌ No iPhone found"
+          #   exit 1
+          # fi
+
+          # # GEN=$(echo "$DEVICE" | cut -f1)
+          # NAME=$(echo "$DEVICE" | cut -f2)
+          # UDID=$(echo "$DEVICE" | cut -f3)
+
+          # echo "✅ Selected: $NAME (generation $GEN)"
+
+          NAME="iPhone 17"
+          UDID=$(xcrun simctl list devices | grep "$NAME" | tail -n 1 | awk -F'[()]' '{print $2}')
+
+          xcrun simctl boot "$UDID" || true
+          echo "SIM_DEVICE_NAME=$NAME" >> "$GITHUB_ENV"
+
+          # OS_VERSION=$(echo "$RUNTIME_ID" | sed 's/.*iOS-//; s/-/./')
+          # echo "SIM_OS_VERSION=$OS_VERSION" >> "$GITHUB_ENV"
 
       - name: Test
-        uses: sersoft-gmbh/xcodebuild-action@v3.2.0
+        uses: sersoft-gmbh/xcodebuild-action@v4.0.0
+        env:
+            COMPILER_INDEX_STORE_ENABLE: NO
+            CODE_SIGNING_ALLOWED: NO
         with:
           project: YVLearning.xcodeproj
           scheme: YVLearning
-          destination: 'platform=iOS Simulator,name=iPhone 16'
-          action: test
+          action: test          
+          destination: "platform=iOS Simulator,name=${{ env.SIM_DEVICE_NAME }}" # ,OS=${{ env.SIM_OS_VERSION }}
+          derived-data-path: /tmp/DerivedData
+          disable-automatic-package-resolution: true
+          skip-package-plugin-validation: true
+          skip-macro-validation: true
+          allow-provisioning-updates: false
