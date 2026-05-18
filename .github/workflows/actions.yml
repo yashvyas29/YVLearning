@@ -74,7 +74,7 @@ jobs:
           #   exit 1
           # fi
 
-          # # GEN=$(echo "$DEVICE" | cut -f1)
+          # GEN=$(echo "$DEVICE" | cut -f1)
           # NAME=$(echo "$DEVICE" | cut -f2)
           # UDID=$(echo "$DEVICE" | cut -f3)
 
@@ -82,6 +82,8 @@ jobs:
 
           NAME="iPhone 17"
           UDID=$(xcrun simctl list devices | grep "$NAME" | tail -n 1 | awk -F'[()]' '{print $2}')
+
+          echo "✅ Selected: $NAME ($UDID)"
 
           xcrun simctl boot "$UDID" || true
           echo "SIM_DEVICE_NAME=$NAME" >> "$GITHUB_ENV"

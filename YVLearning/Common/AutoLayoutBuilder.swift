@@ -36,7 +36,7 @@ extension NSLayoutConstraint {
 protocol LayoutGroup {
     var constraints: [NSLayoutConstraint] { get }
 }
-extension NSLayoutConstraint: LayoutGroup {
+extension NSLayoutConstraint: @MainActor LayoutGroup {
     var constraints: [NSLayoutConstraint] { [self] }
 }
 extension Array: LayoutGroup where Element == NSLayoutConstraint {

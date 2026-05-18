@@ -11,7 +11,7 @@ import Security
 // MARK: - Protocol
 
 /// Abstraction over Keychain operations. Conform a mock to this in tests.
-protocol KeychainManaging {
+protocol KeychainManaging: Sendable {
     func save(_ data: Data, for key: String) throws
     func load(for key: String) throws -> Data
     func update(_ data: Data, for key: String) throws

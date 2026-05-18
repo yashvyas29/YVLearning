@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-final class NetworkMonitor: ObservableObject {
+final class NetworkMonitor: ObservableObject, @unchecked Sendable {
     static let shared = NetworkMonitor()
     @Published private(set) var isConnected: Bool = true
 

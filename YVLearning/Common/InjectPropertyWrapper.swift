@@ -16,7 +16,7 @@ struct Inject<Component> {
     }
 }
 
-class Resolver {
+final class Resolver: Sendable {
     static let shared = Resolver()
     // private var container = Container()
 

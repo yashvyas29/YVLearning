@@ -13,7 +13,7 @@ import Foundation
 
 /// Thin abstraction over `DCAppAttestService` so tests can inject a fake without hitting hardware.
 @available(iOS 14.0, *)
-protocol AppAttestService {
+protocol AppAttestService: Sendable {
     var isSupported: Bool { get }
     func generateKey(completionHandler: @escaping @Sendable (String?, Error?) -> Void)
     func attestKey(
@@ -71,7 +71,7 @@ protocol AppAttestManaging {
 /// - Important: App Attest is unavailable in the iOS Simulator and on jailbroken devices.
 ///   Always guard with ``isSupported`` before calling any method.
 @available(iOS 14.0, *)
-struct AppAttestManager: AppAttestManaging {
+struct AppAttestManager: AppAttestManaging, Sendable {
     static let shared = AppAttestManager()
 
     private let keyIdKeychainKey = "com.yvlearning.appattest.keyId"

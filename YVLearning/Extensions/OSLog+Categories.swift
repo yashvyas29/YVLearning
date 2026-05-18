@@ -10,7 +10,7 @@ import os.log
 
 extension OSLog {
     // App bundle identifier
-    private static var subsystem = Bundle.main.bundleIdentifier!
+    private static let subsystem = Bundle.main.bundleIdentifier!
 
     /// Logs the app life cycles
     static let appCycle = OSLog(subsystem: subsystem, category: "appcycle")

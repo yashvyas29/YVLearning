@@ -11,7 +11,7 @@ import Foundation
 // MARK: - System Service Protocol
 
 /// Thin abstraction over `DCDevice` so tests can inject a fake without hitting hardware.
-protocol DeviceTokenService {
+protocol DeviceTokenService: Sendable {
     var isSupported: Bool { get }
     func generateToken(completionHandler: @escaping @Sendable (Data?, Error?) -> Void)
 }
@@ -21,7 +21,7 @@ extension DCDevice: DeviceTokenService {}
 // MARK: - Manager Protocol
 
 /// Abstraction over DeviceCheck operations. Conform a mock to this in tests.
-protocol DeviceCheckManaging {
+protocol DeviceCheckManaging: Sendable {
     var isSupported: Bool { get }
     func generateToken() async throws -> Data
     func generateTokenBase64() async throws -> String

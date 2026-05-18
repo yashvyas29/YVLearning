@@ -1,7 +1,7 @@
 // To use app classes in playground
 import YVLearning
 // To use Task in playground
-import _Concurrency
+//import _Concurrency
 
 // To hide the unnecessary duplicate framework logs
 // import PlaygroundSupport
@@ -72,6 +72,15 @@ Task.detached(priority: .background) {
         }
         group.addTaskUnlessCancelled {
             return "Full Name"
+        }
+
+        /*
+        for result in group {
+            debugPrint(result)
+        }
+         */
+        while let result = await group.next() {
+            debugPrint(result)
         }
     }
 }

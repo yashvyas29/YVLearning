@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C42B4B127B7BBC000D8D885 /* YVLearningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4B027B7BBC000D8D885 /* YVLearningTests.swift */; };
 		1C42B4CE27B7BD2D00D8D885 /* LearnTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C42B4CD27B7BD2D00D8D885 /* LearnTaskTest.swift */; };
+		D3FD72EA2FBAE45C000A400C /* FactoryKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3FD72E92FBAE45C000A400C /* FactoryKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FD72EA2FBAE45C000A400C /* FactoryKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +170,9 @@
 				hi,
 			);
 			mainGroup = 1C42B49327B7BBBE00D8D885;
+			packageReferences = (
+				D3FD72E82FBAE45C000A400C /* XCRemoteSwiftPackageReference "Factory" */,
+			);
 			productRefGroup = 1C42B49D27B7BBBE00D8D885 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -500,6 +505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3FD72E82FBAE45C000A400C /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3FD72E92FBAE45C000A400C /* FactoryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3FD72E82FBAE45C000A400C /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = FactoryKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C42B49427B7BBBE00D8D885 /* Project object */;
 }

@@ -11,7 +11,7 @@ import OSLog
 @available(iOS 14.0, *)
 extension Logger {
     // App bundle identifier
-    private static var subsystem = Bundle.main.bundleIdentifier!
+    private static let subsystem = Bundle.main.bundleIdentifier!
 
     /// Logs the app life cycles
     static let appCycle = Logger(subsystem: subsystem, category: "appcycle")

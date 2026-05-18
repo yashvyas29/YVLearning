@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Protocol
 
 /// Abstraction over Secure Enclave key operations. Conform a mock to this in tests.
-protocol SecureEnclaveManaging {
+protocol SecureEnclaveManaging: Sendable {
     var isAvailable: Bool { get }
     @discardableResult
     func generateAndStoreKey(tag: String) throws -> SecureEnclave.P256.Signing.PrivateKey
