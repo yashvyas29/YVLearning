@@ -13,7 +13,7 @@ struct LearnTask {
             DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
                 debugPrint("In dispatch after.")
             }
-            try await Task.sleep(nanoseconds: 2_000_000_000)
+            try? await Task.sleep(nanoseconds: 2_000_000_000)
             debugPrint("In task.")
         }
         debugPrint("Outside of task.")

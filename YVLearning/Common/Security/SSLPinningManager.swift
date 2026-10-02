@@ -104,12 +104,11 @@ final class SSLPinningManager: NSObject, SSLPinningManaging, @unchecked Sendable
 
         guard let pins, !pins.isEmpty else { return true }
 
-        guard
-            let leafCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0),
-            let publicKey = SecCertificateCopyKey(leafCertificate)
-        else {
-            return false
-        }
+		guard let certs = SecTrustCopyCertificateChain(serverTrust) as? [SecCertificate],
+			  let leafCertificate = certs.first,
+			  let publicKey = SecCertificateCopyKey(leafCertificate) else {
+			return false
+		}
 
         var exportError: Unmanaged<CFError>?
         guard let keyData = SecKeyCopyExternalRepresentation(publicKey, &exportError) else {

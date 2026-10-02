@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             if #available(iOS 14.0, *) {
-                window.rootViewController = UIHostingController(rootView: CustomShape())
+                window.rootViewController = UIHostingController(rootView: RootView())
             } else {
                 window.rootViewController = UIHostingController(rootView: NumberFormLinkView())
             }

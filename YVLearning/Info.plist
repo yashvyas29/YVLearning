@@ -2,30 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIImageRespectsSafeAreaInsets</key>
-		<false/>
-		<key>UITabBar</key>
-		<dict>
-			<key>UIImageName</key>
-			<string></string>
-		</dict>
-		<key>UIToolbar</key>
-		<dict>
-			<key>UIImageName</key>
-			<string></string>
-		</dict>
-		<key>UINavigationBar</key>
-		<dict>
-			<key>UIImageName</key>
-			<string></string>
-		</dict>
-		<key>UIColorName</key>
-		<string>AccentColor</string>
-		<key>UIImageName</key>
-		<string></string>
-	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -41,6 +17,30 @@
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 				</dict>
 			</array>
+		</dict>
+	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>AccentColor</string>
+		<key>UIImageName</key>
+		<string></string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<false/>
+		<key>UINavigationBar</key>
+		<dict>
+			<key>UIImageName</key>
+			<string></string>
+		</dict>
+		<key>UITabBar</key>
+		<dict>
+			<key>UIImageName</key>
+			<string></string>
+		</dict>
+		<key>UIToolbar</key>
+		<dict>
+			<key>UIImageName</key>
+			<string></string>
 		</dict>
 	</dict>
 </dict>

@@ -19,7 +19,10 @@ struct IntentProvider: AppShortcutsProvider {
                     "Repeat a phrase in \(.applicationName)",
                     "Say a phrase in \(.applicationName)",
                     "Repeat something back in \(.applicationName)"
-                ])
+                ],
+                shortTitle: "Learning",
+                systemImageName: "book"
+            )
         ]
     }
 }

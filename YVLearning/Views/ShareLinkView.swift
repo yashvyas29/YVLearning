@@ -89,11 +89,12 @@ struct ShareLinkView: View {
         }
     }
 
+    // @available(iOS, obsoleted: 16.0, message: "Use ShareLink instead on iOS 16+.")
+    @available(iOS, deprecated: 16.0, message: "Use ShareLink instead on iOS 16+.")
     func shareBeforeiOS16() {
-        let activityVC = UIActivityViewController(
-            activityItems: [shareItem], applicationActivities: nil)
-        UIApplication.shared.windows.first?.rootViewController?.present(
-            activityVC, animated: true, completion: nil)
+        guard let rootViewController = UIApplication.shared.rootViewController else { return }
+        let activityVC = UIActivityViewController(activityItems: [shareItem], applicationActivities: nil)
+        rootViewController.present(activityVC, animated: true, completion: nil)
     }
 
 }

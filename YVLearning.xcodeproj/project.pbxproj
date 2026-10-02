@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,7 +31,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D3FA11122D704AD6004AA4FA /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		D3FA11122D704AD6004AA4FA /* Exceptions for "YVLearning" folder in "YVLearning" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -41,24 +41,27 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D3FA10C02D704AD6004AA4FA /* YVLearning */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3FA11122D704AD6004AA4FA /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = YVLearning; sourceTree = "<group>"; };
+		D3FA10C02D704AD6004AA4FA /* YVLearning */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D3FA11122D704AD6004AA4FA /* Exceptions for "YVLearning" folder in "YVLearning" target */,
+			);
+			path = YVLearning;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1C42B49927B7BBBE00D8D885 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				D3FD72EA2FBAE45C000A400C /* FactoryKit in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1C42B4A927B7BBC000D8D885 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -72,6 +75,7 @@
 				1C42B49D27B7BBBE00D8D885 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		1C42B49D27B7BBBE00D8D885 /* Products */ = {
 			isa = PBXGroup;
@@ -112,8 +116,6 @@
 				D35FEC262AB2EF470025F4B1 /* SwiftLint */,
 			);
 			buildRules = (
-			);
-			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
 				D3FA10C02D704AD6004AA4FA /* YVLearning */,
@@ -161,7 +163,6 @@
 				};
 			};
 			buildConfigurationList = 1C42B49727B7BBBE00D8D885 /* Build configuration list for PBXProject "YVLearning" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -173,6 +174,7 @@
 			packageReferences = (
 				D3FD72E82FBAE45C000A400C /* XCRemoteSwiftPackageReference "Factory" */,
 			);
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 1C42B49D27B7BBBE00D8D885 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -186,17 +188,13 @@
 /* Begin PBXResourcesBuildPhase section */
 		1C42B49A27B7BBBE00D8D885 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1C42B4AA27B7BBC000D8D885 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
@@ -204,40 +202,37 @@
 		D35FEC262AB2EF470025F4B1 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
 			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ": '\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n'\n";
+			shellScript = (
+				": '",
+				"if [[ \"$(uname -m)\" == arm64 ]]; then",
+				"    export PATH=\"/opt/homebrew/bin:$PATH\"",
+				"fi",
+				"",
+				"if which swiftlint > /dev/null; then",
+				"  swiftlint",
+				"else",
+				"  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"",
+				"fi",
+				"'",
+				"",
+			);
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C42B49827B7BBBE00D8D885 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1C42B4A827B7BBC000D8D885 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				1C42B4B127B7BBC000D8D885 /* YVLearningTests.swift in Sources */,
 				1C42B4CE27B7BD2D00D8D885 /* LearnTaskTest.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -250,7 +245,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1C42B4BE27B7BBC000D8D885 /* Debug */ = {
+		1C42B4BE27B7BBC000D8D885 /* Debug configuration for PBXProject "YVLearning" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -315,7 +310,7 @@
 			};
 			name = Debug;
 		};
-		1C42B4BF27B7BBC000D8D885 /* Release */ = {
+		1C42B4BF27B7BBC000D8D885 /* Release configuration for PBXProject "YVLearning" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -374,7 +369,7 @@
 			};
 			name = Release;
 		};
-		1C42B4C127B7BBC000D8D885 /* Debug */ = {
+		1C42B4C127B7BBC000D8D885 /* Debug configuration for PBXNativeTarget "YVLearning" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -389,9 +384,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YVLearning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,7 +400,7 @@
 			};
 			name = Debug;
 		};
-		1C42B4C227B7BBC000D8D885 /* Release */ = {
+		1C42B4C227B7BBC000D8D885 /* Release configuration for PBXNativeTarget "YVLearning" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -421,9 +415,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YVLearning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,17 +431,20 @@
 			};
 			name = Release;
 		};
-		1C42B4C427B7BBC000D8D885 /* Debug */ = {
+		1C42B4C427B7BBC000D8D885 /* Debug configuration for PBXNativeTarget "YVLearningTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yash.YVLearningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,17 +452,20 @@
 			};
 			name = Debug;
 		};
-		1C42B4C527B7BBC000D8D885 /* Release */ = {
+		1C42B4C527B7BBC000D8D885 /* Release configuration for PBXNativeTarget "YVLearningTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yash.YVLearningTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -480,28 +479,25 @@
 		1C42B49727B7BBBE00D8D885 /* Build configuration list for PBXProject "YVLearning" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C42B4BE27B7BBC000D8D885 /* Debug */,
-				1C42B4BF27B7BBC000D8D885 /* Release */,
+				1C42B4BE27B7BBC000D8D885 /* Debug configuration for PBXProject "YVLearning" */,
+				1C42B4BF27B7BBC000D8D885 /* Release configuration for PBXProject "YVLearning" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		1C42B4C027B7BBC000D8D885 /* Build configuration list for PBXNativeTarget "YVLearning" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C42B4C127B7BBC000D8D885 /* Debug */,
-				1C42B4C227B7BBC000D8D885 /* Release */,
+				1C42B4C127B7BBC000D8D885 /* Debug configuration for PBXNativeTarget "YVLearning" */,
+				1C42B4C227B7BBC000D8D885 /* Release configuration for PBXNativeTarget "YVLearning" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		1C42B4C327B7BBC000D8D885 /* Build configuration list for PBXNativeTarget "YVLearningTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C42B4C427B7BBC000D8D885 /* Debug */,
-				1C42B4C527B7BBC000D8D885 /* Release */,
+				1C42B4C427B7BBC000D8D885 /* Debug configuration for PBXNativeTarget "YVLearningTests" */,
+				1C42B4C527B7BBC000D8D885 /* Release configuration for PBXNativeTarget "YVLearningTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
@@ -511,8 +507,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 3.0.4;
+				kind = exactVersion;
+				version = 3.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
