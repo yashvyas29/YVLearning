@@ -80,7 +80,7 @@ struct FormView: View {
                 TextEditor(text: $formState.textDetails)
                     .border(.gray.opacity(0.2))
                     .frame(height: 200)
-                    .onChange(of: formState.textDetails) { _ in
+                    .onChange(of: formState.textDetails) {
                         print("onChange of TextEditor")
                         print(formState.textDetails)
                     }

@@ -15,7 +15,7 @@ struct NameListView: View {
     @State private var searchText: String = ""
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(searchedNames.isEmpty ? names : searchedNames, id: \.self) { name in
                 HStack {
                     Image(systemName: "person")
@@ -49,7 +49,7 @@ struct NameListView: View {
             }
             .apply {
                 if #available(iOS 14.0, *) {
-                    $0.onChange(of: searchText) { _ in
+                    $0.onChange(of: searchText) {
                         searchedNames = names.filter {
                             $0.lowercased().contains(searchText.lowercased())
                         }

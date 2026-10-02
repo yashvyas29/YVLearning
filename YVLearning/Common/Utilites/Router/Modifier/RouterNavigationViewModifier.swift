@@ -28,28 +28,22 @@ where Screen: View, ScreenType: RouterNavigationViewScreenProtocol {
 
 extension RouterNavigationViewModifier: ViewModifier {
 
-    func body(content: Content) -> some View {
-        ZStack {
-            NavigationLink(
-                "",
-                isActive: Binding<Bool>(
-                    get: { screenType != nil },
-                    set: {
-                        if !$0 {
-                            if let type = screenType { onDismiss?(type) }
-                            screenType = nil
-                        }
-                    }),
-                destination: {
-                    if let type = screenType {
-                        screen(type)
-                    } else {
-                        EmptyView()
-                    }
-                })
-
-            content
-        }
-        .onReceive(publisher) { screenType = $0 }
-    }
+	func body(content: Content) -> some View {
+		content
+			.navigationDestination(isPresented: Binding<Bool>(
+				get: { screenType != nil },
+				set: {
+					if !$0 {
+						if let type = screenType { onDismiss?(type) }
+						screenType = nil
+					}
+				})
+			) {
+				if let type = screenType {
+					screen(type)
+				}
+			}
+			.onReceive(publisher) { screenType = $0 }
+	}
 }
+

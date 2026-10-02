@@ -12,21 +12,20 @@ struct RootView: View {
     // @State private var isActive: RootPresentationMode = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 20) {
                 Text("Hello, World!")
-                NavigationLink(
-                    // destination: ContentView1(rootIsActive: self.$isActive),
-                    destination: ContentView1(),
-                    isActive: self.$isActive
-                ) {
-                    Text("Go to Hello, World #1!")
+                Button("Go to Hello, World #1!") {
+                    isActive = true
                 }
             }
             // .isDetailLink(false)
             .navigationBarTitle("Root")
+            .navigationDestination(isPresented: $isActive) {
+                ContentView1()
+				// ContentView1(rootIsActive: self.$isActive)
+            }
         }
-        .navigationViewStyle(.stack)
         .environment(\.rootPresentationMode, self.$isActive)
     }
 }

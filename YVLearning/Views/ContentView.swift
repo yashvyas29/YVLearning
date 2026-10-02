@@ -15,7 +15,7 @@ struct ContentView: View {
 }
 
 struct NumberButtonView: View {
-    @EnvironmentObject private var navView: UINavigationView
+    @EnvironmentObject private var navView: UINavigationStack
     let number: Int
 
     var body: some View {

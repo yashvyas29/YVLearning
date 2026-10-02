@@ -11,7 +11,7 @@ import SwiftUI
 struct ReadAppStorageView: View {
     @AppStorage("name") var name: String = "Yash"
     var body: some View {
-        NavigationView {
+        NavigationStack {
             HStack(spacing: 10) {
                 Text("Name: \(name)")
                     .font(.system(.title))

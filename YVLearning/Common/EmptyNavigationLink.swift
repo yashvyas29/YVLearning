@@ -27,10 +27,9 @@ struct EmptyNavigationLink<Destination: View>: View {
     }
 
     var body: some View {
-        NavigationLink(
-            destination: lazyDestination,
-            isActive: isActive,
-            label: { EmptyView() }
-        )
+		EmptyView()
+			.navigationDestination(isPresented: isActive) {
+				lazyDestination
+			}
     }
 }

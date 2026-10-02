@@ -12,7 +12,7 @@ struct MenuIgnoringSafeAreaView: View {
     private let menuOptions = ["1", "2", "3"]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.red
                     .ignoresSafeArea()

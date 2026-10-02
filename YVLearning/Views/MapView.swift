@@ -23,7 +23,7 @@ struct MapView: View {
     ]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if #available(iOS 17.0, *) {
                     Map(initialPosition: .region(mapRegion)) {

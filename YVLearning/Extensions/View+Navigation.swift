@@ -8,31 +8,19 @@
 import SwiftUI
 
 extension View {
-    func navigate<Destination: View>(to destination: Destination, when isActive: Binding<Bool>)
-        -> some View {
-        ZStack {
-            self
-            NavigationLink(
-                destination: destination,
-                isActive: isActive
-            ) {
-                EmptyView()
-            }
-        }
-    }
+	func navigate<Destination: View>(to destination: Destination, when isActive: Binding<Bool>) -> some View {
+		self
+			.navigationDestination(isPresented: isActive) {
+				destination
+			}
+	}
 
-    func navigate(to route: Binding<Route?>) -> some View {
-        ZStack {
-            self
-            if let wrappedValue = route.wrappedValue {
-                NavigationLink(
-                    destination: wrappedValue.destination,
-                    tag: wrappedValue,
-                    selection: route,
-                    label: { EmptyView() })
-            }
-        }
-    }
+	func navigate(to route: Binding<Route?>) -> some View {
+		self
+			.navigationDestination(item: route) { route in
+				route.destination
+			}
+	}
 }
 
 enum FirstRoute: Identifiable {

@@ -13,7 +13,7 @@ struct ScreenPreview<Screen: View>: View {
     var body: some View {
         ForEach(values: deviceNames) { device in
             ForEach(values: ColorScheme.allCases) { scheme in
-                NavigationView {
+                NavigationStack {
                     self.screen
                         .navigationBarTitle("")
                         .navigationBarHidden(true)

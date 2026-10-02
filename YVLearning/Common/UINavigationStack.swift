@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-final class UINavigationView: UIViewControllerRepresentable, ObservableObject {
+final class UINavigationStack: UIViewControllerRepresentable, ObservableObject {
     typealias UIViewControllerType = UINavigationController
 
     private let navVC: UINavigationController
@@ -41,11 +41,11 @@ final class UINavigationView: UIViewControllerRepresentable, ObservableObject {
     func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {}
 }
 
-extension UINavigationView {
+extension UINavigationStack {
     class Coordinator: NSObject, UINavigationControllerDelegate {
-        var parent: UINavigationView
+        var parent: UINavigationStack
 
-        init(_ parent: UINavigationView) {
+        init(_ parent: UINavigationStack) {
             self.parent = parent
         }
     }

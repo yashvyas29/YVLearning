@@ -29,7 +29,7 @@ struct PhotosPickerView: View {
 
             }
         )
-        .onChange(of: photoPickerItem) { newValue in
+        .onChange(of: photoPickerItem) { _, newValue in
             Task {
                 selectedImage = try? await newValue?.loadTransferable(type: Image.self)
             }

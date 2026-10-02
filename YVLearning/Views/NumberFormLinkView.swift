@@ -12,7 +12,7 @@ struct NumberFormLinkView: View {
     lazy var numberFormLink = NumberFormLink(viewModel: viewModel)
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             var mutableSelf = self
             mutableSelf.numberFormLink
             /*
